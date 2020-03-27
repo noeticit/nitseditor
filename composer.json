@@ -62,7 +62,7 @@
     "repositories": [
         {
             "type": "path",
-            "url": "~/Dev/composer/nitseditor-application"
+            "url": "C:/xampp/htdocs/nitseditor-backend"
         }
     ],
     "minimum-stability": "dev",
