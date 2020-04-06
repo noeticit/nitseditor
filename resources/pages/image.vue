@@ -15,14 +15,19 @@
 <!--        </div>-->
 
 <!--    </div>-->
-<!--    <button class="inline-block max-w-xs w-48 px-4 py-2 rounded-lg shadow-md bg-teal-500 hover:bg-teal-400 focus:outline-none focus:shadow-outline text-white text-sm tracking-wider font-semibold">Hello World</button>-->
-
-<!--<base-hover-flat-button></base-hover-flat-button>-->
+<!--    <base-secondary-button></base-secondary-button>-->
+<!--    <base-outline-button></base-outline-button>-->
+<!--    <base-traditional-aert></base-traditional-aert>-->
+<!--    <base-modern-badge-alert></base-modern-badge-alert>-->
+<!--    <base-left-accent-border-alert></base-left-accent-border-alert>-->
+<!--    <base-banner-alert></base-banner-alert>-->
+<!--    <base-left-accent-border-alert></base-left-accent-border-alert>-->
+<!--    <base-top-accent-border-alert></base-top-accent-border-alert>-->
+<!--    <base-solid-alert></base-solid-alert>-->
+<!--    <base-hover-flat-button></base-hover-flat-button>-->
 <!--    <base-hover-outline></base-hover-outline>-->
 <!--    <base-secondary-button></base-secondary-button>-->
-<!--    <base-solid-button></base-solid-button>-->
-<!--    <base-outline-button></base-outline-button>-->
-    <base-horizontal-button></base-horizontal-button>
+    <base-solid-button></base-solid-button>
 </template>
 
 <script>
