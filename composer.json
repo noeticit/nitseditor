@@ -11,9 +11,6 @@
         "php": "^7.2.5",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
-        "guzzlehttp/guzzle": "^6.3",
-        "laravel/framework": "^7.0",
-        "laravel/tinker": "^2.0",
         "nitseditor/application": "dev-master"
     },
     "require-dev": {
@@ -61,8 +58,8 @@
     },
     "repositories": [
         {
-            "type": "path",
-            "url": "D:/xampp/htdocs/nitseditor-backend"
+            "type": "vcs",
+            "url": "ssh://git@bitbucket.nitsonline.in:7999/ne/nitseditor-application.git"
         }
     ],
     "minimum-stability": "dev",
