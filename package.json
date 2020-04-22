@@ -11,6 +11,6 @@
     },
     "devDependencies": {},
     "dependencies": {
-        "nitseditor-frontend": "^0.0.5"
+        "nitseditor-frontend": "^0.0.6"
     }
 }

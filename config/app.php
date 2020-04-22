@@ -171,11 +171,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        /*
-         * Package Service Providers...
-         */
-//        Nitseditor\Application\Providers\ApplicationServiceProvider::class,
-//        Nitseditor\Application\Providers\RouteServiceProvider::class,
     ],
 
     /*
