@@ -59,7 +59,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "ssh://git@github.com:noeticit/nitseditor-application.git"
+            "url": "git@github.com:noeticit/nitseditor-application.git"
         }
     ],
     "minimum-stability": "dev",
