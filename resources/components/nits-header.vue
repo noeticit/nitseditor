@@ -1,11 +1,22 @@
 <template>
     <div class="w-full z-40 lg:fixed">
-        <div class="flex md:py-3 py-3 justify-between" style="background: #183444">
-            <div class="flex">
-                <img class="md:h-10 md:w-40 h-6 w-24 sm:mt-1 ml-3 md:ml-10" src="/nits-assets/images/Biltrax.png">
+        <div class="flex md:py-3 py-2 md:justify-between" style="background: #183444">
+            <div class="hidden md:flex">
+                <img class="md:h-10 my-auto md:w-40 h-6 w-24 sm:mt-1 ml-3 md:ml-10" src="/nits-assets/images/Biltrax.png">
             </div>
-            <span class="w-1/4 hidden my-auto h-10 cursor-pointer border border-gray-300 md:text-sm rounded md:flex" style="background: #e9eff5">
-                <input type="search" name="serch" placeholder="Search Company" class="flex-grow px-4 rounded text-sm focus:outline-none" style="background: #e9eff5">
+            <div class="md:hidden rounded-full bg-white h-8 w-8 flex my-auto mx-3">
+                <img class="h-4 w-4 m-auto" src="/project-assets/images/bx.png">
+            </div>
+            <div class="relative my-auto md:hidden max-w-full">
+                <span class="absolute inset-y-0 left-0 pl-3 flex items-center">
+                    <svg class="h-4 w-4 text-gray-500" viewBox="0 0 24 24" fill="none">
+                        <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <input class="w-full text-xs border border-gray-500 rounded-md pl-10 pr-4 py-1 focus:bg-white focus:outline-none" type="text" placeholder="Search Company ..." style="background: #e9eff5">
+            </div>
+            <span class="md:w-1/4 w-full my-auto h-10 cursor-pointer border border-gray-300 md:text-sm rounded hidden md:flex" style="background: #e9eff5">
+                <input type="search" name="search" placeholder="Search Company" class="flex-grow px-4 rounded text-sm focus:outline-none" style="background: #e9eff5">
                 <!--                <i class="fas fa-search m-3 mr-5 text-lg text-gray-700 w-4 h-4"></i>-->
                 <svg class="h-4 w-4 m-3 mr-5 text-black" viewBox="0 0 24 24" fill="none">
                     <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -138,6 +149,9 @@
                     <div class="text-base md:font-semibold font-medium ml-2 md:ml-4">Hello , Sign In</div>
                 </div>
             </div>
+            <svg @click="cartOpen = !cartOpen" class="h-8 w-8 cursor-pointer my-auto mx-3 text-white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.4 9H3.6c-.552 0-.6.447-.6 1 0 .553.048 1 .6 1h12.8c.552 0 .6-.447.6-1s-.048-1-.6-1zm0 4H3.6c-.552 0-.6.447-.6 1 0 .553.048 1 .6 1h12.8c.552 0 .6-.447.6-1s-.048-1-.6-1zM3.6 7h12.8c.552 0 .6-.447.6-1s-.048-1-.6-1H3.6c-.552 0-.6.447-.6 1s.048 1 .6 1z"/>
+            </svg>
         </div>
         <div class="relative md:hidden mt-3 max-w-full mx-3">
             <span class="absolute inset-y-0 left-0 pl-3 flex items-center">
