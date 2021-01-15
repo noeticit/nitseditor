@@ -1,5 +1,4 @@
 const mix = require('laravel-mix');
-require('laravel-mix-alias');
 
 /*
  |--------------------------------------------------------------------------
@@ -7,39 +6,27 @@ require('laravel-mix-alias');
  |--------------------------------------------------------------------------
  |
  | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
+ | for your Laravel applications. By default, we are compiling the CSS
  | file for the application as well as bundling up all the JS files.
  |
  */
 
-mix.options({
-    postCss: [
-        require('autoprefixer'),
-    ],
-});
-
-mix.alias({
-    'NitsModels': 'node_modules/nitseditor-frontend/Models',
-});
-
-mix.webpackConfig({
-    node: {
-        fs: "empty"
-    },
-    output: {
-        publicPath: '/',
-        chunkFilename: 'nits-assets/chunks/[name].[chunkhash].js',
-    }
-});
-
-mix.copy('node_modules/nitseditor-frontend/Assets', 'public/nits-assets/images');
-
-const tailwindcss = require('tailwindcss');
-
-mix.sass('resources/sass/app.scss', 'nits-assets/css')
-    .options({
-        processCssUrls: false,
-        postCss: [ tailwindcss('./tailwind.config.js') ],
+mix.js('resources/js/app.js', 'public/nits-assets/js')
+    .postCss('./resources/sass/app.css', 'public/nits-assets/css', [
+        require("tailwindcss"),
+    ])
+    .webpackConfig({
+        output: {
+            chunkFilename: 'nits-assets/chunks/[name].[contenthash].js'
+        },
+        resolve: {
+            symlinks: false,
+            alias: {
+                NitsModels: path.resolve( './resources/models/Models'),
+                NitsComponents: path.resolve( './resources/demo/Components'),
+                NitsPages: path.resolve( './resources/pages'),
+                ProjectModels: path.resolve('./resources/models'),
+            },
+        }
     })
-    .js('resources/js/app.js', 'nits-assets/js')
     .sourceMaps().version();

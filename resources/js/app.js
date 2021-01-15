@@ -1,1 +1,1 @@
-require('nitseditor-frontend');
+require('@noeticit/nitseditor-frontend');

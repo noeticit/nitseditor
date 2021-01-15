@@ -74,29 +74,6 @@ class AppSettingsSeeder extends Seeder
             ]
         ]);
 
-        DB::table('oauth_clients')->insert([
-            [
-                'user_id' => null,
-                'name' => 'Laravel Personal Access Client',
-                'secret' => 'MjsSjpdbEAaVlSdjJxB10sglZki8oF9oyPHV9UAg',
-                'redirect' => 'http://localhost',
-                'personal_access_client' => 1,
-                'password_client' => 0,
-                'revoked' => 0,
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
-                'user_id' => null,
-                'name' => 'Laravel Password Grant Client',
-                'secret' => 'u25lw4NFXXvD6QJ8cs45FwkpMdTcwTPKR64nstaW',
-                'redirect' => 'http://localhost',
-                'personal_access_client' => 0,
-                'password_client' => 1,
-                'revoked' => 0,
-                'created_at' => now(),
-                'updated_at' => now()
-            ]
-        ]);
+
     }
 }

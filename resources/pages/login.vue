@@ -1,8 +1,9 @@
 <template>
     <div class="block">
         <div class="absolute mt-4 right-0 px-10">
-            <inertia-link href="/login" class="font-serif subpixel-antialiased font-normal tracking-normal leading-loose p-2 text-gray-600">Login</inertia-link>
-            <inertia-link href="/login" class="font-serif subpixel-antialiased font-normal tracking-normal leading-loose p-2 text-gray-600">Register</inertia-link>
+            <inertia-link href="/" class="font-serif subpixel-antialiased font-normal tracking-normal leading-loose p-2 text-gray-600">Home</inertia-link>
+            <inertia-link href="/nits-admin/login" class="font-serif subpixel-antialiased font-normal tracking-normal leading-loose p-2 text-gray-600">Login</inertia-link>
+            <inertia-link href="/nits-admin/register" class="font-serif subpixel-antialiased font-normal tracking-normal leading-loose p-2 text-gray-600">Register</inertia-link>
         </div>
 
         <div class="block flex h-screen">
@@ -16,6 +17,7 @@
                     <a href="https://github.com/noeticit/nitseditor" class="font-serif subpixel-antialiased font-normal tracking-normal leading-loose text-gray-600 p-4">GitHub</a>
                 </div>
             </div>
+
         </div>
     </div>
 </template>

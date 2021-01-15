@@ -2,15 +2,26 @@
     "private": true,
     "scripts": {
         "dev": "npm run development",
-        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/nitseditor-frontend/webpack.config.js",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/@noeticit/nitseditor-frontend/webpack.config.js",
         "watch": "npm run development -- --watch",
         "watch-poll": "npm run watch -- --watch-poll",
-        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/nitseditor-frontend/webpack.config.js",
+        "hot": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/nitseditor-frontend/webpack.config.js"
+        "production": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
-    "devDependencies": {},
+    "devDependencies": {
+        "laravel-mix": "^6.0.10",
+        "lodash": "^4.17.20",
+        "cross-env": "^7.0.3",
+        "postcss": "^8.2.4",
+        "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1",
+        "vue": "^2.6.12",
+        "vue-template-compiler": "^2.6.12"
+    },
     "dependencies": {
-        "nitseditor-frontend": "^0.0.8"
+        "@inertiajs/inertia": "^0.6.3",
+        "@inertiajs/inertia-vue": "^0.4.3",
+        "@noeticit/nitseditor-frontend": "0.0.20",
+        "babel-plugin-syntax-dynamic-import": "^6.18.0"
     }
 }

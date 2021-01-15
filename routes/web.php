@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,4 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/{view?}', 'HomeController@index')->where('view', '(.*)')->name('nitseditor.app');
+Route::get('/', 'HomeController@index')->name('index');
+
+Auth::routes();

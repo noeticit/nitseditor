@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+/*
+Dashboard page Carousel
+ */
+
+.family{
+    font-family: 'Montserrat', sans-serif;
+}
+.family-sriracha{
+    font-family: 'Sriracha', cursive;
+}
+.border-radius{
+    border-radius: 24px;
+    box-shadow: 0 15px 35px 0 rgba(50,50,93,.1);
+}
+.shadow-box{
+    box-shadow: 0 15px 35px 0 rgba(50,50,93,.1);
+}
+.text-pink{
+    color: #eb5b77;
+    cursor: pointer;
+    font-size: 9px;
+    font-weight: 600;
+}
+.text-zx{
+    font-size: 11px
+}
+.bg-dark-bluish{
+    background-color: #21243d;
+}
+.rounded-bottom{
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    box-shadow: 0 15px 35px 0 rgba(50,50,93,.1);
+}
+
+
+
+.family{
+    font-family: 'Montserrat', sans-serif;
+    /*font-weight: bold;*/
+}
+
+/*
+Home page Carousel
+ */
+.carousel-open:checked + .carousel-item {
+    position: static;
+    opacity: 100;
+}
+.carousel-item {
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+}
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+    display: block;
+}
+.carousel-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 50;
+}
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+    color: #2b6cb0;  /*Set to match the Tailwind colour you want the active one to be */
+}
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.animated.faster {
+    -webkit-animation-duration: 500ms;
+    animation-duration: 500ms;
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+.fadeOut {
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+}
+
+@keyframes fadeIn {
+   from {
+             opacity: 0;
+   }
+
+   to {
+       opacity: 1;
+   }
+}
+@keyframes fadeOut {
+    from {
+             opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+
+/*
+Industry project page.
+ */
+.carousel-open:checked + .carousel-item {
+    position: static;
+    opacity: 100;
+}
+.carousel-item {
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+}
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+    display: block;
+}
+.carousel-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+    color: #2b6cb0;  /*Set to match the Tailwind colour you want the active one to be */
+}
+
+/*
+Login Screen
+ */
+
+.bg-mustard{
+    background-color: #F2C98A;
+}
+.text-mustard-800{
+    color: #986923;
+}
+
+/*
+Top Bar
+ */
+
+.bg-btn{
+    background-color: #c9f7f5;
+    color: #1bc5bd;
+}
+
+
+/*
+CheckOut
+ */
+input:checked + svg {
+    display: block;
+}
+.border-radius{
+    background-color: #FBF6F0;
+    border-radius: 1.25rem;
+}
+.custom-shape-divider-top-1602319768 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1602319768 svg {
+    display: block;
+    width: calc(139% + 1.3px);
+    height: 460px;
+}
+
+.custom-shape-divider-top-1602319768 .shape-fill {
+    fill: white;
+}
+.border-circle{
+    border-top-left-radius: 1.35rem;
+    border-top-right-radius: 1.35rem;
+}
+
+
+/*
+Course Dashboard
+ */
+.border-radius{
+    background-color: #FBF6F0;
+    border-radius: 1.25rem;
+}
+svg#freepik_stories-welcome:not(.animated) .animable {opacity: 0;}svg#freepik_stories-welcome.animated #el0eiqul6thll {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0s;}svg#freepik_stories-welcome.animated #elkvsm495a4dc {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.03225806451612903s;opacity: 0}svg#freepik_stories-welcome.animated #elde2q7yoybwn {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.06451612903225806s;opacity: 0}svg#freepik_stories-welcome.animated #el8q1yurj2upc {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.0967741935483871s;opacity: 0}svg#freepik_stories-welcome.animated #el1wvf5p2iv61 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.12903225806451613s;opacity: 0}svg#freepik_stories-welcome.animated #elf6eeraa2vma {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.16129032258064516s;opacity: 0}svg#freepik_stories-welcome.animated #elu86j5w2y9us {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.1935483870967742s;opacity: 0}svg#freepik_stories-welcome.animated #elpsivux5kvg {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.22580645161290322s;opacity: 0}svg#freepik_stories-welcome.animated #el1wmj736ke6r {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.25806451612903225s;opacity: 0}svg#freepik_stories-welcome.animated #elqoal3ew2xmc {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.29032258064516125s;opacity: 0}svg#freepik_stories-welcome.animated #eli0f51vw1dl {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.3225806451612903s;opacity: 0}svg#freepik_stories-welcome.animated #el5992956kzbh {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.3548387096774194s;opacity: 0}svg#freepik_stories-welcome.animated #elmst6t3f7iqi {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.3870967741935484s;opacity: 0}svg#freepik_stories-welcome.animated #eleco47gejyct {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.4193548387096774s;opacity: 0}svg#freepik_stories-welcome.animated #eli6zg9i49pre {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.45161290322580644s;opacity: 0}svg#freepik_stories-welcome.animated #elomjg4yd06gf {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.4838709677419355s;opacity: 0}svg#freepik_stories-welcome.animated #el9530bg0ns9q {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.5161290322580645s;opacity: 0}svg#freepik_stories-welcome.animated #elqubh5pxqqp {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.5483870967741935s;opacity: 0}svg#freepik_stories-welcome.animated #eldekobgarynm {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.5806451612903225s;opacity: 0}svg#freepik_stories-welcome.animated #eldzt6qi4r5si {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.6129032258064516s;opacity: 0}svg#freepik_stories-welcome.animated #elwrglf0vzegk {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.6451612903225806s;opacity: 0}svg#freepik_stories-welcome.animated #el8ndx3syaaf8 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.6774193548387096s;opacity: 0}svg#freepik_stories-welcome.animated #ele343susc607 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.7096774193548387s;opacity: 0}svg#freepik_stories-welcome.animated #elua7hp6yb6np {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.7419354838709677s;opacity: 0}svg#freepik_stories-welcome.animated #elsillazgjmt {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.7741935483870968s;opacity: 0}svg#freepik_stories-welcome.animated #elilog0bperor {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.8064516129032258s;opacity: 0}svg#freepik_stories-welcome.animated #eljwiowpvoqbp {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.8387096774193548s;opacity: 0}svg#freepik_stories-welcome.animated #ellti13qd20op {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.8709677419354839s;opacity: 0}svg#freepik_stories-welcome.animated #elewqhgj3jvwm {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.9032258064516129s;opacity: 0}svg#freepik_stories-welcome.animated #elwdjzxyxx7q {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.9354838709677419s;opacity: 0}svg#freepik_stories-welcome.animated #elrn4k9faqzcs {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.967741935483871s;opacity: 0}svg#freepik_stories-welcome.animated #freepik--character-2--inject-1--inject-3 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp,1.5s Infinite  linear floating;animation-delay: 0s,1s;}svg#freepik_stories-welcome.animated #eloiw7v1yqirg {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0s;}svg#freepik_stories-welcome.animated #el3u88ji7phmb {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.034482758620689655s;opacity: 0}svg#freepik_stories-welcome.animated #elar9t2y5kdxd {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.06896551724137931s;opacity: 0}svg#freepik_stories-welcome.animated #elwq5loyctjup {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.10344827586206896s;opacity: 0}svg#freepik_stories-welcome.animated #el9o2br1930mi {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.13793103448275862s;opacity: 0}svg#freepik_stories-welcome.animated #eliebeypkktl {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.1724137931034483s;opacity: 0}svg#freepik_stories-welcome.animated #el8s1052tzz4g {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.20689655172413793s;opacity: 0}svg#freepik_stories-welcome.animated #elwrwact06wm {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.24137931034482757s;opacity: 0}svg#freepik_stories-welcome.animated #elrcf9rzbi68p {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.27586206896551724s;opacity: 0}svg#freepik_stories-welcome.animated #ela68n0r2gkt {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.3103448275862069s;opacity: 0}svg#freepik_stories-welcome.animated #eluoc8i9qehy {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.3448275862068966s;opacity: 0}svg#freepik_stories-welcome.animated #el6bdzxgsdpw {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.3793103448275862s;opacity: 0}svg#freepik_stories-welcome.animated #el7bladisczoq {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.41379310344827586s;opacity: 0}svg#freepik_stories-welcome.animated #elvldb617uic {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.4482758620689655s;opacity: 0}svg#freepik_stories-welcome.animated #el0bke2p21pgc {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.48275862068965514s;opacity: 0}svg#freepik_stories-welcome.animated #el414oc7iy3ze {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.5172413793103449s;opacity: 0}svg#freepik_stories-welcome.animated #elxn1csozh8fs {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.5517241379310345s;opacity: 0}svg#freepik_stories-welcome.animated #elknaqdjar0hg {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.5862068965517241s;opacity: 0}svg#freepik_stories-welcome.animated #elwbbarn2hna {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.6206896551724138s;opacity: 0}svg#freepik_stories-welcome.animated #el6vknji5csn5 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.6551724137931034s;opacity: 0}svg#freepik_stories-welcome.animated #elfa09pfn8y5 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.6896551724137931s;opacity: 0}svg#freepik_stories-welcome.animated #elmssldkmrjej {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.7241379310344828s;opacity: 0}svg#freepik_stories-welcome.animated #elt299y0bgrj {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.7586206896551724s;opacity: 0}svg#freepik_stories-welcome.animated #elxkl2xbk9qbc {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.7931034482758621s;opacity: 0}svg#freepik_stories-welcome.animated #els36cg23mdb {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.8275862068965517s;opacity: 0}svg#freepik_stories-welcome.animated #elvyfrdvps0pi {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.8620689655172413s;opacity: 0}svg#freepik_stories-welcome.animated #elgz9ye4gnzy4 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.896551724137931s;opacity: 0}svg#freepik_stories-welcome.animated #elk23i4k5ywos {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.9310344827586207s;opacity: 0}svg#freepik_stories-welcome.animated #elvg3e8vxbkbl {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0.9655172413793103s;opacity: 0}svg#freepik_stories-welcome.animated #freepik--character-1--inject-1--inject-3 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp,1.5s Infinite  linear wind;animation-delay: 0s,1s;}svg#freepik_stories-welcome.animated #freepik--characters-with-banner--inject-1--inject-3 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp,1.5s Infinite  linear floating;animation-delay: 0s,1s;}            @keyframes slideUp {                0% {                    opacity: 0;                    transform: translateY(30px);                }                100% {                    opacity: 1;                    transform: inherit;                }            }                    @keyframes floating {                0% {                    opacity: 1;                    transform: translateY(0px);                }                50% {                    transform: translateY(-10px);                }                100% {                    opacity: 1;                    transform: translateY(0px);                }            }                    @keyframes wind {                0% {                    transform: rotate( 0deg );                }                25% {                    transform: rotate( 1deg );                }                75% {                    transform: rotate( -1deg );                }            }
+
+
+.border-radius-only{
+    border-radius: 1.25rem;
+}
+.bg-theme{
+    background-color: #FBF6F0;
+}
+svg#freepik_stories-under-construction:not(.animated) .animable {opacity: 0;}svg#freepik_stories-under-construction.animated #freepik--Gears--inject-4 {animation: 1.5s Infinite  linear floating;animation-delay: 0s;}svg#freepik_stories-under-construction.animated #freepik--Plant--inject-4 {animation: 1.5s Infinite  linear heartbeat;animation-delay: 0s;}svg#freepik_stories-under-construction.animated #freepik--Crane--inject-4 {animation: 1.5s Infinite  linear wind;animation-delay: 0s;}svg#freepik_stories-under-construction.animated #freepik--Character--inject-4 {animation: 1.5s Infinite  linear shake;animation-delay: 0s;}            @keyframes floating {                0% {                    opacity: 1;                    transform: translateY(0px);                }                50% {                    transform: translateY(-10px);                }                100% {                    opacity: 1;                    transform: translateY(0px);                }            }                    @keyframes heartbeat {                0% {                    transform: scale(1);                }                10% {                    transform: scale(1.1);                }                30% {                    transform: scale(1);                }                40% {                    transform: scale(1);                }                50% {                    transform: scale(1.1);                }                60% {                    transform: scale(1);                }                100% {                    transform: scale(1);                }            }                    @keyframes wind {                0% {                    transform: rotate( 0deg );                }                25% {                    transform: rotate( 1deg );                }                75% {                    transform: rotate( -1deg );                }            }                    @keyframes shake {                10%, 90% {                    transform: translate3d(-1px, 0, 0);                  }                  20%, 80% {                    transform: translate3d(2px, 0, 0);                  }                  30%, 50%, 70% {                    transform: translate3d(-4px, 0, 0);                  }                  40%, 60% {                    transform: translate3d(4px, 0, 0);                  }            }
+
+
+svg#freepik_stories-career-progress:not(.animated) .animable {opacity: 0;}svg#freepik_stories-career-progress.animated #freepik--Arrow--inject-2 {animation: 1.5s Infinite  linear wind;animation-delay: 0s;}svg#freepik_stories-career-progress.animated #freepik--speech-bubble--inject-2 {animation: 1.5s Infinite  linear heartbeat;animation-delay: 0s;}svg#freepik_stories-career-progress.animated #freepik--Character--inject-2 {animation: 1.5s Infinite  linear wind;animation-delay: 0s;}svg#freepik_stories-career-progress.animated #freepik--Chair--inject-2 {animation: 1.5s Infinite  linear heartbeat;animation-delay: 0s;}            @keyframes wind {                0% {                    transform: rotate( 0deg );                }                25% {                    transform: rotate( 1deg );                }                75% {                    transform: rotate( -1deg );                }            }                    @keyframes heartbeat {                0% {                    transform: scale(1);                }                10% {                    transform: scale(1.1);                }                30% {                    transform: scale(1);                }                40% {                    transform: scale(1);                }                50% {                    transform: scale(1.1);                }                60% {                    transform: scale(1);                }                100% {                    transform: scale(1);                }            }
