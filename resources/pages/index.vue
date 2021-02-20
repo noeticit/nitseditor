@@ -1,9 +1,16 @@
 <template>
     <div class="block">
-        <div class="absolute mt-4 right-0 px-10">
-            <inertia-link href="/login" class="font-serif subpixel-antialiased font-normal tracking-normal leading-loose p-2 text-gray-600">Login</inertia-link>
-            <inertia-link href="/login" class="font-serif subpixel-antialiased font-normal tracking-normal leading-loose p-2 text-gray-600">Register</inertia-link>
-        </div>
+        <div v-if="canLogin" class="absolute mt-4 right-0 px-10">
+            <inertia-link v-if="$page.props.user" href="/dashboard" class="text-sm text-gray-700 underline">
+                Dashboard
+            </inertia-link>
+
+            <template v-else>
+                <inertia-link href="/login" class="font-serif subpixel-antialiased font-normal tracking-normal leading-loose p-2 text-gray-600">Login</inertia-link>
+                <inertia-link v-if="canRegister" href="/register" class="font-serif subpixel-antialiased font-normal tracking-normal leading-loose p-2 text-gray-600">Register</inertia-link>
+            </template>
+
+         </div>
 
         <div class="block flex h-screen">
             <div class="m-auto">
@@ -22,7 +29,11 @@
 
 <script>
     export default {
-        name: "index"
+        name: "index",
+        props: {
+            canLogin: Boolean,
+            canRegister: Boolean,
+        }
     }
 </script>
 

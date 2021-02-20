@@ -11,22 +11,17 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/nits-assets/js')
-    .postCss('./resources/sass/app.css', 'public/nits-assets/css', [
-        require("tailwindcss"),
+
+mix.js('resources/js/app.js', 'public/js').vue()
+    .postCss('resources/css/app.css', 'public/css', [
+        require('postcss-import'),
+        require('tailwindcss'),
+        require('autoprefixer'),
     ])
-    .webpackConfig({
-        output: {
-            chunkFilename: 'nits-assets/chunks/[name].[contenthash].js'
-        },
-        resolve: {
-            symlinks: false,
-            alias: {
-                NitsModels: path.resolve( './resources/models/Models'),
-                NitsComponents: path.resolve( './resources/demo/Components'),
-                NitsPages: path.resolve( './resources/pages'),
-                ProjectModels: path.resolve('./resources/models'),
-            },
-        }
-    })
-    .sourceMaps().version();
+    .webpackConfig(require('./webpack.config'));
+
+
+if (mix.inProduction()) {
+    mix.version();
+//     .sourceMaps().version();
+}

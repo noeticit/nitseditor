@@ -6,18 +6,16 @@
     <meta name="author" content="Nitish Kumar">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
-    {{--    <link rel="icon" href="{{ $favicon }}" sizes="{{ $favicon_sizes }}" type="{{ $favicon_image_type }}">--}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="shortcut icon" href="{{ config('nitseditor.favicon') }}">
-    <link rel="stylesheet" href="{{ mix('nits-assets/css/app.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
 </head>
 <body>
 
  @inertia
 
-<script src="{{ mix('nits-assets/js/app.js') }}"></script>
+<script src="{{ mix('js/app.js') }}"></script>
 
  <script>
 
