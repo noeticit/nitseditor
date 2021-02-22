@@ -31414,6 +31414,10 @@ svg#freepik_stories-forgot-password.animated #freepik--Character--inject-3 {
 
 /*forget password end*/
 
+.max-w-8xl{
+  max-width: 90rem;
+}
+
 @media (min-width: 640px){
   .sm\:container{
     width: 100%;
