@@ -17,9 +17,6 @@ use Inertia\Inertia;
 |
 */
 
-//Route::get('/', 'HomeController@index')->name('index');
-//
-//Auth::routes();
 
 Route::get('/', function () {
     return Inertia::render('index', [
@@ -27,7 +24,6 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
     ]);
 });
-
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
