@@ -18029,6 +18029,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     logout: function logout() {
+      // this.$inertia.post(route('logout'));
       this.$inertia.post('logout');
     }
   }
@@ -20292,18 +20293,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
-  "class": "w-16 h-16",
-  viewBox: "0 0 48 48",
-  fill: "none",
-  xmlns: "http://www.w3.org/2000/svg"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
-  d: "M11.395 44.428C4.557 40.198 0 32.632 0 24 0 10.745 10.745 0 24 0a23.891 23.891 0 0113.997 4.502c-.2 17.907-11.097 33.245-26.602 39.926z",
-  fill: "#6875F5"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
-  d: "M14.134 45.885A23.914 23.914 0 0024 48c13.255 0 24-10.745 24-24 0-3.516-.756-6.856-2.115-9.866-4.659 15.143-16.608 27.092-31.75 31.751z",
-  fill: "#6875F5"
-})], -1
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+  "class": "px-6 h-20",
+  src: "/nits-assets/images/nit-logo.png",
+  alt: "NitsEditor Logo"
+}, null, -1
 /* HOISTED */
 );
 
@@ -20311,7 +20305,8 @@ function render(_ctx, _cache) {
   var _component_inertia_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("inertia-link");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_inertia_link, {
-    href: '/'
+    href: '/',
+    "class": "focus:outline-none"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_1];
@@ -20837,7 +20832,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("input", {
-    "class": "border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm",
+    "class": "border-gray-300 px-2 py-2 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm",
     value: $props.modelValue,
     onInput: _cache[1] || (_cache[1] = function ($event) {
       return _ctx.$emit('update:modelValue', $event.target.value);
@@ -21931,7 +21926,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
 /* harmony import */ var _vendor_tightenco_ziggy_src_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../vendor/tightenco/ziggy/src/js */ "./vendor/tightenco/ziggy/src/js/index.js");
 /* harmony import */ var _ziggy__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ziggy */ "./resources/js/ziggy.js");
+/* harmony import */ var _nitseditor_plugin__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./nitseditor-plugin */ "./resources/js/nitseditor-plugin.js");
 // Import modules...
+
 
 
 
@@ -21953,6 +21950,253 @@ var el = document.getElementById('app');
     }
   }
 }).use(_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.plugin).mount(el);
+app.use(_nitseditor_plugin__WEBPACK_IMPORTED_MODULE_4__.default, {});
+
+/***/ }),
+
+/***/ "./resources/js/nitseditor-plugin.js":
+/*!*******************************************!*\
+  !*** ./resources/js/nitseditor-plugin.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  install: function install(app, options) {
+    // Plugin code goes here
+    //Header Components
+    app.component('NitsHeaderAndSubheaderBordered', function () {
+      return __webpack_require__.e(/*! import() */ "resources_components_Base_Headers_NitsFloatingMenuHeader_vue").then(__webpack_require__.bind(__webpack_require__, /*! @/Base/Headers/NitsFloatingMenuHeader */ "./resources/components/Base/Headers/NitsFloatingMenuHeader.vue"));
+    });
+    app.component('NitsHeaderAndSubheaderTransparentTop', function () {
+      return __webpack_require__.e(/*! import() */ "resources_components_Base_Headers_NitsHeaderAndSubheaderTransparentTop_vue").then(__webpack_require__.bind(__webpack_require__, /*! @/Base/Headers/NitsHeaderAndSubheaderTransparentTop */ "./resources/components/Base/Headers/NitsHeaderAndSubheaderTransparentTop.vue"));
+    });
+    app.component('NitsHeaderFloating', function () {
+      return __webpack_require__.e(/*! import() */ "resources_components_Base_Headers_NitsHeaderFloating_vue").then(__webpack_require__.bind(__webpack_require__, /*! @/Base/Headers/NitsHeaderFloating */ "./resources/components/Base/Headers/NitsHeaderFloating.vue"));
+    });
+    app.component('NitsHeaderLeftsidePushContent', function () {
+      return __webpack_require__.e(/*! import() */ "resources_components_Base_Headers_NitsHeaderLeftsidePushContent_vue").then(__webpack_require__.bind(__webpack_require__, /*! @/Base/Headers/NitsHeaderLeftsidePushContent */ "./resources/components/Base/Headers/NitsHeaderLeftsidePushContent.vue"));
+    });
+    app.component('NitsHeaderMenuCenterBottom', function () {
+      return __webpack_require__.e(/*! import() */ "resources_components_Base_Headers_NitsHeaderMenuCenterBottom_vue").then(__webpack_require__.bind(__webpack_require__, /*! @/Base/Headers/NitsHeaderMenuCenterBottom */ "./resources/components/Base/Headers/NitsHeaderMenuCenterBottom.vue"));
+    });
+    app.component('NitsHeaderMenuLogoRight', function () {
+      return __webpack_require__.e(/*! import() */ "resources_components_Base_Headers_NitsHeaderMenuLogoRight_vue").then(__webpack_require__.bind(__webpack_require__, /*! @/Base/Headers/NitsHeaderMenuLogoRight */ "./resources/components/Base/Headers/NitsHeaderMenuLogoRight.vue"));
+    });
+    app.component('NitsHeaderMenuWithTitleAndSubtitle', function () {
+      return __webpack_require__.e(/*! import() */ "resources_components_Base_Headers_NitsHeaderMenuWithTitleAndSubtitle_vue").then(__webpack_require__.bind(__webpack_require__, /*! @/Base/Headers/NitsHeaderMenuWithTitleAndSubtitle */ "./resources/components/Base/Headers/NitsHeaderMenuWithTitleAndSubtitle.vue"));
+    });
+    app.component('NitsHeaderOverlay', function () {
+      return __webpack_require__.e(/*! import() */ "resources_components_Base_Headers_NitsHeaderOverlay_vue").then(__webpack_require__.bind(__webpack_require__, /*! @/Base/Headers/NitsHeaderOverlay */ "./resources/components/Base/Headers/NitsHeaderOverlay.vue"));
+    });
+    app.component('NitsHeaderStaticSticky', function () {
+      return __webpack_require__.e(/*! import() */ "resources_components_Base_Headers_NitsHeaderStaticSticky_vue").then(__webpack_require__.bind(__webpack_require__, /*! @/Base/Headers/NitsHeaderStaticSticky */ "./resources/components/Base/Headers/NitsHeaderStaticSticky.vue"));
+    });
+    app.component('NitsHeaderStickyLogoChange', function () {
+      return __webpack_require__.e(/*! import() */ "resources_components_Base_Headers_NitsHeaderStickyLogoChange_vue").then(__webpack_require__.bind(__webpack_require__, /*! @/Base/Headers/NitsHeaderStickyLogoChange */ "./resources/components/Base/Headers/NitsHeaderStickyLogoChange.vue"));
+    });
+    app.component('NitsHeaderSubheaderLeftBottom', function () {
+      return __webpack_require__.e(/*! import() */ "resources_components_Base_Headers_NitsHeaderSubheaderLeftBottom_vue").then(__webpack_require__.bind(__webpack_require__, /*! @/Base/Headers/NitsHeaderSubheaderLeftBottom */ "./resources/components/Base/Headers/NitsHeaderSubheaderLeftBottom.vue"));
+    });
+    app.component('NitsHeaderSubheaderModern', function () {
+      return __webpack_require__.e(/*! import() */ "resources_components_Base_Headers_NitsHeaderSubheaderModern_vue").then(__webpack_require__.bind(__webpack_require__, /*! @/Base/Headers/NitsHeaderSubheaderModern */ "./resources/components/Base/Headers/NitsHeaderSubheaderModern.vue"));
+    });
+    app.component('NitsHeaderSubheaderTop', function () {
+      return __webpack_require__.e(/*! import() */ "resources_components_Base_Headers_NitsHeaderSubheaderTop_vue").then(__webpack_require__.bind(__webpack_require__, /*! @/Base/Headers/NitsHeaderSubheaderTop */ "./resources/components/Base/Headers/NitsHeaderSubheaderTop.vue"));
+    });
+    app.component('NitsHeaderWithIcon', function () {
+      return __webpack_require__.e(/*! import() */ "resources_components_Base_Headers_NitsHeaderWithIcon_vue").then(__webpack_require__.bind(__webpack_require__, /*! @/Base/Headers/NitsHeaderWithIcon */ "./resources/components/Base/Headers/NitsHeaderWithIcon.vue"));
+    }); // //Footer Components
+    // app.component('AnalyticsOverview', () => import('@/App/AnalyticsOverview'));
+    // app.component('AppDescription', () => import('@/App/AppDescription'));
+    // app.component('NitsActionOne', () => import('@/App/CallToAction/NitsActionOne'));
+    // app.component('NitsCarouselOne', () => import('@/App/Carousels/NitsCarouselOne'));
+    // app.component('DashboardTaskInfo', () => import('@/App/DashboardTaskInfo'));
+    // app.component('EmailAd', () => import('@/App/EmailAd'));
+    // app.component('NitsFeatureEight', () => import('@/App/Features/NitsFeatureEight'));
+    // app.component('NitsFeatureFive', () => import('@/App/Features/NitsFeatureFive'));
+    // app.component('NitsFeatureFour', () => import('@/App/Features/NitsFeatureFour'));
+    // app.component('NitsFeatureOne', () => import('@/App/Features/NitsFeatureOne'));
+    // app.component('NitsFeatureSeven', () => import('@/App/Features/NitsFeatureSeven'));
+    // app.component('NitsFeatureSix', () => import('@/App/Features/NitsFeatureSix'));
+    // app.component('NitsFeatureThree', () => import('@/App/Features/NitsFeatureThree'));
+    // app.component('NitsFeatureTwo', () => import('@/App/Features/NitsFeatureTwo'));
+    // app.component('NitsTextOne', () => import('@/App/Features/NitsTextOne'));
+    // app.component('MenuBuilder', () => import('@/App/MenuBuilder'));
+    // app.component('NitsPortfolioEight', () => import('@/App/Portfolios/NitsPortfolioEight'));
+    // app.component('NitsPortfolioFive', () => import('@/App/Portfolios/NitsPortfolioFive'));
+    // app.component('NitsPortfolioFour', () => import('@/App/Portfolios/NitsPortfolioFour'));
+    // app.component('NitsPortfolioOne', () => import('@/App/Portfolios/NitsPortfolioOne'));
+    // app.component('NitsPortfolioSeven', () => import('@/App/Portfolios/NitsPortfolioSeven'));
+    // // app.component('NitsPortfolioSix', () => import('@/App/Portfolios/NitsPortfolioSix'));
+    // app.component('NitsPortfolioThree', () => import('@/App/Portfolios/NitsPortfolioThree'));
+    // app.component('NitsPortfolioTwo', () => import('@/App/Portfolios/NitsPortfolioTwo'));
+    // app.component('SearchFilters', () => import('@/App/SearchFilters'));
+    // app.component('SiteInfoWidget', () => import('@/App/SiteInfoWidget'));
+    // app.component('NitsTestimonialOne', () => import('@/App/Testimonials/NitsTestimonialOne'));
+    // app.component('NitsAboutUs', () => import('@/Base/About/NitsAboutUs'));
+    // app.component('BaseBannerAlert', () => import('@/Base/Alerts/BaseBannerAlert'));
+    // app.component('BaseLeftAccentBorderAlert', () => import('@/Base/Alerts/BaseLeftAccentBorderAlert'));
+    // app.component('BaseModernBadgeAlert', () => import('@/Base/Alerts/BaseModernBadgeAlert'));
+    // app.component('BaseSolidAlert', () => import('@/Base/Alerts/BaseSolidAlert'));
+    // app.component('BaseTitledAlert', () => import('@/Base/Alerts/BaseTitledAlert'));
+    // app.component('BaseTopAccentBorderAlert', () => import('@/Base/Alerts/BaseTopAccentBorderAlert'));
+    // app.component('BaseTraditionalAert', () => import('@/Base/Alerts/BaseTraditionalAert'));
+    // app.component('Sample', () => import('@/Base/Alerts/sample'));
+    // app.component('BaseBreadCrumbOne', () => import('@/Base/BreadCrumbs/BaseBreadCrumbOne'));
+    // app.component('Sample', () => import('@/Base/BreadCrumbs/sample'));
+    // app.component('BaseButton', () => import('@/Base/Buttons/BaseButton'));
+    // app.component('BaseDropdownButton', () => import('@/Base/Buttons/BaseDropdownButton'));
+    // app.component('BaseHoverFlatButton', () => import('@/Base/Buttons/BaseHoverFlatButton'));
+    // app.component('BaseHoverOutline', () => import('@/Base/Buttons/BaseHoverOutline'));
+    // app.component('BaseOutlineButton', () => import('@/Base/Buttons/BaseOutlineButton'));
+    // app.component('BaseSecondaryButton', () => import('@/Base/Buttons/BaseSecondaryButton'));
+    // app.component('BaseSolidButton', () => import('@/Base/Buttons/BaseSolidButton'));
+    // app.component('NitsButton', () => import('@/Base/Buttons/NitsButton'));
+    // app.component('NitsOutlineButton', () => import('@/Base/Buttons/NitsOutlineButton'));
+    // app.component('NitsToggleButton', () => import('@/Base/Buttons/NitsToggleButton'));
+    // app.component('NitsFooter', () => import('@/Base/Footers/NitsFooter'));
+    // app.component('NitsFooterLayout1', () => import('@/Base/Footers/NitsFooterLayout1'));
+    // app.component('NitsFooterLayout2', () => import('@/Base/Footers/NitsFooterLayout2'));
+    // app.component('NitsFooterLayout3', () => import('@/Base/Footers/NitsFooterLayout3'));
+    // app.component('NitsFooterLayout4', () => import('@/Base/Footers/NitsFooterLayout4'));
+    // app.component('NitsFooterLayout5', () => import('@/Base/Footers/NitsFooterLayout5'));
+    // app.component('NitsStickyFooter', () => import('@/Base/Footers/NitsStickyFooter'));
+    // app.component('NitsCheckBox', () => import('@/Base/Forms/NitsCheckBox'));
+    // app.component('NitsCkeditor', () => import('@/Base/Forms/NitsCkeditor'));
+    // app.component('NitsDatePicker', () => import('@/Base/Forms/NitsDatePicker'));
+    // app.component('NitsEditor', () => import('@/Base/Forms/NitsEditor'));
+    // app.component('NitsForm', () => import('@/Base/Forms/NitsForm'));
+    // app.component('NitsFormBuilder', () => import('@/Base/Forms/NitsFormBuilder'));
+    // app.component('NitsFormCheck', () => import('@/Base/Forms/NitsFormCheck'));
+    // app.component('NitsFormPageBuilder', () => import('@/Base/Forms/NitsFormPageBuilder'));
+    // app.component('NitsFormRepeater', () => import('@/Base/Forms/NitsFormRepeater'));
+    // app.component('NitsFormWizard', () => import('@/Base/Forms/NitsFormWizard'));
+    // app.component('NitsInputDate', () => import('@/Base/Forms/NitsInputDate'));
+    // app.component('NitsInputFile', () => import('@/Base/Forms/NitsInputFile'));
+    // app.component('NitsInputMultiSelect', () => import('@/Base/Forms/NitsInputMultiSelect'));
+    // app.component('NitsInputSelect', () => import('@/Base/Forms/NitsInputSelect'));
+    // app.component('NitsInputText', () => import('@/Base/Forms/NitsInputText'));
+    // app.component('NitsMultipleDropzone', () => import('@/Base/Forms/NitsMultipleDropzone'));
+    // app.component('NitsPageBuilder', () => import('@/Base/Forms/NitsPageBuilder'));
+    // app.component('NitsSingleDropzone', () => import('@/Base/Forms/NitsSingleDropzone'));
+    // app.component('NitsVirtualList', () => import('@/Base/Forms/NitsVirtualList'));
+    // app.component('NitsColumn', () => import('@/Base/Grids/NitsColumn'));
+    // app.component('NitsDivision', () => import('@/Base/Grids/NitsDivision'));
+    // app.component('NitsGrid', () => import('@/Base/Grids/NitsGrid'));
+    // app.component('NitsRow', () => import('@/Base/Grids/NitsRow'));
+    // app.component('BaseHorizontalButton', () => import('@/Base/GroupButton/BaseHorizontalButton'));
+    // app.component('BaseIconButton', () => import('@/Base/GroupButton/BaseIconButton'));
+    // app.component('BaseIconForButton', () => import('@/Base/GroupButton/BaseIconForButton'));
+    // app.component('BaseVerticalButton', () => import('@/Base/GroupButton/BaseVerticalButton'));
+    // app.component('NitsFloatingMenuHeader', () => import('@/Base/Headers/NitsFloatingMenuHeader'));
+    // app.component('NitsFramedLayoutHeader', () => import('@/Base/Headers/NitsFramedLayoutHeader'));
+    // app.component('NitsHAlternateLogo', () => import('@/Base/Headers/NitsHAlternateLogo'));
+    // app.component('NitsHAndSubH', () => import('@/Base/Headers/NitsHAndSubH'));
+    // app.component('NitsHAndSubHFlex', () => import('@/Base/Headers/NitsHAndSubHFlex'));
+    // app.component('NitsHBlue', () => import('@/Base/Headers/NitsHBlue'));
+    // app.component('NitsHCentered', () => import('@/Base/Headers/NitsHCentered'));
+    // app.component('NitsHDark', () => import('@/Base/Headers/NitsHDark'));
+    // app.component('NitsHIconAndText', () => import('@/Base/Headers/NitsHIconAndText'));
+    // app.component('NitsHIconWithText', () => import('@/Base/Headers/NitsHIconWithText'));
+    // app.component('NitsHLeftSideOnclick', () => import('@/Base/Headers/NitsHLeftSideOnclick'));
+    // app.component('NitsHLight', () => import('@/Base/Headers/NitsHLight'));
+    // app.component('NitsHMenuLeftAlign', () => import('@/Base/Headers/NitsHMenuLeftAlign'));
+    // app.component('NitsHResponsiveSticky', () => import('@/Base/Headers/NitsHResponsiveSticky'));
+    // app.component('NitsHRightSideOnclick', () => import('@/Base/Headers/NitsHRightSideOnclick'));
+    // app.component('NitsHRightSidePush', () => import('@/Base/Headers/NitsHRightSidePush'));
+    // app.component('NitsHSemiTransparentDark', () => import('@/Base/Headers/NitsHSemiTransparentDark'));
+    // app.component('NitsHSemiTransparentLight', () => import('@/Base/Headers/NitsHSemiTransparentLight'));
+    // app.component('NitsHStaticSticky', () => import('@/Base/Headers/NitsHStaticSticky'));
+    // app.component('NitsHTransparent', () => import('@/Base/Headers/NitsHTransparent'));
+    // app.component('NitsLeftsideFixedHeader', () => import('@/Base/Headers/NitsLeftsideFixedHeader'));
+    // app.component('NitsMenuCenteredLogo', () => import('@/Base/Headers/NitsMenuCenteredLogo'));
+    // app.component('NitsRightsideFixedHeader', () => import('@/Base/Headers/NitsRightsideFixedHeader'));
+    // app.component('NitsIcon', () => import('@/Base/Icons/NitsIcon'));
+    // app.component('NitsContentCenter', () => import('@/Base/LayoutContent/NitsContentCenter'));
+    // app.component('NitsContentLeft', () => import('@/Base/LayoutContent/NitsContentLeft'));
+    // app.component('NitsBoldMenus', () => import('@/Base/Menus/NitsBoldMenus'));
+    // app.component('NitsLightMenus', () => import('@/Base/Menus/NitsLightMenus'));
+    // app.component('NitsMenus', () => import('@/Base/Menus/NitsMenus'));
+    // app.component('NitsSideMenus', () => import('@/Base/Menus/NitsSideMenus'));
+    // app.component('BaseModalOne', () => import('@/Base/Modals/BaseModalOne'));
+    // app.component('ListComponent', () => import('@/Base/NitsAim/ListComponent'));
+    // app.component('NitsBackground', () => import('@/Base/NitsAim/NitsBackground'));
+    // app.component('NitsBox', () => import('@/Base/NitsAim/NitsBox'));
+    // app.component('NitsFlex', () => import('@/Base/NitsAim/NitsFlex'));
+    // app.component('NitsHead', () => import('@/Base/NitsAim/NitsHead'));
+    // app.component('Table-view', () => import('@/Base/NitsAim/table-view'));
+    // app.component('NitsImage', () => import('@/Base/NitsImage'));
+    // app.component('BaseBasicPagination', () => import('@/Base/Pagination/BaseBasicPagination'));
+    // app.component('BaseBgColorPagination', () => import('@/Base/Pagination/BaseBgColorPagination'));
+    // app.component('BaseBgHoverPagination', () => import('@/Base/Pagination/BaseBgHoverPagination'));
+    // app.component('BaseCircleLinkPagination', () => import('@/Base/Pagination/BaseCircleLinkPagination'));
+    // app.component('BasePagination', () => import('@/Base/Pagination/BasePagination'));
+    // app.component('BaseSimpleOutlineHoverPagination', () => import('@/Base/Pagination/BaseSimpleOutlineHoverPagination'));
+    // app.component('BaseSizingPagination', () => import('@/Base/Pagination/BaseSizingPagination'));
+    // app.component('BaseStateColorsPagination', () => import('@/Base/Pagination/BaseStateColorsPagination'));
+    // app.component('AboutUs', () => import('@/Base/Parts/AboutUs'));
+    // app.component('LiveStreaming', () => import('@/Base/Parts/LiveStreaming'));
+    // app.component('NitsAnnounce', () => import('@/Base/Parts/NitsAnnounce'));
+    // app.component('NitsAssignmentConfidence', () => import('@/Base/Parts/NitsAssignmentConfidence'));
+    // app.component('NitsCourses', () => import('@/Base/Parts/NitsCourses'));
+    // app.component('NitsCourseSelection', () => import('@/Base/Parts/NitsCourseSelection'));
+    // app.component('NitsFilterCourses', () => import('@/Base/Parts/NitsFilterCourses'));
+    // app.component('NitsImageLearnRead', () => import('@/Base/Parts/NitsImageLearnRead'));
+    // app.component('NitsPink', () => import('@/Base/Parts/NitsPink'));
+    // app.component('NitsQuizzes', () => import('@/Base/Parts/NitsQuizzes'));
+    // app.component('NitsSays', () => import('@/Base/Parts/NitsSays'));
+    // app.component('NitsScrollingHeader', () => import('@/Base/Parts/NitsScrollingHeader'));
+    // app.component('NitsWelcomeConfidence', () => import('@/Base/Parts/NitsWelcomeConfidence'));
+    // app.component('Services', () => import('@/Base/Parts/Services'));
+    // app.component('BasePortletOne', () => import('@/Base/Portlets/BasePortletOne'));
+    // app.component('BaseSimpleProgressBar', () => import('@/Base/ProgressBar/BaseSimpleProgressBar'));
+    // app.component('BaseSizingProgressBar', () => import('@/Base/ProgressBar/BaseSizingProgressBar'));
+    // app.component('BaseStateProgressBar', () => import('@/Base/ProgressBar/BaseStateProgressBar'));
+    // app.component('BaseTableOne', () => import('@/Base/Tables/BaseTableOne'));
+    // app.component('BaseTableTwo', () => import('@/Base/Tables/BaseTableTwo'));
+    // app.component('ListView', () => import('@/Base/Tables/ListView'));
+    // app.component('NitsListView', () => import('@/Base/Tables/NitsListView'));
+    // app.component('NitsTableView', () => import('@/Base/Tables/NitsTableView'));
+    // app.component('Pagination', () => import('@/Base/Tables/Pagination'));
+    // app.component('BaseAdjustedPillsTab', () => import('@/Base/Tabs/BaseAdjustedPillsTab'));
+    // app.component('BaseBasicTab', () => import('@/Base/Tabs/BaseBasicTab'));
+    // app.component('BaseIconTab', () => import('@/Base/Tabs/BaseIconTab'));
+    // app.component('BasePillsIconHoverTab', () => import('@/Base/Tabs/BasePillsIconHoverTab'));
+    // app.component('BasePillsIconTab', () => import('@/Base/Tabs/BasePillsIconTab'));
+    // app.component('BasePillsTab', () => import('@/Base/Tabs/BasePillsTab'));
+    // app.component('Example', () => import('@/Base/Tabs/example'));
+    // app.component('NitsWizard', () => import('@/Base/Wizard/NitsWizard'));
+    // app.component('NitsWizardTwo', () => import('@/Base/Wizard/NitsWizardTwo'));
+    // app.component('WizardTwo', () => import('@/Base/Wizard/WizardTwo'));
+    // app.component('BuilderElement', () => import('@/Builder/BuilderElement'));
+    // app.component('ColumnElement', () => import('@/Builder/ColumnElement'));
+    // app.component('ElementDetails', () => import('@/Builder/ElementDetails'));
+    // app.component('InputField', () => import('@/Builder/Elements/InputField'));
+    // app.component('FormPopupModal', () => import('@/Builder/FormPopupModal'));
+    // app.component('FormPopupOptions', () => import('@/Builder/FormPopupOptions'));
+    // app.component('InputText', () => import('@/Builder/General/InputText'));
+    // app.component('Row', () => import('@/Builder/General/Row'));
+    // app.component('ColumnSettings', () => import('@/Builder/PageBuilder/ColumnSettings'));
+    // app.component('ElementSettings', () => import('@/Builder/PageBuilder/ElementSettings'));
+    // app.component('FormElements', () => import('@/Builder/PageBuilder/FormElements'));
+    // app.component('MainElement', () => import('@/Builder/PageBuilder/MainElement'));
+    // app.component('PageBuilderElement', () => import('@/Builder/PageBuilder/PageBuilderElement'));
+    // app.component('PageColumnElement', () => import('@/Builder/PageBuilder/PageColumnElement'));
+    // app.component('PageRowElement', () => import('@/Builder/PageBuilder/PageRowElement'));
+    // app.component('RowSettings', () => import('@/Builder/PageBuilder/RowSettings'));
+    // app.component('PopupOptions', () => import('@/Builder/PopupOptions'));
+    // app.component('RowElement', () => import('@/Builder/RowElement'));
+    // app.component('MenuOne', () => import('@/Menus/MenuOne'));
+    // app.component('MenuTwo', () => import('@/Menus/MenuTwo'));
+  }
+});
 
 /***/ }),
 
@@ -26343,6 +26587,39 @@ webpackContext.id = "./resources/Pages sync recursive ^\\.\\/.*$";
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/ensure chunk */
+/******/ 	(() => {
+/******/ 		__webpack_require__.f = {};
+/******/ 		// This file contains only the entry chunk.
+/******/ 		// The chunk loading function for additional chunks
+/******/ 		__webpack_require__.e = (chunkId) => {
+/******/ 			return Promise.all(Object.keys(__webpack_require__.f).reduce((promises, key) => {
+/******/ 				__webpack_require__.f[key](chunkId, promises);
+/******/ 				return promises;
+/******/ 			}, []));
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/get javascript chunk filename */
+/******/ 	(() => {
+/******/ 		// This function allow to reference async chunks
+/******/ 		__webpack_require__.u = (chunkId) => {
+/******/ 			// return url for filenames not based on template
+/******/ 			if ({"resources_components_Base_Headers_NitsFloatingMenuHeader_vue":1,"resources_components_Base_Headers_NitsHeaderAndSubheaderTransparentTop_vue":1,"resources_components_Base_Headers_NitsHeaderFloating_vue":1,"resources_components_Base_Headers_NitsHeaderLeftsidePushContent_vue":1,"resources_components_Base_Headers_NitsHeaderMenuCenterBottom_vue":1,"resources_components_Base_Headers_NitsHeaderMenuLogoRight_vue":1,"resources_components_Base_Headers_NitsHeaderMenuWithTitleAndSubtitle_vue":1,"resources_components_Base_Headers_NitsHeaderOverlay_vue":1,"resources_components_Base_Headers_NitsHeaderStaticSticky_vue":1,"resources_components_Base_Headers_NitsHeaderStickyLogoChange_vue":1,"resources_components_Base_Headers_NitsHeaderSubheaderLeftBottom_vue":1,"resources_components_Base_Headers_NitsHeaderSubheaderModern_vue":1,"resources_components_Base_Headers_NitsHeaderSubheaderTop_vue":1,"resources_components_Base_Headers_NitsHeaderWithIcon_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			// return url for filenames based on template
+/******/ 			return undefined;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/get mini-css chunk filename */
+/******/ 	(() => {
+/******/ 		// This function allow to reference all chunks
+/******/ 		__webpack_require__.miniCssF = (chunkId) => {
+/******/ 			// return url for filenames based on template
+/******/ 			return "" + chunkId + ".css";
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/global */
 /******/ 	(() => {
 /******/ 		__webpack_require__.g = (function() {
@@ -26360,6 +26637,52 @@ webpackContext.id = "./resources/Pages sync recursive ^\\.\\/.*$";
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/load script */
+/******/ 	(() => {
+/******/ 		var inProgress = {};
+/******/ 		// data-webpack is not used as build has no uniqueName
+/******/ 		// loadScript function to load a script via script tag
+/******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
+/******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
+/******/ 			var script, needAttach;
+/******/ 			if(key !== undefined) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				for(var i = 0; i < scripts.length; i++) {
+/******/ 					var s = scripts[i];
+/******/ 					if(s.getAttribute("src") == url) { script = s; break; }
+/******/ 				}
+/******/ 			}
+/******/ 			if(!script) {
+/******/ 				needAttach = true;
+/******/ 				script = document.createElement('script');
+/******/ 		
+/******/ 				script.charset = 'utf-8';
+/******/ 				script.timeout = 120;
+/******/ 				if (__webpack_require__.nc) {
+/******/ 					script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 				}
+/******/ 		
+/******/ 				script.src = url;
+/******/ 			}
+/******/ 			inProgress[url] = [done];
+/******/ 			var onScriptComplete = (prev, event) => {
+/******/ 				// avoid mem leaks in IE.
+/******/ 				script.onerror = script.onload = null;
+/******/ 				clearTimeout(timeout);
+/******/ 				var doneFns = inProgress[url];
+/******/ 				delete inProgress[url];
+/******/ 				script.parentNode && script.parentNode.removeChild(script);
+/******/ 				doneFns && doneFns.forEach((fn) => (fn(event)));
+/******/ 				if(prev) return prev(event);
+/******/ 			}
+/******/ 			;
+/******/ 			var timeout = setTimeout(onScriptComplete.bind(null, undefined, { type: 'timeout', target: script }), 120000);
+/******/ 			script.onerror = onScriptComplete.bind(null, script.onerror);
+/******/ 			script.onload = onScriptComplete.bind(null, script.onload);
+/******/ 			needAttach && document.head.appendChild(script);
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -26369,6 +26692,11 @@ webpackContext.id = "./resources/Pages sync recursive ^\\.\\/.*$";
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		__webpack_require__.p = "/";
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
@@ -26386,7 +26714,46 @@ webpackContext.id = "./resources/Pages sync recursive ^\\.\\/.*$";
 /******/ 			["./resources/js/app.js"],
 /******/ 			["./resources/css/app.css"]
 /******/ 		];
-/******/ 		// no chunk on demand loading
+/******/ 		__webpack_require__.f.j = (chunkId, promises) => {
+/******/ 				// JSONP chunk loading for javascript
+/******/ 				var installedChunkData = __webpack_require__.o(installedChunks, chunkId) ? installedChunks[chunkId] : undefined;
+/******/ 				if(installedChunkData !== 0) { // 0 means "already installed".
+/******/ 		
+/******/ 					// a Promise means "currently loading".
+/******/ 					if(installedChunkData) {
+/******/ 						promises.push(installedChunkData[2]);
+/******/ 					} else {
+/******/ 						if("css/app" != chunkId) {
+/******/ 							// setup Promise in chunk cache
+/******/ 							var promise = new Promise((resolve, reject) => {
+/******/ 								installedChunkData = installedChunks[chunkId] = [resolve, reject];
+/******/ 							});
+/******/ 							promises.push(installedChunkData[2] = promise);
+/******/ 		
+/******/ 							// start chunk loading
+/******/ 							var url = __webpack_require__.p + __webpack_require__.u(chunkId);
+/******/ 							// create error before stack unwound to get useful stacktrace later
+/******/ 							var error = new Error();
+/******/ 							var loadingEnded = (event) => {
+/******/ 								if(__webpack_require__.o(installedChunks, chunkId)) {
+/******/ 									installedChunkData = installedChunks[chunkId];
+/******/ 									if(installedChunkData !== 0) installedChunks[chunkId] = undefined;
+/******/ 									if(installedChunkData) {
+/******/ 										var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 										var realSrc = event && event.target && event.target.src;
+/******/ 										error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
+/******/ 										error.name = 'ChunkLoadError';
+/******/ 										error.type = errorType;
+/******/ 										error.request = realSrc;
+/******/ 										installedChunkData[1](error);
+/******/ 									}
+/******/ 								}
+/******/ 							};
+/******/ 							__webpack_require__.l(url, loadingEnded, "chunk-" + chunkId, chunkId);
+/******/ 						} else installedChunks[chunkId] = 0;
+/******/ 					}
+/******/ 				}
+/******/ 		};
 /******/ 		
 /******/ 		// no prefetching
 /******/ 		

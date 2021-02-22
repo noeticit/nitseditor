@@ -263,6 +263,7 @@
             },
 
             logout() {
+                // this.$inertia.post(route('logout'));
                 this.$inertia.post('logout');
             },
         }
