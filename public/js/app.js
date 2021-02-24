@@ -21847,24 +21847,66 @@ __webpack_require__.r(__webpack_exports__);
 
 var _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("data-v-1e64ee9f");
 
-var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_nits_h_and_sub_h = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("nits-h-and-sub-h");
+(0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-1e64ee9f");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("    <div class=\"block\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        <div v-if=\"canLogin\" class=\"absolute mt-4 right-0 px-10\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            <inertia-link v-if=\"$page.props.user\" href=\"/dashboard\" class=\"text-sm text-gray-700 underline\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                Dashboard"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            </inertia-link>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            <template v-else>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <inertia-link href=\"/login\" class=\"font-serif subpixel-antialiased font-normal tracking-normal leading-loose p-2 text-gray-600\">Login</inertia-link>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <inertia-link v-if=\"canRegister\" href=\"/register\" class=\"font-serif subpixel-antialiased font-normal tracking-normal leading-loose p-2 text-gray-600\">Register</inertia-link>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            </template>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("         </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        <div class=\"block flex h-screen\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            <div class=\"m-auto\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"font-serif subpixel-antialiased font-medium text-6xl text-gray-800 tracking-wider leading-4 items-center text-center\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    Nits Editor"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"text-gray-400 mt-6 items-center text-center\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <a href=\"https://nitseditor.com/docs\" class=\"font-serif subpixel-antialiased font-normal tracking-normal leading-loose text-gray-600 p-4\">Docs</a>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <a href=\"https://github.com/noeticit/nitseditor\" class=\"font-serif subpixel-antialiased font-normal tracking-normal leading-loose text-gray-600 p-4\">GitHub</a>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("    </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        <demo-header"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            logo=\"http://nitseditor.com/images/icons/nit-logo.png\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            :menu=\"menu\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            background_color=\"bg-red-600\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            text_color=\"text-white\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            redirect_btn=\"false\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            responsive_background_color=\"bg-blue-600\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            responsive_text_color=\"text-gray-100\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        ></demo-header>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        <center-logo-header"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            background_color=\"orange\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            text_color=\"white\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            :menu=\"menu\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            :svg_icon=\"svg_icon\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            logo=\"https://cdn.shopify.com/s/files/1/0466/9253/2373/t/2/assets/logo.png?v=8505991049215987300\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        ></center-logo-header>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        <humburger-header></humburger-header>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        <nits-header-left-side-push-content :menus=\"menu\"></nits-header-left-side-push-content>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        <nits-h-left-side-onclick :menu=\"menu\" logo=\"http://nitseditor.com/images/icons/nit-logo.png\"></nits-h-left-side-onclick>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        <nits-menu-centered-logo"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        label1=\"Home\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        label2=\"About us\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        label3=\"Contact us\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        label4=\"Blog\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        ></nits-menu-centered-logo>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        <nits-h-alternate-logo :menu=\"menu\"></nits-h-alternate-logo>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_nits_h_and_sub_h, {
-    location: "Location",
-    call: "Call",
-    contact: "Contact",
-    day_time: "Monday 09:00pm",
-    email: "Email",
-    open: "Open",
-    faqs: "FAQ",
-    number: "3658745",
-    email_id: "email@gmail.com",
-    menus: $data.menu,
-    logo: "http://nitseditor.com/images/icons/nit-logo.png"
-  }, null, 8
-  /* PROPS */
-  , ["menus"])])], 2112
+var _hoisted_1 = {
+  "class": "block"
+};
+var _hoisted_2 = {
+  key: 0,
+  "class": "absolute mt-4 right-0 px-10"
+};
+
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Dashboard ");
+
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Login");
+
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Register");
+
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"block flex h-screen\" data-v-1e64ee9f><div class=\"m-auto\" data-v-1e64ee9f><div class=\"font-serif subpixel-antialiased font-medium text-6xl text-gray-800 tracking-wider leading-4 items-center text-center\" data-v-1e64ee9f> Nits Editor </div><div class=\"text-gray-400 mt-6 items-center text-center\" data-v-1e64ee9f><a href=\"https://nitseditor.com/docs\" class=\"font-serif subpixel-antialiased font-normal tracking-normal leading-loose text-gray-600 p-4\" data-v-1e64ee9f>Docs</a><a href=\"https://github.com/noeticit/nitseditor\" class=\"font-serif subpixel-antialiased font-normal tracking-normal leading-loose text-gray-600 p-4\" data-v-1e64ee9f>GitHub</a></div></div></div>", 1);
+
+(0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)();
+
+var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_inertia_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("inertia-link");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [$props.canLogin ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_2, [_ctx.$page.props.user ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_inertia_link, {
+    key: 0,
+    href: "/dashboard",
+    "class": "text-sm text-gray-700 underline"
+  }, {
+    "default": _withId(function () {
+      return [_hoisted_3];
+    }),
+    _: 1
+    /* STABLE */
+
+  })) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    key: 1
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
+    href: "/login",
+    "class": "font-serif subpixel-antialiased font-normal tracking-normal leading-loose p-2 text-gray-600"
+  }, {
+    "default": _withId(function () {
+      return [_hoisted_4];
+    }),
+    _: 1
+    /* STABLE */
+
+  }), $props.canRegister ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_inertia_link, {
+    key: 0,
+    href: "/register",
+    "class": "font-serif subpixel-antialiased font-normal tracking-normal leading-loose p-2 text-gray-600"
+  }, {
+    "default": _withId(function () {
+      return [_hoisted_5];
+    }),
+    _: 1
+    /* STABLE */
+
+  })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 64
+  /* STABLE_FRAGMENT */
+  ))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_6]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("    <div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;        <demo-header&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;            logo=\"http://nitseditor.com/images/icons/nit-logo.png\"&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;            :menu=\"menu\"&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;            background_color=\"bg-red-600\"&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;            text_color=\"text-white\"&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;            redirect_btn=\"false\"&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;            responsive_background_color=\"bg-blue-600\"&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;            responsive_text_color=\"text-gray-100\"&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;        ></demo-header>&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;        <center-logo-header&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;            background_color=\"orange\"&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;            text_color=\"white\"&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;            :menu=\"menu\"&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;            :svg_icon=\"svg_icon\"&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;            logo=\"https://cdn.shopify.com/s/files/1/0466/9253/2373/t/2/assets/logo.png?v=8505991049215987300\"&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;        ></center-logo-header>&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;        <humburger-header></humburger-header>&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;        <nits-header-left-side-push-content :menus=\"menu\"></nits-header-left-side-push-content>&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;        <nits-h-left-side-onclick :menu=\"menu\" logo=\"http://nitseditor.com/images/icons/nit-logo.png\"></nits-h-left-side-onclick>&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;        <nits-menu-centered-logo&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;        label1=\"Home\"&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;        label2=\"About us\"&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;        label3=\"Contact us\"&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;        label4=\"Blog\"&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;        ></nits-menu-centered-logo>&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("&lt;!&ndash;        <nits-h-alternate-logo :menu=\"menu\"></nits-h-alternate-logo>&ndash;&gt;"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("        <nits-h-and-sub-h"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            location=\"Location\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            call=\"Call\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            contact=\"Contact\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            day_time=\"Monday 09:00pm\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            email=\"Email\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            open=\"Open\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            faqs=\"FAQ\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            number=\"3658745\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            email_id=\"email@gmail.com\""), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                          :menus=\"menu\" logo=\"http://nitseditor.com/images/icons/nit-logo.png\"></nits-h-and-sub-h>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("    </div>")], 2112
   /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
   );
 });

@@ -1,72 +1,72 @@
 <template>
-<!--    <div class="block">-->
-<!--        <div v-if="canLogin" class="absolute mt-4 right-0 px-10">-->
-<!--            <inertia-link v-if="$page.props.user" href="/dashboard" class="text-sm text-gray-700 underline">-->
-<!--                Dashboard-->
-<!--            </inertia-link>-->
+    <div class="block">
+        <div v-if="canLogin" class="absolute mt-4 right-0 px-10">
+            <inertia-link v-if="$page.props.user" href="/dashboard" class="text-sm text-gray-700 underline">
+                Dashboard
+            </inertia-link>
 
-<!--            <template v-else>-->
-<!--                <inertia-link href="/login" class="font-serif subpixel-antialiased font-normal tracking-normal leading-loose p-2 text-gray-600">Login</inertia-link>-->
-<!--                <inertia-link v-if="canRegister" href="/register" class="font-serif subpixel-antialiased font-normal tracking-normal leading-loose p-2 text-gray-600">Register</inertia-link>-->
-<!--            </template>-->
+            <template v-else>
+                <inertia-link href="/login" class="font-serif subpixel-antialiased font-normal tracking-normal leading-loose p-2 text-gray-600">Login</inertia-link>
+                <inertia-link v-if="canRegister" href="/register" class="font-serif subpixel-antialiased font-normal tracking-normal leading-loose p-2 text-gray-600">Register</inertia-link>
+            </template>
 
-<!--         </div>-->
+         </div>
 
-<!--        <div class="block flex h-screen">-->
-<!--            <div class="m-auto">-->
-<!--                <div class="font-serif subpixel-antialiased font-medium text-6xl text-gray-800 tracking-wider leading-4 items-center text-center">-->
-<!--                    Nits Editor-->
-<!--                </div>-->
+        <div class="block flex h-screen">
+            <div class="m-auto">
+                <div class="font-serif subpixel-antialiased font-medium text-6xl text-gray-800 tracking-wider leading-4 items-center text-center">
+                    Nits Editor
+                </div>
 
-<!--                <div class="text-gray-400 mt-6 items-center text-center">-->
-<!--                    <a href="https://nitseditor.com/docs" class="font-serif subpixel-antialiased font-normal tracking-normal leading-loose text-gray-600 p-4">Docs</a>-->
-<!--                    <a href="https://github.com/noeticit/nitseditor" class="font-serif subpixel-antialiased font-normal tracking-normal leading-loose text-gray-600 p-4">GitHub</a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-    <div>
-<!--        <demo-header-->
-<!--            logo="http://nitseditor.com/images/icons/nit-logo.png"-->
-<!--            :menu="menu"-->
-<!--            background_color="bg-red-600"-->
-<!--            text_color="text-white"-->
-<!--            redirect_btn="false"-->
-<!--            responsive_background_color="bg-blue-600"-->
-<!--            responsive_text_color="text-gray-100"-->
-<!--        ></demo-header>-->
-<!--        <center-logo-header-->
-<!--            background_color="orange"-->
-<!--            text_color="white"-->
-<!--            :menu="menu"-->
-<!--            :svg_icon="svg_icon"-->
-<!--            logo="https://cdn.shopify.com/s/files/1/0466/9253/2373/t/2/assets/logo.png?v=8505991049215987300"-->
-<!--        ></center-logo-header>-->
-<!--        <humburger-header></humburger-header>-->
-<!--        <nits-header-left-side-push-content :menus="menu"></nits-header-left-side-push-content>-->
-<!--        <nits-h-left-side-onclick :menu="menu" logo="http://nitseditor.com/images/icons/nit-logo.png"></nits-h-left-side-onclick>-->
-<!--        <nits-menu-centered-logo-->
-<!--        label1="Home"-->
-<!--        label2="About us"-->
-<!--        label3="Contact us"-->
-<!--        label4="Blog"-->
-
-<!--        ></nits-menu-centered-logo>-->
-<!--        <nits-h-alternate-logo :menu="menu"></nits-h-alternate-logo>-->
-        <nits-h-and-sub-h
-            location="Location"
-            call="Call"
-            contact="Contact"
-            day_time="Monday 09:00pm"
-            email="Email"
-            open="Open"
-            faqs="FAQ"
-            number="3658745"
-            email_id="email@gmail.com"
-
-
-                          :menus="menu" logo="http://nitseditor.com/images/icons/nit-logo.png"></nits-h-and-sub-h>
+                <div class="text-gray-400 mt-6 items-center text-center">
+                    <a href="https://nitseditor.com/docs" class="font-serif subpixel-antialiased font-normal tracking-normal leading-loose text-gray-600 p-4">Docs</a>
+                    <a href="https://github.com/noeticit/nitseditor" class="font-serif subpixel-antialiased font-normal tracking-normal leading-loose text-gray-600 p-4">GitHub</a>
+                </div>
+            </div>
+        </div>
     </div>
+<!--    <div>-->
+<!--&lt;!&ndash;        <demo-header&ndash;&gt;-->
+<!--&lt;!&ndash;            logo="http://nitseditor.com/images/icons/nit-logo.png"&ndash;&gt;-->
+<!--&lt;!&ndash;            :menu="menu"&ndash;&gt;-->
+<!--&lt;!&ndash;            background_color="bg-red-600"&ndash;&gt;-->
+<!--&lt;!&ndash;            text_color="text-white"&ndash;&gt;-->
+<!--&lt;!&ndash;            redirect_btn="false"&ndash;&gt;-->
+<!--&lt;!&ndash;            responsive_background_color="bg-blue-600"&ndash;&gt;-->
+<!--&lt;!&ndash;            responsive_text_color="text-gray-100"&ndash;&gt;-->
+<!--&lt;!&ndash;        ></demo-header>&ndash;&gt;-->
+<!--&lt;!&ndash;        <center-logo-header&ndash;&gt;-->
+<!--&lt;!&ndash;            background_color="orange"&ndash;&gt;-->
+<!--&lt;!&ndash;            text_color="white"&ndash;&gt;-->
+<!--&lt;!&ndash;            :menu="menu"&ndash;&gt;-->
+<!--&lt;!&ndash;            :svg_icon="svg_icon"&ndash;&gt;-->
+<!--&lt;!&ndash;            logo="https://cdn.shopify.com/s/files/1/0466/9253/2373/t/2/assets/logo.png?v=8505991049215987300"&ndash;&gt;-->
+<!--&lt;!&ndash;        ></center-logo-header>&ndash;&gt;-->
+<!--&lt;!&ndash;        <humburger-header></humburger-header>&ndash;&gt;-->
+<!--&lt;!&ndash;        <nits-header-left-side-push-content :menus="menu"></nits-header-left-side-push-content>&ndash;&gt;-->
+<!--&lt;!&ndash;        <nits-h-left-side-onclick :menu="menu" logo="http://nitseditor.com/images/icons/nit-logo.png"></nits-h-left-side-onclick>&ndash;&gt;-->
+<!--&lt;!&ndash;        <nits-menu-centered-logo&ndash;&gt;-->
+<!--&lt;!&ndash;        label1="Home"&ndash;&gt;-->
+<!--&lt;!&ndash;        label2="About us"&ndash;&gt;-->
+<!--&lt;!&ndash;        label3="Contact us"&ndash;&gt;-->
+<!--&lt;!&ndash;        label4="Blog"&ndash;&gt;-->
+
+<!--&lt;!&ndash;        ></nits-menu-centered-logo>&ndash;&gt;-->
+<!--&lt;!&ndash;        <nits-h-alternate-logo :menu="menu"></nits-h-alternate-logo>&ndash;&gt;-->
+<!--        <nits-h-and-sub-h-->
+<!--            location="Location"-->
+<!--            call="Call"-->
+<!--            contact="Contact"-->
+<!--            day_time="Monday 09:00pm"-->
+<!--            email="Email"-->
+<!--            open="Open"-->
+<!--            faqs="FAQ"-->
+<!--            number="3658745"-->
+<!--            email_id="email@gmail.com"-->
+
+
+<!--                          :menus="menu" logo="http://nitseditor.com/images/icons/nit-logo.png"></nits-h-and-sub-h>-->
+<!--    </div>-->
 </template>
 
 <script>
