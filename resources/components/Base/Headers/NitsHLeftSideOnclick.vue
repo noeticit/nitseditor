@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="relative">
-            <img src="/project-assets/images/school_image.jpg">
+            <img class="h-screen w-screen" src="https://wallpapercave.com/wp/wp3222138.jpg">
             <button @click="Open = ! Open" class="absolute focus:outline-none left-0 top-0">
                 <svg class="h-8 w-8  my-4 mx-3 text-white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9h-4v4H9v-4H5V9h4V5h2v4h4v2z"/>
@@ -13,7 +13,7 @@
             <div class="mt-16 ml-8">
                 <img class="h-12 w-48 pr-4" :src="logo">
             </div>
-            <nits-side-menus :menus="menus"></nits-side-menus>
+            <nits-side-menus :menus="menu"></nits-side-menus>
             <div class="flex mt-8 px-5 py-5">
                 <div class="inline-block hover:bg-blue-800  rounded cursor-pointer hover:text-white text-gray-700 ">
                     <svg class="h-4 w-4 my-3 mx-3 " xmlns="http://www.w3.org/2000/svg" fill="currentColor"  viewBox="0 0 20 20">
@@ -57,8 +57,10 @@
 </template>
 
 <script>
+    import NitsSideMenus from "@/Base/Menus/NitsSideMenus";
     export default {
         name: "NitsHLeftSideOnclick",
+        components: {NitsSideMenus},
         props:{
             menu : Array,
             logo: {

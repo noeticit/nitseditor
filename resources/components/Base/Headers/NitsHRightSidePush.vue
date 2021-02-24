@@ -1,7 +1,7 @@
 <template>
     <div class="flex">
         <div class="relative">
-            <img class=" h-auto w-screen" src="/project-assets/images/school_image.jpg">
+            <img class="h-screen w-screen" src="https://wallpapercave.com/wp/wp3222138.jpg">
             <div @click="box4 = true " :class="box4 ? 'hidden' : 'block'" class=" bg-white cursor-pointer  rounded mr-6 mt-5 absolute right-0 top-0">
                 <svg class=" h-8 w-8 px-1 py-1" version="1.1" id="Menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                      viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
@@ -16,14 +16,12 @@
                 </svg>
             </div>
         </div>
-        <div v-if="box4" class="block flex">
-            <div  class="flex-col h-full w-64 bg-white">
+        <div v-if="box4" class="flex">
+            <div  class="flex-col h-full z-50 w-64 bg-white">
                 <div class="mt-16 ml-8">
-                    <img class="h-12 w-48 pr-4" src="/nits-assets/images/logo.png">
+                    <img class="h-12 w-48 pr-4" src="http://nitseditor.com/images/icons/nit-logo.png">
                 </div>
-                <nits-side-menus
-                :menus="menus"
-                ></nits-side-menus>
+                <nits-side-menus :menus="menus"></nits-side-menus>
                 <div class="flex mt-8 px-5 py-5">
                     <div class="inline-block hover:bg-blue-800  rounded cursor-pointer hover:text-white text-gray-700 ">
                         <svg class="h-4 w-4 my-3 mx-3 " xmlns="http://www.w3.org/2000/svg" fill="currentColor"  viewBox="0 0 20 20">
@@ -31,7 +29,7 @@
                         </svg>
                     </div>
 
-                    <div class="inline-block cursor-pointer hover:bg-teal-600 hover:text-white rounded text-gray-700">
+                    <div class="inline-block cursor-pointer hover:bg-green-400 hover:text-white rounded text-gray-700">
                         <svg class="h-4 w-4  my-3 mx-3" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M17.316 6.246c.008.162.011.326.011.488 0 4.99-3.797 10.742-10.74 10.742-2.133 0-4.116-.625-5.787-1.697a7.577 7.577 0 005.588-1.562 3.779 3.779 0 01-3.526-2.621 3.858 3.858 0 001.705-.065 3.779 3.779 0 01-3.028-3.703v-.047a3.766 3.766 0 001.71.473 3.775 3.775 0 01-1.168-5.041 10.716 10.716 0 007.781 3.945 3.813 3.813 0 01-.097-.861 3.773 3.773 0 013.774-3.773 3.77 3.77 0 012.756 1.191 7.602 7.602 0 002.397-.916 3.789 3.789 0 01-1.66 2.088 7.55 7.55 0 002.168-.594 7.623 7.623 0 01-1.884 1.953z"/>
                         </svg>
@@ -62,8 +60,10 @@
 </template>
 
 <script>
+    import NitsSideMenus from "@/Base/Menus/NitsSideMenus";
     export default {
         name: "NitsHeaderLeftSidePushContent",
+        components: {NitsSideMenus},
         props: {
             menus : Array
         },

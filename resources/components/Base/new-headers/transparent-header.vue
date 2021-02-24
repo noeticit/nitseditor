@@ -2,7 +2,7 @@
       <div class="bg-white opacity-75 md:h-20 sm:16 h-14 shadow-lg z-10 fixed w-full">
           <div class="flex justify-between max-w-7xl md:mx-auto mx-3 h-full">
               <div class="flex my-auto">
-                  <img class="md:h-16 sm:h-10 h-8" src="../../public/images/nit-logo.png">
+                  <img class="md:h-16 sm:h-10 h-8" src="http://nitseditor.com/images/icons/nit-logo.png">
               </div>
               <div class="hidden md:flex my-auto">
                   <div class="text-gray-800 hover:text-blue-900 font-bold text-base cursor-pointer mx-5">Home</div>

@@ -19,7 +19,7 @@
     <div class="bg-green-400 p-1 w-full h-screen">
         <div class="rounded-md h-full w-full bg-white">
 <!--            header start-->
-            <div class="fixed top-0 w-full">
+            <div class="fixed top-0 z-20 w-full">
                 <div class="max-w-screen-2xl mx-auto border-b border-gray-100 ">
                     <div class="h-16 max-w-7xl mt-1 mx-auto rounded-t-lg bg-white flex justify-between">
                         <div class="my-auto flex">
@@ -53,10 +53,10 @@
                 </div>
             </div>
 <!--            header end-->
-            <div class="max-w-8xl mx-auto relative">
+            <div class="max-w-screen-2xl mx-auto relative">
                 <div class="flex relative">
                     <!--            sidebar start-->
-                    <div class="md:w-64 bg-white fixed h-screen py-3 px-4 shadow-2xl rounded-t-lg">
+                    <div class="md:w-64 bg-white z-30 fixed h-screen py-3 px-4 shadow-2xl rounded-t-lg">
                         <img class="h-10 mx-auto" src="http://nitseditor.com/images/icons/nit-logo.png">
                         <div class="flex-col mt-10 w-full">
                             <div class="text-base px-4 pb-3 border-b border-gray-100 font-semibold family-montserrat">Dashboard</div>
@@ -88,7 +88,7 @@
                                     </g>
                                 </svg>
                             </div>
-                            <div class="my-auto ml-4 text-sm font-medium text-gray-900 family-montserrat">My Links</div>
+                            <div class="my-auto ml-4 text-sm font-medium text-gray-900 family-montserrat">My</div>
                         </div>
                         <div class="py-3 border-b border-gray-100  rounded-xl px-4 flex text-green-500">
                             <div class="my-auto">
@@ -181,8 +181,8 @@
                     </div>
                     <!--            sidebar end-->
 <!--                    slot start-->
-                    <div class="w-4/5 ml-auto mt-20">
-                        <div class="">hello</div>
+                    <div class="w-4/5 relative ml-auto mt-20">
+
                     </div>
 <!--                    slot end-->
                 </div>
@@ -195,9 +195,11 @@
 <script>
     import AppLayout from '@/Layouts/AppLayout'
     import Welcome from '@/Jetstream/Welcome'
+    import NitsHBlue from "@/Base/Headers/NitsHBlue";
 
     export default {
         components: {
+            NitsHBlue,
             AppLayout,
             Welcome,
         },

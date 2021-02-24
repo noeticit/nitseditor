@@ -39,7 +39,7 @@
                             </a>
                         </div>
                         <div class="float-right mt-8 pr-3 mx-10">
-                            <img class="h-16 w-56  ml-64" src="/nits-assets/images/nits-editor-logo.png">
+                            <img class="h-16 w-56  ml-64" src="http://nitseditor.com/images/icons/nit-logo.png">
                         </div>
                         <div class="absolute right-0 mr-24 -mt-20">
                         <div class=" inline-block text-white  p-1 mx-3">
@@ -69,7 +69,7 @@
             <h3 class=" font-black text-4xl mt-40 text-white ">{{heading}}</h3>
         </div>
         <div class=" h-full w-full">
-            <img src="/project-assets/images/Advertising-Agency-Website.jpg" class="w-screen h-full" alt=" image">
+            <img src="https://wallpapercave.com/wp/wp3222138.jpg" class="w-screen h-full" alt=" image">
         </div>
 
     </div>

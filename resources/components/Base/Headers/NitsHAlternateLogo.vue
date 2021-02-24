@@ -17,7 +17,7 @@
                 </div>
                 <div class=" flex items-center flex-shrink-0 md:px-6  md:py-5 ">
                     <a class="" href="">
-                        <img class="w-48 h-auto" src="/nits-assets/images/logo.png">
+                        <img class="w-48 h-auto" src="http://nitseditor.com/images/icons/nit-logo.png">
                     </a>
                     <!--                <a class="w-20 h-18" src="/nits-assets/images/logo.png"></a>-->
                 </div>
@@ -51,7 +51,7 @@
                     <ul class="lg:flex-grow uppercase  flex flex-col lg:flex-row pb-4 lg:pb-0 ">
                         <li class="flex flex-row cursor-pointer "  v-for="item in menu" @mouseover="isVisibleResponsiveHeader1 = true" @mouseleave="isVisibleResponsiveHeader1 = false" @keydown.enter="isVisibleResponsiveHeader1 = !isVisibleResponsiveHeader1">
                             <div class="w-11/12 pb-4 border-b-2 block mt-4 lg:inline-block lg:mt-0 ml-4 lg:h-25 lg:py-10 pl-2 hover:text-teal-500 text-gray-800 text-sm font-medium">
-                                {{item}}
+                                {{item.name}}
                             </div>
                             <div class="pb-4 border-b-2 block mt-4 px-2 text-gray-700 text-sm font-medium text-right">
                                 <svg class="h-4  w-4" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -67,14 +67,15 @@
 
                 <div class="w-full h-full block lg:flex lg:items-center lg:w-auto hidden">
                     <ul class="lg:flex-grow font-medium uppercase flex flex-col lg:flex-row pb-4 lg:pb-0 text-gray-700 text-sm">
-                        <li class="hover:text-teal-400"  v-for="item in menu">
+                        <li class="hover:text-teal-400"  v-for="(item, index) in menu">
 <!--                            @mouseover="isVisibleHeader1 = true" @mouseleave="isVisibleHeader1 = false" @keydown.enter="isVisibleHeader1 = !isVisibleHeader1"-->
                             <a href="" class="border-l-4 lg:border-l-0 block mt-4 lg:inline-block lg:mt-0 mx-4 lg:h-25 lg:py-10 px-2">
-                                {{item}}
+                                {{item.name}}
                             </a>
                             <transition enter-active-class="transition duration-300 ease-out transform" enter-class="-translate-y-3 scale-95 opacity-0" enter-to-class="translate-y-0 scale-100 opacity-100" leave-active-class="transition duration-150 ease-in transform" leave-class="translate-y-0 opacity-100" leave-to-class="-translate-y-3 opacity-0">
                                 <ul  class="dropdown-menu absolute  text-gray-600 bg-white border-t-2 border-teal-400" v-show="isVisibleHeader1">
-                                <li class=" hover:text-teal-400"  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
+                                <li class=" hover:text-teal-400"  @mouseover="isVisible1 = true" @mouseleave="isVisible1 = false" @keydown.enter="isVisible1 = !isVisible1">
+                                    <a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">
                                     <spam class="flex " >HOME-Coperate, Portfolio, blog</spam>
                                     <span>
 <!--                                        <svg class="h-3  w-3 mt-1 items-end" version="1.1" id="Chevron_thin_right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"-->
@@ -83,7 +84,8 @@
                                         <!--                                            c0.268,0.271,0.268,0.709,0,0.979l-7.83,7.908c-0.268,0.271-0.701,0.27-0.969,0c-0.268-0.269-0.268-0.707,0-0.979L13.25,10z"/>-->
                                         <!--                                        </svg>-->
                                     </span>
-                                </a></li>
+                                </a>
+                                </li>
                                 <!--                                <ul  class="dropdown-menu absolute  text-gray-600 bg-white " v-show="isVisible1">-->
                                 <!--                                    <li class="hover:text-teal-400"><a class="rounded-t  hover:bg-pink-100 py-4 px-4 block whitespace-no-wrap flex " href="#">-->
                                 <!--                                        <spam class="flex  ">HOME-Coperate</spam>-->

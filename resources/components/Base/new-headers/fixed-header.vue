@@ -1,9 +1,9 @@
 <template>
     <div>
-      <div class="w-full bg-white shadow-lg h-20 z-20 fixed ralative">
+      <div class="w-full bg-white shadow-lg h-20 z-20 fixed relative">
         <div class="max-w-7xl mx-auto h-full flex justify-between">
           <div class="my-auto">
-            <img class="md:h-14 h-8 w-auto" src="../../public/images/nit-logo.png">
+            <img class="md:h-14 h-8 w-auto" src="http://nitseditor.com/images/icons/nit-logo.png">
           </div>
           <div class="hidden md:flex my-auto">
             <div class="text-green-400 hover:text-indigo-700 cursor-pointer mx-5 family-mont lg:text-lg font-semibold">Home</div>
