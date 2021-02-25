@@ -57,7 +57,7 @@
       <div class="flex">
         <div class="w-24 h-screen bg-indigo-500 fixed">
           <div class="w-full mt-4">
-            <img class="h-12 mx-auto" src="../../public/images/nlogo.png">
+            <img class="h-12 mx-auto" src="http://nitseditor.com/images/icons/nit-logo.png">
           </div>
           <div class="flex h-12 w-12 bg-gray-100 rounded-lg mx-auto mt-12">
             <svg class="w-6 h-6 text-indigo-500 m-auto" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -132,7 +132,7 @@
             <div class="family-mont text-gray-600 text-base font-medium text-center mt-4">Lorem ipsum, or lipsum Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print,<br> graphic or web designsas it is sometimes known, is dummy text used in laying<br> out print, graphic or web designs</div>
             <div class="flex grid grid-cols-6 mt-6 w-full">
               <div class="col-span-2 my-16">
-                <img class="rounded-lg h-96" src="../../public/images/graph-1.png">
+                <img class="rounded-lg h-96" src="images/graph-1.png">
               </div>
               <div class="col-span-4">
                 <!-- This example requires Tailwind CSS v2.0+ -->

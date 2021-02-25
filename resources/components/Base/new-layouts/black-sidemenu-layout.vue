@@ -51,7 +51,7 @@
     <div class="flex">
       <div class="w-64 fixed h-screen bg-gray-900">
         <div class="flex justify-between w-full family-mont text-white bg-black h-16">
-          <img class="my-auto mx-3 h-8" src="../../public/images/nitslogo.png">
+          <img class="my-auto mx-3 h-8" src="http://nitseditor.com/images/icons/nit-logo.png">
           <svg class="text-white my-auto mx-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
               <polygon points="0 0 24 0 24 24 0 24"/>
