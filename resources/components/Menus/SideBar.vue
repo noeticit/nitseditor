@@ -1,6 +1,8 @@
 <template>
     <div class="md:w-64 bg-white z-30 fixed h-screen py-3 shadow-2xl rounded-t-lg">
-        <img class="h-10 mx-auto" src="http://nitseditor.com/images/icons/nit-logo.png">
+        <inertia-link href="/dashboard">
+            <img class="h-10 mx-auto" src="http://nitseditor.com/images/icons/nit-logo.png">
+        </inertia-link>
         <div class="flex-col mt-10 w-full">
             <div class="text-base px-8 pb-3 border-b border-gray-100 font-semibold family-montserrat">Dashboard</div>
         </div>

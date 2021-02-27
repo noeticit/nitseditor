@@ -1,6 +1,7 @@
 <template>
-    <div class="w-full">
-        <div class="md:h-20 sm:h-16 h-12 shadow-lg fixed z-10 w-full" :class="background_color">
+    <div class="w-full fixed top-0">
+        <div v-if="topbar" class="h-10 w-full bg-gray-400"></div>
+        <div class="md:h-20 sm:h-16 h-12 shadow-lg z-10 w-full" :class="background_color">
             <div class="flex justify-between max-w-7xl md:mx-auto mx-3 h-full">
                 <a href="/" class="my-auto">
                     <img class="md:h-16 sm:h-8 h-6" :src="logo">
@@ -56,6 +57,10 @@ export default {
             default : 'text-white'
         },
         redirect_btn: {
+            type: Boolean,
+            default: false
+        },
+        topbar: {
             type: Boolean,
             default: false
         },
