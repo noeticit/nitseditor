@@ -142,7 +142,6 @@
                 <div class="my-auto ml-4 text-sm font-semibold family-montserrat">My Logs</div>
             </div>
         </div>
-
     </div>
 </template>
 
