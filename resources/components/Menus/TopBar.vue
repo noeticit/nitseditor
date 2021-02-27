@@ -41,6 +41,9 @@
                                         <div class="h-2 w-2 my-auto rounded-full bg-green-500 mr-2"></div>
                                         <div class="text-xs my-auto font-semibold text-gray-800 family-montserrat">Logout</div>
                                     </inertia-link>
+                                    <div class="border-t border-gray-100 pt-3">
+                                        <button @click="openBox =false" class="text-xs family-montserrat font-normal text-gray-600 bg-gray-100 rounded-md focus:outline-none px-3 py-1">Close</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -52,8 +55,10 @@
 </template>
 
 <script>
+import Button from "@/Jetstream/Button";
 export default {
     name: "TopBar",
+    components: {Button},
     data(){
         return{
             openBox:false
