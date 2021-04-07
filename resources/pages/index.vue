@@ -12,12 +12,12 @@
 <!--        <div slot="footer"></div>-->
 <!--    </nits-layout>-->
     <general-layout>
-        <template #topbar>
+<!--        <template #topbar>-->
 
-        </template>
+<!--        </template>-->
         <template #header>
-<!--            <h1>Here might be a page title</h1>-->
-            <demo-header topbar :menu="menu" logo="http://nitseditor.com/images/icons/nit-logo.png"></demo-header>
+            <h1>Here might be a page title</h1>
+            <demo-header :menu="menu" logo="http://nitseditor.com/images/icons/nit-logo.png"></demo-header>
         </template>
 
         <img class="w-full h-screen" src="http://html.modernwebtemplates.com/colorway/images/slide01.jpg">
@@ -34,6 +34,7 @@
     import NitsLayout from '@/Base/nit-layout/layout'
     import GeneralLayout from "@/Layouts/GeneralLayout/general-layout";
     import DemoHeader from "@/Base/new-headers/demo-header";
+
     export default {
         name: "index",
         components: {DemoHeader, GeneralLayout, NitsLayout},
@@ -55,14 +56,6 @@
                         ]
                     },
                     {id:4, name:'Contact',url:'/contact', open: false},
-                    // {id:5, name:'About us',url:'/about-us', open: false},
-                    // {id:6, name:'Pages',url:'/about-us', open: false,
-                    //     sub_menu:[
-                    //         {id:1, name:'Page 1'},
-                    //         {id:2, name:'Page 2'},
-                    //         {id:3, name:'Page 3'},
-                    //     ]
-                    // },
                 ],
             }
         }

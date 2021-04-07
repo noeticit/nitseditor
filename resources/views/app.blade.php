@@ -8,14 +8,14 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="shortcut icon" href="{{ config('nitseditor.favicon') }}">
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="{{ mix('nits-assets/css/app.css') }}">
 
 </head>
 <body>
 
  @inertia
 
-<script src="{{ mix('js/app.js') }}"></script>
+<script src="{{ mix('nits-assets/js/app.js') }}"></script>
 
  <script>
 

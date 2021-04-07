@@ -11,17 +11,12 @@ const mix = require('laravel-mix');
  |
  */
 
-
-mix.js('resources/js/app.js', 'public/js').vue()
-    .postCss('resources/css/app.css', 'public/css', [
+mix.js('resources/js/app.js', 'public/nits-assets/js').vue()
+    .postCss('resources/css/app.css', 'public/nits-assets/css', [
         require('postcss-import'),
         require('tailwindcss'),
         require('autoprefixer'),
     ])
-    .webpackConfig(require('./webpack.config'));
-
-
-if (mix.inProduction()) {
-    mix.version();
-//     .sourceMaps().version();
-}
+    .webpackConfig(require('./webpack.config'))
+    .sourceMaps()
+    .version();
