@@ -12,8 +12,7 @@ module.exports = {
         symlinks: false,
         alias: {
             '@': path.resolve('resources/components'),
-            NitsModels: path.resolve(__dirname, 'Models'),
-            NitsComponents: path.resolve(__dirname, './Components'),
+            NitsModels: path.resolve('resources/models'),
             NitsPages: path.resolve( './resources/pages'),
             ProjectModels: path.resolve('./resources/models'),
         },
