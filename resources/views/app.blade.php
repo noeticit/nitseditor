@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="author" content="Nitish Kumar">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="shortcut icon" href="{{ config('nitseditor.favicon') }}">
-    <link rel="stylesheet" href="{{ mix('nits-assets/css/app.css') }}">
+{{--        <title>{{ config('app.name', 'Laravel') }}</title>--}}
+        <title>NitsEditor</title>
 
-</head>
-<body>
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
- @inertia
+        <!-- Styles -->
+        <link rel="stylesheet" href="{{ mix('nits-assets/css/app.css') }}">
 
-<script src="{{ mix('nits-assets/js/app.js') }}"></script>
-
- <script>
-
- </script>
-
-</body>
+        <!-- Scripts -->
+        @routes
+        <script src="{{ mix('nits-assets/js/app.js') }}" defer></script>
+    </head>
+    <body class="font-sans antialiased">
+        @inertia
+    </body>
 </html>

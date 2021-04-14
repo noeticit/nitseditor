@@ -3,8 +3,6 @@
 namespace App\Http\Middleware;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Inertia\Inertia;
 use Inertia\Middleware;
 
 class HandleInertiaRequests extends Middleware
@@ -38,30 +36,8 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request)
     {
-        $tokens = $request->user() ? $request->user()->tokens : [];
-
-        if($request->user()) {
-            if(collect($tokens)->count()) {
-                $token = collect($tokens)->first()->token;
-            }
-            else {
-                $token = $request->user()->createToken('token-name')->plainTextToken;
-            }
-        }
-        else
-            $token = null;
-
         return array_merge(parent::share($request), [
-            //Lazily
-            'user' => fn () => $request->user()
-                ? $request->user()->only('id', 'name','email')
-                : null,
-
-            'token' => $token,
-
-            'flash' => [
-                'message' => fn () => $request->session()->get('message')
-            ],
+            //
         ]);
     }
 }

@@ -5,12 +5,9 @@
 /vendor
 .env
 .env.backup
-/public/nits-assets
 .phpunit.result.cache
+docker-compose.override.yml
 Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-/public/mix-manifest.json
-/.idea
-.rnd
