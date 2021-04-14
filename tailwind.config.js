@@ -7,7 +7,11 @@ module.exports = {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         './resources/js/**/*.vue',
+        // './resources/**/*.blade.php',
+        // './resources/**/*.js',
+        // './resources/**/*.vue',
     ],
+    darkMode: false, // or 'media' or 'class'
 
     theme: {
         extend: {
