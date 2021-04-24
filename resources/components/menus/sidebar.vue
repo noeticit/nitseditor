@@ -4,7 +4,7 @@
             <div style="width: 100%">
                 <div class="h-full">
                     <div class="mx-3 px-5 pb-8 border-b mt-24">
-                        <div class="text-sm font-semibold text-gray-600">Set up your site</div>
+                        <div class="text-sm font-semibold text-gray-600">Set up your sites</div>
                         <div class="w-full rounded-full h-1 bg-gray-100 my-1">
                             <div class="h-1 rounded-full bg-linear-blue w-6"></div>
                         </div>

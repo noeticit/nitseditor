@@ -58,166 +58,26 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-white rounded-md p-3 mt-4">
+                    <div class="bg-white rounded-md p-4 mt-4">
                         <div class="flex">
-                            <div class="relative flex flex-col">
-                                <img class="rounded-t-md shadow-lg" height="80" width="132" src="https://manage.wix.com/site-thumbnail/721f22e4-84bc-41a1-a892-c1e8ece4a83d?preset=site-details-horizontal">
-                                <div class="h-4 bg-gray-800 flex rounded-b-md -mt-4 w-full z-20">
-                                    <span class="m-auto font-medium text-white text-vs">Not piblished</span>
-                                </div>
-                            </div>
-                            <div class="ml-4 pb-2 border-b w-full flex justify-between">
-                                <div >
-                                    <div class="text-base font-bold family-poppins text-gray-900">MySite</div>
-                                    <div class="text-xs font-normal mt-2 family-poppins text-gray-500">https://abuzaidsayyad86nitseditor.com</div>
-                                    <div class="text-xs font-medium family-poppins text-indigo-600 mt-1">Connect your own domain</div>
-                                </div>
-                                <div>
-                                    <button class="px-5 py-1 text-xs font-medium text-white bg-blue-600 rounded-full focus:outline-none">Site Actions</button>
+                            <div class="pb-2.5 border-b w-full flex justify-between">
+                                <div class="text-base font-bold family-poppins text-gray-900">Let's Set Up Your Site</div>
+                                <div class="flex">
+                                    <div class="text-xz font-semibold mr-2 text-gray-500 my-auto">7 steps left</div>
+                                    <div class="w-32 rounded-full h-1 bg-gray-100 my-auto">
+                                        <div class="h-1 rounded-full bg-linear-blue w-6"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="py-3">
-                            <div class="grid grid-cols-4 gap-5 ">
-                                <div class="border-r">
-                                    <div class="text-xs font-semibold text-gray-900 ">Site Role: Owner</div>
-                                    <div class="text-xs font-semibold text-blue-600 mt-1">Invite People</div>
-                                </div>
-                                <div class="border-r">
-                                    <div class="text-xs font-semibold text-gray-900 ">Site Role: Owner</div>
-                                    <div class="text-xs font-semibold text-blue-600 mt-1">Invite People</div>
-                                </div>
-                                <div class="border-r">
-                                    <div class="text-xs font-semibold text-gray-900 ">Site Role: Owner</div>
-                                    <div class="text-xs font-semibold text-blue-600 mt-1">Invite People</div>
-                                </div>
-                                <div class="">
-                                    <div class="text-xs font-semibold text-gray-900 ">Site Role: Owner</div>
-                                    <div class="text-xs font-semibold text-blue-600 mt-1">Invite People</div>
-                                </div>
+                            <div class="grid grid-cols-10 gap-5 ">
+                                <div class="col-span-4 h-32 bg-gray-200 rounded"></div>
+                                <div class="col-span-6 h-32 bg-gray-200 rounded"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-white rounded-md p-3 mt-4">
-                        <div class="flex">
-                            <div class="relative flex flex-col">
-                                <img class="rounded-t-md shadow-lg" height="80" width="132" src="https://manage.wix.com/site-thumbnail/721f22e4-84bc-41a1-a892-c1e8ece4a83d?preset=site-details-horizontal">
-                                <div class="h-4 bg-gray-800 flex rounded-b-md -mt-4 w-full z-20">
-                                    <span class="m-auto font-medium text-white text-vs">Not piblished</span>
-                                </div>
-                            </div>
-                            <div class="ml-4 pb-2 border-b w-full flex justify-between">
-                                <div >
-                                    <div class="text-base font-bold family-poppins text-gray-900">MySite</div>
-                                    <div class="text-xs font-normal mt-2 family-poppins text-gray-500">https://abuzaidsayyad86nitseditor.com</div>
-                                    <div class="text-xs font-medium family-poppins text-indigo-600 mt-1">Connect your own domain</div>
-                                </div>
-                                <div>
-                                    <button class="px-5 py-1 text-xs font-medium text-white bg-blue-600 rounded-full focus:outline-none">Site Actions</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="py-3">
-                            <div class="grid grid-cols-4 gap-5 ">
-                                <div class="border-r">
-                                    <div class="text-xs font-semibold text-gray-900 ">Site Role: Owner</div>
-                                    <div class="text-xs font-semibold text-blue-600 mt-1">Invite People</div>
-                                </div>
-                                <div class="border-r">
-                                    <div class="text-xs font-semibold text-gray-900 ">Site Role: Owner</div>
-                                    <div class="text-xs font-semibold text-blue-600 mt-1">Invite People</div>
-                                </div>
-                                <div class="border-r">
-                                    <div class="text-xs font-semibold text-gray-900 ">Site Role: Owner</div>
-                                    <div class="text-xs font-semibold text-blue-600 mt-1">Invite People</div>
-                                </div>
-                                <div class="">
-                                    <div class="text-xs font-semibold text-gray-900 ">Site Role: Owner</div>
-                                    <div class="text-xs font-semibold text-blue-600 mt-1">Invite People</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-md p-3 mt-4">
-                        <div class="flex">
-                            <div class="relative flex flex-col">
-                                <img class="rounded-t-md shadow-lg" height="80" width="132" src="https://manage.wix.com/site-thumbnail/721f22e4-84bc-41a1-a892-c1e8ece4a83d?preset=site-details-horizontal">
-                                <div class="h-4 bg-gray-800 flex rounded-b-md -mt-4 w-full z-20">
-                                    <span class="m-auto font-medium text-white text-vs">Not piblished</span>
-                                </div>
-                            </div>
-                            <div class="ml-4 pb-2 border-b w-full flex justify-between">
-                                <div >
-                                    <div class="text-base font-bold family-poppins text-gray-900">MySite</div>
-                                    <div class="text-xs font-normal mt-2 family-poppins text-gray-500">https://abuzaidsayyad86nitseditor.com</div>
-                                    <div class="text-xs font-medium family-poppins text-indigo-600 mt-1">Connect your own domain</div>
-                                </div>
-                                <div>
-                                    <button class="px-5 py-1 text-xs font-medium text-white bg-blue-600 rounded-full focus:outline-none">Site Actions</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="py-3">
-                            <div class="grid grid-cols-4 gap-5 ">
-                                <div class="border-r">
-                                    <div class="text-xs font-semibold text-gray-900 ">Site Role: Owner</div>
-                                    <div class="text-xs font-semibold text-blue-600 mt-1">Invite People</div>
-                                </div>
-                                <div class="border-r">
-                                    <div class="text-xs font-semibold text-gray-900 ">Site Role: Owner</div>
-                                    <div class="text-xs font-semibold text-blue-600 mt-1">Invite People</div>
-                                </div>
-                                <div class="border-r">
-                                    <div class="text-xs font-semibold text-gray-900 ">Site Role: Owner</div>
-                                    <div class="text-xs font-semibold text-blue-600 mt-1">Invite People</div>
-                                </div>
-                                <div class="">
-                                    <div class="text-xs font-semibold text-gray-900 ">Site Role: Owner</div>
-                                    <div class="text-xs font-semibold text-blue-600 mt-1">Invite People</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-md p-3 mt-4">
-                        <div class="flex">
-                            <div class="relative flex flex-col">
-                                <img class="rounded-t-md shadow-lg" height="80" width="132" src="https://manage.wix.com/site-thumbnail/721f22e4-84bc-41a1-a892-c1e8ece4a83d?preset=site-details-horizontal">
-                                <div class="h-4 bg-gray-800 flex rounded-b-md -mt-4 w-full z-20">
-                                    <span class="m-auto font-medium text-white text-vs">Not piblished</span>
-                                </div>
-                            </div>
-                            <div class="ml-4 pb-2 border-b w-full flex justify-between">
-                                <div >
-                                    <div class="text-base font-bold family-poppins text-gray-900">MySite</div>
-                                    <div class="text-xs font-normal mt-2 family-poppins text-gray-500">https://abuzaidsayyad86nitseditor.com</div>
-                                    <div class="text-xs font-medium family-poppins text-indigo-600 mt-1">Connect your own domain</div>
-                                </div>
-                                <div>
-                                    <button class="px-5 py-1 text-xs font-medium text-white bg-blue-600 rounded-full focus:outline-none">Site Actions</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="py-3">
-                            <div class="grid grid-cols-4 gap-5 ">
-                                <div class="border-r">
-                                    <div class="text-xs font-semibold text-gray-900 ">Site Role: Owner</div>
-                                    <div class="text-xs font-semibold text-blue-600 mt-1">Invite People</div>
-                                </div>
-                                <div class="border-r">
-                                    <div class="text-xs font-semibold text-gray-900 ">Site Role: Owner</div>
-                                    <div class="text-xs font-semibold text-blue-600 mt-1">Invite People</div>
-                                </div>
-                                <div class="border-r">
-                                    <div class="text-xs font-semibold text-gray-900 ">Site Role: Owner</div>
-                                    <div class="text-xs font-semibold text-blue-600 mt-1">Invite People</div>
-                                </div>
-                                <div class="">
-                                    <div class="text-xs font-semibold text-gray-900 ">Site Role: Owner</div>
-                                    <div class="text-xs font-semibold text-blue-600 mt-1">Invite People</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="col-span-3 bg-gray-50 rounded-md p-4">
                     <div class="p-3 bg-white rounded-md p-4">
@@ -280,7 +140,13 @@
     }
 </script>
 <style scoped>
+.bg-linear-blue{
+    background: -webkit-gradient(linear,left top,right top,from(#273c92),to(#293e92));
+}
 .text-vs{
     font-size: 10px;
+}
+.text-xz{
+    font-size: 11px;
 }
 </style>

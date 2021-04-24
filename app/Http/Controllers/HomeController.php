@@ -16,4 +16,7 @@ class HomeController extends Controller
     public function Register(){
         return Inertia::render('new-registration');
     }
+    public function AppMarket(){
+        return Inertia::render('app-market');
+    }
 }
