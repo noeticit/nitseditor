@@ -1,3 +1,14 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+.max-w-8xl{
+    max-width: 90rem;
+}
+
+.h-screen-24{
+    height: calc(100vh - 65px);
+}
+.to-rose-500{
+    --tw-gradient-to: #f43f5e;
+}

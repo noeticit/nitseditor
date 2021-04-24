@@ -16,7 +16,7 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
+    return Inertia::render('index', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
@@ -27,3 +27,9 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
+
+
+Route::get('/nits-admin/login', [\App\Http\Controllers\HomeController::class, 'login']);
+Route::get('/nits-admin/forgot-password', [\App\Http\Controllers\HomeController::class, 'ForgotPassword']);
+Route::get('/nits-admin/register', [\App\Http\Controllers\HomeController::class, 'Register']);
+Route::get('/nits-admin/app-market', [\App\Http\Controllers\HomeController::class, 'AppMarket']);
