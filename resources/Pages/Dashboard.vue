@@ -77,7 +77,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <div class="col-span-3 bg-gray-50 rounded-md p-4">
                     <div class="p-3 bg-white rounded-md p-4">

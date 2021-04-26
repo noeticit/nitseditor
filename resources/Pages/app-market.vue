@@ -21,7 +21,7 @@
             <div class="py-5">
                 <div class="text-xl pb-4 font-bold family-poppins text-gray-900">Recommended for you</div>
                 <div class="grid grid-cols-4 gap-6">
-                    <div v-for="(item, index) in gridData" class="bg-white rounded-lg p-5">
+                    <a href="/nits-admin/app-market/nitseditor-app-markets-detail" v-for="(item, index) in gridData" class="bg-white rounded-lg p-5">
                         <img class="h-12 w-12 rounded-md" :src="item.image">
                         <div class="py-3">
                             <h2 class="text-base font-bold text-gray-800 ">{{item.title}}</h2>
@@ -35,14 +35,14 @@
                             <div class="text-xs font-bold my-auto ml-1">{{ item.rating}}<span class="text-gray-600 font-medium ">{{ item.total_rating }}</span></div>
                         </div>
                         <div class="mt-5 text-xz text-gray-700 font-medium">{{item.cost}}</div>
-                    </div>
+                    </a>
                 </div>
             </div>
 
             <div class="py-5 mt-6">
                 <div class="text-xl pb-4 font-bold family-poppins text-gray-900">Trending Now</div>
                 <div class="grid grid-cols-4 gap-6">
-                    <div v-for="(item, index) in gridData2" class="bg-white rounded-lg">
+                    <a href="/nits-admin/app-market/nitseditor-app-markets-detail" v-for="(item, index) in gridData2" class="bg-white rounded-lg">
                         <img class="h-auto w-full rounded-t-lg" :src="item.image">
                         <img class="h-8 w-8 ml-5 -mt-4 rounded-lg border-2 border-white" :src="item.sub_image">
 
@@ -56,14 +56,14 @@
                                 <div class="text-xz font-medium text-gray-700 my-auto ml-1">{{ item.cost}}</div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
 
             <div class="py-5 mt-6">
                 <div class="text-xl pb-4 font-bold family-poppins text-gray-900">Nitseditor Business Solutions</div>
                 <div class="grid grid-cols-4 gap-6">
-                    <div v-for="(item, index) in gridData3" class="bg-white rounded-lg p-5">
+                    <a href="/nits-admin/app-market/nitseditor-app-markets-detail" v-for="(item, index) in gridData3" class="bg-white rounded-lg p-5 cursor-pointer">
                         <img class="h-12 w-12 rounded-md" :src="item.image">
                         <div class="py-3">
                             <h2 class="text-base font-bold text-gray-800 ">{{item.title}}</h2>
@@ -77,7 +77,7 @@
                             <div class="text-xs font-bold my-auto ml-1">{{ item.rating}}<span class="text-gray-600 font-medium ">{{ item.total_rating }}</span></div>
                         </div>
                         <div class="mt-5 text-xz text-gray-700 font-medium">{{item.cost}}</div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -113,6 +113,13 @@ export default {
                 {id:1, image:'https://static.wixstatic.com/media/1849bd_e0bcef1e7d7b411581c499d02eca75d6~mv2.jpg/v1/fill/w_68,h_68,al_c,q_80,usm_0.66_1.00_0.01/1849bd_e0bcef1e7d7b411581c499d02eca75d6~mv2.webp', title:'Instagram Pro', subtitle:'By Nitseditor', desc:'Showcase your Instagram feed like a pro', rating:'4.0', total_rating:'(377)', cost:'Free Plan Available'},
                 {id:1, image:'https://static.wixstatic.com/media/454bab_853eea4ca3ae4af4bc5a4cf726260ff5~mv2.jpg/v1/fill/w_68,h_68,al_c,q_80,usm_0.66_1.00_0.01/454bab_853eea4ca3ae4af4bc5a4cf726260ff5~mv2.webp', title:'Nitseditor Blog', subtitle:'By Nitseditor', desc:'Share your expertise and grow your traffic', rating:'2.4', total_rating:'(377)', cost:'Free Plan Available'},
             ],
+        }
+    },
+    methods:{
+        Redirect(){
+            // this.$router.push('nits-admin/app-market/nitseditor-app-markets-detail');
+            // this.$router.push({ name: 'nits-admin/app-market/nitseditor-app-markets-detail' })
+            this.$router.push({ name: 'nits-admin/app-market/nitseditor-app-markets-detail', params: {  }})
         }
     }
 }

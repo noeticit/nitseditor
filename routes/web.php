@@ -33,3 +33,4 @@ Route::get('/nits-admin/login', [\App\Http\Controllers\HomeController::class, 'l
 Route::get('/nits-admin/forgot-password', [\App\Http\Controllers\HomeController::class, 'ForgotPassword']);
 Route::get('/nits-admin/register', [\App\Http\Controllers\HomeController::class, 'Register']);
 Route::get('/nits-admin/app-market', [\App\Http\Controllers\HomeController::class, 'AppMarket']);
+Route::get('/nits-admin/app-market/nitseditor-app-markets-detail', [\App\Http\Controllers\HomeController::class, 'AppMarketDetail']);
