@@ -71,9 +71,34 @@
                             </div>
                         </div>
                         <div class="py-3">
-                            <div class="grid grid-cols-10 gap-5 ">
-                                <div class="col-span-4 h-32 bg-gray-200 rounded"></div>
-                                <div class="col-span-6 h-32 bg-gray-200 rounded"></div>
+                            <div class="grid grid-cols-10 gap-5">
+                                <div class="col-span-4">
+                                    <div class="flex">
+                                        <div class="h-12 w-12 rounded-full bg-gray-200 p-1 mr-5">
+                                            <div class="rounded-full bg-white h-full w-full flex">
+                                                <div class="text-xs font-bold m-auto">0/4</div>
+                                            </div>
+                                        </div>
+                                        <div class="flex-col">
+                                            <div class="text-xs font-bold ">Get Booked Online</div>
+                                            <div class="text-xz font-normal py-0.5">Add your services and start<br>taking bookings.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-span-6">
+                                    <div class="py-1.5 w-full">
+                                        <div class="w-full h-9 rounded-md bg-indigo-100 border border-indigo-200 flex items-center justify-between px-2">
+                                            <div class="flex">
+                                                <svg class="h-4 w-4 text-indigo-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.8 10a2.2 2.2 0 004.4 0 2.2 2.2 0 00-4.4 0z"/></svg>
+                                                <div class="text-xz font-semibold ">Create your first service <span class="text-gray-500">(5 min.)</span></div>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="text-xz text-indigo-600 font-semibold cursor-pointer mr-3">Skip</div>
+                                                <button class="text-xz text-indigo-100 font-semibold cursor-pointer px-4 py-1 rounded-full bg-indigo-600">Create Services</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
