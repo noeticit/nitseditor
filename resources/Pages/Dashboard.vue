@@ -16,8 +16,12 @@
 <!--    </app-layout>-->
     <admin-layout>
         <div class="p-4">
-            <div class="grid grid-cols-5 gap-4 mb-4">
-                <div v-for="item in 5" :key="item" class="h-24 rounded-md bg-white shadow-lg p-4 flex">
+            <div class="flex justify-between items-center mt-10 px-2">
+                <div class="text-white text-sm font-semibold z-40 uppercase">Dashboard</div>
+                <div class="text-gray-200 text-xs font-normal z-40">Welcome to Nitseditor</div>
+            </div>
+            <div class="grid grid-cols-5 gap-4 mb-4 mt-9">
+                <div v-for="item in 5" :key="item" class="h-24 rounded-md bg-white p-4 flex">
                     <!--          <h3 class="text-lg font-semibold family-nunito">Lorem ipsum </h3>-->
                     <div>
                         <div class="h-16 w-16 rounded-full bg-indigo-500 p-2 flex mr-4">
@@ -26,7 +30,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-sm font-semibold family-nunito my-auto">Lorem ipsum dolor</p>
+                    <p class="text-sm font-semibold family-nunito my-auto">Lorem ipsum dolors</p>
                 </div>
             </div>
             <div class="grid grid-cols-10 gap-4">

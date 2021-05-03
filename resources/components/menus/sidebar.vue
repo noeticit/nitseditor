@@ -1,9 +1,9 @@
 <template>
-    <div class="bg-white h-screen fixed z-30 top-0 w-56">
+    <div class="bg-white h-screen-24 fixed z-30 top-16" style="width: 16.7%">
         <div class="flex w-full h-full">
             <div style="width: 100%">
                 <div class="h-full">
-                    <div class="mx-3 px-5 pb-8 border-b mt-24">
+                    <div class="mx-3 px-5 pb-8 border-b mt-8">
                         <div class="text-sm font-semibold text-gray-600">Set up your sites</div>
                         <div class="w-full rounded-full h-1 bg-gray-100 my-1">
                             <div class="h-1 rounded-full bg-linear-blue w-6"></div>
@@ -51,7 +51,7 @@
                             </div>
                         </div>
                     </a>
-                    <div class="border-b w-full my-4 mx-3"></div>
+                    <div class="border-b w-full my-4"></div>
                     <a href="/playground" class="flex items-center px-8 hover:text-gray-900 transition-colors duration-200 font-semibold mb-4 family-mont text-sm text-gray-500">
                         <div class="mr-3">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

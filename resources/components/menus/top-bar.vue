@@ -1,36 +1,34 @@
 <template>
-    <div class="w-full z-40 bg-linear-blue fixed top-0 h-16 flex">
-        <div class="w-full max-w-screen-2xl bg-linear-blue m-auto">
-            <div class="flex justify-between">
+    <div :class="{'shadow bg-linear-blue transition transform translate-y-0 duration-700 ease-in': scrollPosition > 80 }" class="w-full z-50 bg-transparent fixed top-0 h-16 flex shadow-lg">
+        <div class="w-full max-w-screen-2xl my-auto">
+            <div class="flex justify-between items-center">
                 <div class="h-full flex">
-                    <div class="bg-linear-blue py-2 px-8">
+                    <div class="py-2 px-8">
                         <img class="h-10 w-auto" src="/project-assets/images/nitslogo.png" alt="logo">
                     </div>
-                    <div class="flex my-auto mx-5 ml-14">
+                    <div class="flex my-auto mx-5 ml-14 cursor-pointer">
                         <div class="text-xs font-semibold family-poppins text-gray-100"><span class="text-xs font-light text-white family-poppins">My Sites</span> : MySite</div>
                         <svg class="h-4 w-4 my-auto text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M13.418 7.859a.695.695 0 01.978 0 .68.68 0 010 .969l-3.908 3.83a.697.697 0 01-.979 0l-3.908-3.83a.68.68 0 010-.969.695.695 0 01.978 0L10 11l3.418-3.141z"/></svg>
                     </div>
-                    <div class="flex my-auto">
+                    <div class="flex my-auto cursor-pointer">
                         <div class="text-xs font-semibold family-poppins text-gray-100">Explore</div>
                         <svg class="h-4 w-4 my-auto text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M13.418 7.859a.695.695 0 01.978 0 .68.68 0 010 .969l-3.908 3.83a.697.697 0 01-.979 0l-3.908-3.83a.68.68 0 010-.969.695.695 0 01.978 0L10 11l3.418-3.141z"/></svg>
                     </div>
-                    <div class="flex my-auto mx-5">
+                    <div class="flex my-auto mx-5 cursor-pointer">
                         <div class="text-xs font-semibold family-poppins text-gray-100">Help</div>
                         <svg class="h-4 w-4 my-auto text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M13.418 7.859a.695.695 0 01.978 0 .68.68 0 010 .969l-3.908 3.83a.697.697 0 01-.979 0l-3.908-3.83a.68.68 0 010-.969.695.695 0 01.978 0L10 11l3.418-3.141z"/></svg>
                     </div>
-                    <div class="my-auto">
+                    <div class="my-auto cursor-pointer">
                         <div class="text-xs font-semibold family-poppins text-gray-100">Hire a professional</div>
                     </div>
                 </div>
                 <div class="my-auto px-5 flex">
                     <div class="my-auto mr-5">
                         <div class="relative w-full text-gray-600">
-                            <input class="form-control" type="search" name="search" placeholder="Search">
-                            <button type="submit" class="absolute left-0 top-3 ml-4">
-                                <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve">
+                            <svg class="text-gray-300 absolute top-2.5 left-3 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve">
                                 <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
                             </svg>
-                            </button>
+                            <input class="pl-8 pr-3 py-2 text-sm font-medium text text-white bg-blue-500 rounded-md bg-opacity-50 placeholder-gray-300 border-none" style="background-color: rgba(243,243,249,.07);" type="search" name="search" placeholder="Search">
                         </div>
                     </div>
                     <div class="my-auto h-10 w-10 rounded-md flex hover:bg-indigo-700">
@@ -61,7 +59,21 @@
 
 <script>
 export default {
-    name: "top-bar"
+    name: "top-bar",
+    data(){
+        return{
+            openMenu:'',
+            scrollPosition: null
+        }
+    },
+    methods: {
+        updateScroll() {
+            this.scrollPosition = window.scrollY
+        }
+    },
+    mounted() {
+        window.addEventListener('scroll', this.updateScroll);
+    },
 }
 </script>
 
