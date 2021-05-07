@@ -80,6 +80,28 @@
                     </a>
                 </div>
             </div>
+
+            <div class="py-5 mt-6">
+                <div class="text-xl pb-4 font-bold family-poppins text-gray-900">API DATA</div>
+                <div class="grid grid-cols-4 gap-6">
+                    <div v-for="(item, index) in tableData" class="bg-white rounded-lg p-5">
+                        <img class="h-12 w-12 rounded-md" :src="item.image">
+                        <div class="py-3">
+                            <a href="#" @click="redirect(item.slug)" class="text-base font-bold text-gray-800 ">{{item.name}}</a>
+                            <h3 class="text-xz font-normal text-gray-500">By {{item.author}}</h3>
+                        </div>
+                        <div class="text-xs font-semibold text-gray-700 mt-2">{{item.brief}}</div>
+                        <div class="flex py-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <div class="text-xs font-bold my-auto ml-1"> 4.0 <span class="text-gray-600 font-medium "> (500) </span></div>
+                        </div>
+                        <div class="mt-5 text-xz text-gray-700 font-medium">Free</div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </admin-layout>
 </template>
@@ -113,14 +135,23 @@ export default {
                 {id:1, image:'https://static.wixstatic.com/media/1849bd_e0bcef1e7d7b411581c499d02eca75d6~mv2.jpg/v1/fill/w_68,h_68,al_c,q_80,usm_0.66_1.00_0.01/1849bd_e0bcef1e7d7b411581c499d02eca75d6~mv2.webp', title:'Instagram Pro', subtitle:'By Nitseditor', desc:'Showcase your Instagram feed like a pro', rating:'4.0', total_rating:'(377)', cost:'Free Plan Available'},
                 {id:1, image:'https://static.wixstatic.com/media/454bab_853eea4ca3ae4af4bc5a4cf726260ff5~mv2.jpg/v1/fill/w_68,h_68,al_c,q_80,usm_0.66_1.00_0.01/454bab_853eea4ca3ae4af4bc5a4cf726260ff5~mv2.webp', title:'Nitseditor Blog', subtitle:'By Nitseditor', desc:'Share your expertise and grow your traffic', rating:'2.4', total_rating:'(377)', cost:'Free Plan Available'},
             ],
+            tableData:[]
         }
     },
     methods:{
-        Redirect(){
-            // this.$router.push('nits-admin/app-market/nitseditor-app-markets-detail');
-            // this.$router.push({ name: 'nits-admin/app-market/nitseditor-app-markets-detail' })
-            this.$router.push({ name: 'nits-admin/app-market/nitseditor-app-markets-detail', params: {  }})
+        redirect(slug){
+            this.$inertia.get('/nits-admin/app-market/'+slug);
+        },
+        fetchData(){
+            axios.get('/api/get-plugins').then(response => {
+                if (response.status === 200) {
+                    this.tableData = response.data.data
+                }
+            })
         }
+    },
+    created() {
+        this.fetchData();
     }
 }
 </script>

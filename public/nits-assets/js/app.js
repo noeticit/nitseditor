@@ -17831,18 +17831,26 @@ __webpack_require__.r(__webpack_exports__);
         rating: '2.4',
         total_rating: '(377)',
         cost: 'Free Plan Available'
-      }]
+      }],
+      tableData: []
     };
   },
   methods: {
-    Redirect: function Redirect() {
-      // this.$router.push('nits-admin/app-market/nitseditor-app-markets-detail');
-      // this.$router.push({ name: 'nits-admin/app-market/nitseditor-app-markets-detail' })
-      this.$router.push({
-        name: 'nits-admin/app-market/nitseditor-app-markets-detail',
-        params: {}
+    redirect: function redirect(slug) {
+      this.$inertia.get('/nits-admin/app-market/' + slug);
+    },
+    fetchData: function fetchData() {
+      var _this = this;
+
+      axios.get('/api/get-plugins').then(function (response) {
+        if (response.status === 200) {
+          _this.tableData = response.data.data;
+        }
       });
     }
+  },
+  created: function created() {
+    this.fetchData();
   }
 });
 
@@ -17942,6 +17950,7 @@ __webpack_require__.r(__webpack_exports__);
     Button: _components_Jetstream_Button__WEBPACK_IMPORTED_MODULE_1__.default,
     AdminLayout: _components_Layouts_admin_layout__WEBPACK_IMPORTED_MODULE_0__.default
   },
+  props: ['data'],
   data: function data() {
     return {
       FlexData: [{
@@ -18042,6 +18051,19 @@ __webpack_require__.r(__webpack_exports__);
         cost: 'Free Plan Available'
       }]
     };
+  },
+  created: function created() {
+    console.log(this.data);
+  },
+  methods: {
+    downloadPlugin: function downloadPlugin(item) {
+      axios.post('/api/download-plugin', {
+        user_name: item.author.name,
+        plugin_name: item.name
+      }).then(function (response) {
+        if (response.status === 200) {}
+      });
+    }
   }
 });
 
@@ -21990,6 +22012,54 @@ var _hoisted_38 = {
 var _hoisted_39 = {
   "class": "mt-5 text-xz text-gray-700 font-medium"
 };
+var _hoisted_40 = {
+  "class": "py-5 mt-6"
+};
+
+var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "text-xl pb-4 font-bold family-poppins text-gray-900"
+}, "API DATA", -1
+/* HOISTED */
+);
+
+var _hoisted_42 = {
+  "class": "grid grid-cols-4 gap-6"
+};
+var _hoisted_43 = {
+  "class": "bg-white rounded-lg p-5"
+};
+var _hoisted_44 = {
+  "class": "py-3"
+};
+var _hoisted_45 = {
+  "class": "text-xz font-normal text-gray-500"
+};
+var _hoisted_46 = {
+  "class": "text-xs font-semibold text-gray-700 mt-2"
+};
+
+var _hoisted_47 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "flex py-1"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  "class": "h-4 w-4 text-yellow-500",
+  viewBox: "0 0 20 20",
+  fill: "currentColor"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+  d: "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "text-xs font-bold my-auto ml-1"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" 4.0 "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
+  "class": "text-gray-600 font-medium "
+}, " (500) ")])], -1
+/* HOISTED */
+);
+
+var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "mt-5 text-xz text-gray-700 font-medium"
+}, "Free", -1
+/* HOISTED */
+);
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)();
 
@@ -22058,6 +22128,27 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
         )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_39, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.cost), 1
         /* TEXT */
         )]);
+      }), 256
+      /* UNKEYED_FRAGMENT */
+      ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_40, [_hoisted_41, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_42, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.tableData, function (item, index) {
+        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_43, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+          "class": "h-12 w-12 rounded-md",
+          src: item.image
+        }, null, 8
+        /* PROPS */
+        , ["src"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_44, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("a", {
+          href: "#",
+          onClick: function onClick($event) {
+            return $options.redirect(item.slug);
+          },
+          "class": "text-base font-bold text-gray-800 "
+        }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.name), 9
+        /* TEXT, PROPS */
+        , ["onClick"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h3", _hoisted_45, "By " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.author), 1
+        /* TEXT */
+        )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_46, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.brief), 1
+        /* TEXT */
+        ), _hoisted_47, _hoisted_48]);
       }), 256
       /* UNKEYED_FRAGMENT */
       ))])])])];
@@ -25343,25 +25434,37 @@ var _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("dat
 var _hoisted_1 = {
   "class": "p-8"
 };
-
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_2 = {
   "class": "grid grid-cols-12 gap-5 pb-16 border-b border-gray-300"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+};
+var _hoisted_3 = {
   "class": "col-span-5"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+};
+var _hoisted_4 = {
   "class": "flex mt-12"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
+};
+
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
   "class": "h-14 w-14 rounded-md mr-7",
   src: "https://static.wixstatic.com/media/18d23d_589925a0d27343a5958cad77ed1669d8~mv2.png/v1/fill/w_68,h_68,al_c,q_85,usm_0.66_1.00_0.01/18d23d_589925a0d27343a5958cad77ed1669d8~mv2.webp"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_6 = {
   "class": "flex-col"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+};
+var _hoisted_7 = {
   "class": "text-2xl font-bold family-poppins text-gray-900"
-}, "Pricing Plans"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+};
+var _hoisted_8 = {
   "class": "text-xs mt-1 font-medium family-poppins text-gray-500"
-}, "By Nitseditor")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+};
+var _hoisted_9 = {
   "class": "text-base font-semibold text-gray-700 mt-6"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Subscriptions, memberships"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" & pricing plans")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+};
+
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "flex py-6 -ml-1"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
@@ -25372,13 +25475,19 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
   d: "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
 })]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "text-sm font-bold my-auto ml-1"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("3.5"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("4.5"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
   "class": "text-gray-600 font-medium"
-}, "(377)")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-  "class": "rounded-full px-10 py-2 mt-2 text-sm font-semibold text-white bg-linear-blue focus:outline-none"
-}, "Add to site"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+}, "(500)")])], -1
+/* HOISTED */
+);
+
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "text-xs ml-14 my-4 font-medium text-gray-600"
-}, "Free")])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+}, "Free", -1
+/* HOISTED */
+);
+
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "col-span-7"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "flex justify-between h-full"
@@ -25429,31 +25538,31 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
   "class": "h-1.5 w-4 bg-gray-200"
 }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "h-h-1.5 w-4 ml-2 bg-gray-200"
-})])])])], -1
+})])])], -1
 /* HOISTED */
 );
 
-var _hoisted_3 = {
+var _hoisted_13 = {
   "class": "py-6 border-b"
 };
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "text-2xl font-bold family-poppins text-gray-900 pb-6"
 }, "Pricing Plans Overview", -1
 /* HOISTED */
 );
 
-var _hoisted_5 = {
+var _hoisted_15 = {
   "class": "grid grid-cols-3 gap-5"
 };
-var _hoisted_6 = {
+var _hoisted_16 = {
   "class": "col-span-2"
 };
-var _hoisted_7 = {
+var _hoisted_17 = {
   "class": "flex py-1"
 };
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
   viewBox: "0 0 24 24",
   fill: "currentColor",
   width: "18",
@@ -25465,53 +25574,20 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 /* HOISTED */
 );
 
-var _hoisted_9 = {
+var _hoisted_19 = {
   "class": "text-sm text-gray-700 ml-4 my-auto"
 };
-
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_20 = {
   "class": "text-sm text-gray-700 py-5 my-auto"
-}, "Sell subscriptions, packages and memberships for your services, products, content and software.", -1
-/* HOISTED */
-);
+};
 
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "text-sm text-gray-700"
-}, "- Create Pricing Plans: Customize your plans, highlight or recommend plans, and promote them on your pricing page", -1
-/* HOISTED */
-);
-
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "text-sm text-gray-700"
-}, "- Free Trials and Plans: Offer free trials and plans so members can try your services before committing", -1
-/* HOISTED */
-);
-
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "text-sm text-gray-700"
-}, "- Offer One-Time and Recurring Payments: Let clients purchase subscriptions or plans in advance and use them over a period of time", -1
-/* HOISTED */
-);
-
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "text-sm text-gray-700"
-}, "- Build Customer Loyalty: Set up special pricing for longterm clients and members, or offer free trials and punch cards for new clients", -1
-/* HOISTED */
-);
-
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "text-sm text-gray-700"
-}, "- Seamless Integr...", -1
-/* HOISTED */
-);
-
-var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "text-sm text-indigo-600 font-semibold mt-4"
 }, "Read More", -1
 /* HOISTED */
 );
 
-var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "col-span-1"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "p-5 rounded-lg border border-gray-300"
@@ -25535,11 +25611,11 @@ var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_18 = {
+var _hoisted_23 = {
   "class": "py-8 grid grid-cols-5 gap-4"
 };
 
-var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "col-span-2 h-full flex"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "my-auto"
@@ -25560,36 +25636,9 @@ var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_20 = {
+var _hoisted_25 = {
   "class": "col-span-3"
 };
-var _hoisted_21 = {
-  "class": "flex"
-};
-var _hoisted_22 = {
-  "class": "flex"
-};
-
-var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
-  d: "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-}, null, -1
-/* HOISTED */
-);
-
-var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "w-full h-1 rounded-full bg-gray-200 ml-5 my-auto"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "w-14 bg-yellow-400 h-1 rounded-full"
-})], -1
-/* HOISTED */
-);
-
-var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "ml-2 text-vs font-bold my-auto"
-}, "40", -1
-/* HOISTED */
-);
-
 var _hoisted_26 = {
   "class": "flex"
 };
@@ -25603,7 +25652,34 @@ var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
+var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "w-full h-1 rounded-full bg-gray-200 ml-5 my-auto"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "w-14 bg-yellow-400 h-1 rounded-full"
+})], -1
+/* HOISTED */
+);
+
+var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  "class": "ml-2 text-vs font-bold my-auto"
+}, "40", -1
+/* HOISTED */
+);
+
+var _hoisted_31 = {
+  "class": "flex"
+};
+var _hoisted_32 = {
+  "class": "flex"
+};
+
+var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+  d: "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "class": "h-3 w-3 my-auto text-gray-300 mx-px",
   viewBox: "0 0 20 20",
@@ -25614,7 +25690,7 @@ var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "w-full h-1 rounded-full bg-gray-200 ml-5 my-auto"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "w-12 bg-yellow-400 h-1 rounded-full"
@@ -25622,26 +25698,26 @@ var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "ml-2 text-vs font-bold my-auto"
 }, "41", -1
 /* HOISTED */
 );
 
-var _hoisted_32 = {
+var _hoisted_37 = {
   "class": "flex"
 };
-var _hoisted_33 = {
+var _hoisted_38 = {
   "class": "flex"
 };
 
-var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+var _hoisted_39 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
   d: "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
+var _hoisted_40 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "class": "h-3 w-3 my-auto text-gray-300 mx-px",
   viewBox: "0 0 20 20",
@@ -25652,7 +25728,7 @@ var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
+var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "class": "h-3 w-3 my-auto text-gray-300 mx-px",
   viewBox: "0 0 20 20",
@@ -25663,7 +25739,7 @@ var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "w-full h-1 rounded-full bg-gray-200 ml-5 my-auto"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "w-24 bg-yellow-400 h-1 rounded-full"
@@ -25671,20 +25747,20 @@ var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_38 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_43 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "ml-2 text-vs font-bold my-auto"
 }, "72", -1
 /* HOISTED */
 );
 
-var _hoisted_39 = {
+var _hoisted_44 = {
   "class": "flex"
 };
-var _hoisted_40 = {
+var _hoisted_45 = {
   "class": "flex"
 };
 
-var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
+var _hoisted_46 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "class": "h-3 w-3 my-auto text-yellow-400 mx-px",
   viewBox: "0 0 20 20",
@@ -25695,7 +25771,7 @@ var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
+var _hoisted_47 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "class": "h-3 w-3 my-auto text-yellow-400 mx-px",
   viewBox: "0 0 20 20",
@@ -25706,13 +25782,13 @@ var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_43 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
   d: "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_44 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_49 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "w-full h-1 rounded-full bg-gray-200 ml-5 my-auto"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "w-28 bg-yellow-400 h-1 rounded-full"
@@ -25720,20 +25796,20 @@ var _hoisted_44 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_45 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "ml-2 text-vs font-bold my-auto"
 }, "84", -1
 /* HOISTED */
 );
 
-var _hoisted_46 = {
+var _hoisted_51 = {
   "class": "flex"
 };
-var _hoisted_47 = {
+var _hoisted_52 = {
   "class": "flex"
 };
 
-var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
+var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "class": "h-3 w-3 my-auto text-yellow-400 mx-px",
   viewBox: "0 0 20 20",
@@ -25744,13 +25820,13 @@ var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_49 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+var _hoisted_54 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
   d: "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_55 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "w-full h-1 rounded-full bg-gray-200 ml-5 my-auto"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "w-40 bg-yellow-400 h-1 rounded-full"
@@ -25758,17 +25834,17 @@ var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_56 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "ml-2 text-vs font-bold my-auto"
 }, "140", -1
 /* HOISTED */
 );
 
-var _hoisted_52 = {
+var _hoisted_57 = {
   "class": "border border-gray-300 rounded-3xl p-8"
 };
 
-var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_58 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "flex justify-between"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "flex"
@@ -25795,11 +25871,11 @@ var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_54 = {
+var _hoisted_59 = {
   "class": "py-8 border-b flex"
 };
 
-var _hoisted_55 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_60 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "bg-red-300 rounded-full h-12 w-12 flex mr-5"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
   "class": "text-sm m-auto font-extrabold text-gray-800"
@@ -25807,11 +25883,11 @@ var _hoisted_55 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_56 = {
+var _hoisted_61 = {
   "class": "flex-col"
 };
 
-var _hoisted_57 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_62 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "text-sm font-semibold family-mont text-gray-800"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Colormecutie / "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
   "class": "font-normal"
@@ -25819,11 +25895,11 @@ var _hoisted_57 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_58 = {
+var _hoisted_63 = {
   "class": "flex py-1.5"
 };
 
-var _hoisted_59 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
+var _hoisted_64 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "class": "h-4 w-4 my-auto text-yellow-400 mx-px",
   viewBox: "0 0 20 20",
@@ -25834,35 +25910,35 @@ var _hoisted_59 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_60 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+var _hoisted_65 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
   d: "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_61 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_66 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "text-base font-bold "
 }, "I hate it.", -1
 /* HOISTED */
 );
 
-var _hoisted_62 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_67 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "text-sm font-semibold text-gray-700 py-1.5 w-1/2"
 }, " There is very little control on the back end of this app. My customers are frustrated and now are not signing up for my subscription. I DO NOT WANT MY CUSTOMERS TO HAVE... ", -1
 /* HOISTED */
 );
 
-var _hoisted_63 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_68 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "text-sm font-semibold text-indigo-600 cursor-pointer"
 }, "Read more", -1
 /* HOISTED */
 );
 
-var _hoisted_64 = {
+var _hoisted_69 = {
   "class": "py-8 border-b flex"
 };
 
-var _hoisted_65 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_70 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "bg-indigo-300 rounded-full h-12 w-12 flex mr-5"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
   "class": "text-sm m-auto font-extrabold text-gray-800"
@@ -25870,11 +25946,11 @@ var _hoisted_65 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_66 = {
+var _hoisted_71 = {
   "class": "flex-col"
 };
 
-var _hoisted_67 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_72 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "text-sm font-semibold family-mont text-gray-800"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Nitseditor-trainer / "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
   "class": "font-normal"
@@ -25882,33 +25958,33 @@ var _hoisted_67 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_68 = {
+var _hoisted_73 = {
   "class": "flex py-1.5"
 };
 
-var _hoisted_69 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+var _hoisted_74 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
   d: "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_70 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_75 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "text-base font-bold "
 }, "Stretch To Full Width For Pricing Plans Add -Ons", -1
 /* HOISTED */
 );
 
-var _hoisted_71 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_76 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "text-sm font-semibold text-gray-700 py-1.5 w-1/2"
 }, " It will be great to have the ability to \"Stretch To Full Width For Pricing Plans Add -Ons\" - Thanks ", -1
 /* HOISTED */
 );
 
-var _hoisted_72 = {
+var _hoisted_77 = {
   "class": "py-8 flex"
 };
 
-var _hoisted_73 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_78 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "bg-green-300 rounded-full h-12 w-12 flex mr-5"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
   "class": "text-sm m-auto font-extrabold text-gray-800"
@@ -25916,11 +25992,11 @@ var _hoisted_73 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_74 = {
+var _hoisted_79 = {
   "class": "flex-col"
 };
 
-var _hoisted_75 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_80 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "text-sm font-semibold family-mont text-gray-800"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Zahra720 / "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", {
   "class": "font-normal"
@@ -25928,17 +26004,17 @@ var _hoisted_75 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_76 = {
+var _hoisted_81 = {
   "class": "flex py-1.5"
 };
 
-var _hoisted_77 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
+var _hoisted_82 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
   d: "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_78 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
+var _hoisted_83 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   "class": "h-4 w-4 my-auto text-gray-300 mx-px",
   viewBox: "0 0 20 20",
@@ -25949,19 +26025,19 @@ var _hoisted_78 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_79 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_84 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "text-base font-bold "
 }, "Its madness", -1
 /* HOISTED */
 );
 
-var _hoisted_80 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_85 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "text-sm font-semibold text-gray-700 py-1.5 w-1/2"
 }, " Whilst I find this useful, its deeply annoying that we cannot select some plans to be shown in different pages, please can you reconsider this! I have had USE another system... ", -1
 /* HOISTED */
 );
 
-var _hoisted_81 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_86 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "text-sm font-semibold text-indigo-600 cursor-pointer"
 }, "Read more", -1
 /* HOISTED */
@@ -25974,23 +26050,26 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_admin_layout, null, {
     "default": _withId(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.FlexData, function (item, index) {
-        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.name), 1
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.data.name), 1
+      /* TEXT */
+      ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, "By " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.data.author.name), 1
+      /* TEXT */
+      )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.data.brief), 1
+      /* TEXT */
+      ), _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+        onClick: _cache[1] || (_cache[1] = function ($event) {
+          return $options.downloadPlugin($props.data);
+        }),
+        "class": "rounded-full px-10 py-2 mt-2 text-sm font-semibold text-white bg-linear-blue focus:outline-none"
+      }, "Add to site"), _hoisted_11])])]), _hoisted_12]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_16, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.FlexData, function (item, index) {
+        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_17, [_hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.name), 1
         /* TEXT */
         )]);
       }), 256
       /* UNKEYED_FRAGMENT */
-      )), _hoisted_10, _hoisted_11, _hoisted_12, _hoisted_13, _hoisted_14, _hoisted_15, _hoisted_16]), _hoisted_17])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_18, [_hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_22, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(5, function (item) {
-        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
-          key: item,
-          xmlns: "http://www.w3.org/2000/svg",
-          "class": "h-3 w-3 my-auto text-yellow-400 mx-px",
-          viewBox: "0 0 20 20",
-          fill: "currentColor"
-        }, [_hoisted_23]);
-      }), 64
-      /* STABLE_FRAGMENT */
-      ))]), _hoisted_24, _hoisted_25]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_27, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(4, function (item) {
+      )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.data.description), 1
+      /* TEXT */
+      ), _hoisted_21]), _hoisted_22])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_23, [_hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_27, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(5, function (item) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
           key: item,
           xmlns: "http://www.w3.org/2000/svg",
@@ -26000,67 +26079,77 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
         }, [_hoisted_28]);
       }), 64
       /* STABLE_FRAGMENT */
-      )), _hoisted_29]), _hoisted_30, _hoisted_31]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_33, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(3, function (item) {
+      ))]), _hoisted_29, _hoisted_30]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_32, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(4, function (item) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
           key: item,
           xmlns: "http://www.w3.org/2000/svg",
           "class": "h-3 w-3 my-auto text-yellow-400 mx-px",
           viewBox: "0 0 20 20",
           fill: "currentColor"
-        }, [_hoisted_34]);
+        }, [_hoisted_33]);
       }), 64
       /* STABLE_FRAGMENT */
-      )), _hoisted_35, _hoisted_36]), _hoisted_37, _hoisted_38]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_39, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_40, [_hoisted_41, _hoisted_42, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(3, function (item) {
+      )), _hoisted_34]), _hoisted_35, _hoisted_36]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_38, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(3, function (item) {
+        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
+          key: item,
+          xmlns: "http://www.w3.org/2000/svg",
+          "class": "h-3 w-3 my-auto text-yellow-400 mx-px",
+          viewBox: "0 0 20 20",
+          fill: "currentColor"
+        }, [_hoisted_39]);
+      }), 64
+      /* STABLE_FRAGMENT */
+      )), _hoisted_40, _hoisted_41]), _hoisted_42, _hoisted_43]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_44, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_45, [_hoisted_46, _hoisted_47, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(3, function (item) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
           key: item,
           xmlns: "http://www.w3.org/2000/svg",
           "class": "h-3 w-3 my-auto text-gray-300 mx-px",
           viewBox: "0 0 20 20",
           fill: "currentColor"
-        }, [_hoisted_43]);
+        }, [_hoisted_48]);
       }), 64
       /* STABLE_FRAGMENT */
-      ))]), _hoisted_44, _hoisted_45]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_46, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_47, [_hoisted_48, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(4, function (item) {
+      ))]), _hoisted_49, _hoisted_50]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_51, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_52, [_hoisted_53, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(4, function (item) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
           key: item,
           xmlns: "http://www.w3.org/2000/svg",
           "class": "h-3 w-3 my-auto text-gray-300 mx-px",
           viewBox: "0 0 20 20",
           fill: "currentColor"
-        }, [_hoisted_49]);
+        }, [_hoisted_54]);
       }), 64
       /* STABLE_FRAGMENT */
-      ))]), _hoisted_50, _hoisted_51])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_52, [_hoisted_53, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_54, [_hoisted_55, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_56, [_hoisted_57, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_58, [_hoisted_59, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(4, function (item) {
+      ))]), _hoisted_55, _hoisted_56])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_57, [_hoisted_58, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_59, [_hoisted_60, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_61, [_hoisted_62, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_63, [_hoisted_64, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(4, function (item) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
           key: item,
           xmlns: "http://www.w3.org/2000/svg",
           "class": "h-4 w-4 my-auto text-gray-300 mx-px",
           viewBox: "0 0 20 20",
           fill: "currentColor"
-        }, [_hoisted_60]);
+        }, [_hoisted_65]);
       }), 64
       /* STABLE_FRAGMENT */
-      ))]), _hoisted_61, _hoisted_62, _hoisted_63])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_64, [_hoisted_65, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_66, [_hoisted_67, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_68, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(5, function (item) {
+      ))]), _hoisted_66, _hoisted_67, _hoisted_68])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_69, [_hoisted_70, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_71, [_hoisted_72, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_73, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(5, function (item) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
           key: item,
           xmlns: "http://www.w3.org/2000/svg",
           "class": "h-4 w-4 my-auto text-yellow-400 mx-px",
           viewBox: "0 0 20 20",
           fill: "currentColor"
-        }, [_hoisted_69]);
+        }, [_hoisted_74]);
       }), 64
       /* STABLE_FRAGMENT */
-      ))]), _hoisted_70, _hoisted_71])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_72, [_hoisted_73, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_74, [_hoisted_75, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_76, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(4, function (item) {
+      ))]), _hoisted_75, _hoisted_76])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_77, [_hoisted_78, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_79, [_hoisted_80, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_81, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(4, function (item) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
           key: item,
           xmlns: "http://www.w3.org/2000/svg",
           "class": "h-4 w-4 my-auto text-yellow-400 mx-px",
           viewBox: "0 0 20 20",
           fill: "currentColor"
-        }, [_hoisted_77]);
+        }, [_hoisted_82]);
       }), 64
       /* STABLE_FRAGMENT */
-      )), _hoisted_78]), _hoisted_79, _hoisted_80, _hoisted_81])])])])];
+      )), _hoisted_83]), _hoisted_84, _hoisted_85, _hoisted_86])])])])];
     }),
     _: 1
     /* STABLE */
@@ -28003,7 +28092,7 @@ var _hoisted_4 = {
 };
 
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-  "class": "h-40 bg-linear-blue w-full absolute top-0"
+  "class": "h-16 bg-linear-blue w-full absolute top-0"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "w-full h-full background-pic"
 })], -1
@@ -28598,7 +28687,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.bg-linear-blue[data-v-6e9e0cc1]{\n    background: -webkit-gradient(linear,left top,right top,from(#273c92),to(#293e92));\n}\n.text-vs[data-v-6e9e0cc1]{\n    font-size: 10px;\n}\n.text-xz[data-v-6e9e0cc1]{\n    font-size: 11px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.bg-linear-blue[data-v-6e9e0cc1]{\r\n    background: -webkit-gradient(linear,left top,right top,from(#273c92),to(#293e92));\n}\n.text-vs[data-v-6e9e0cc1]{\r\n    font-size: 10px;\n}\n.text-xz[data-v-6e9e0cc1]{\r\n    font-size: 11px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28646,7 +28735,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.bg-teal-600[data-v-f0fdafdc]{\n    background-color: #02A594;\n}\nsvg#freepik_stories-forgot-password:not(.animated) .animable[data-v-f0fdafdc] {opacity: 0;}svg#freepik_stories-forgot-password.animated #freepik--Plants--inject-3[data-v-f0fdafdc] {-webkit-animation: 1.5s Infinite linear wind-f0fdafdc;animation: 1.5s Infinite linear wind-f0fdafdc;-webkit-animation-delay: 0s;animation-delay: 0s;}svg#freepik_stories-forgot-password.animated #freepik--question-marks--inject-3[data-v-f0fdafdc] {-webkit-animation: 1.5s Infinite linear shake-f0fdafdc;animation: 1.5s Infinite linear shake-f0fdafdc;-webkit-animation-delay: 0s;animation-delay: 0s;}svg#freepik_stories-forgot-password.animated #freepik--Character--inject-3[data-v-f0fdafdc] {-webkit-animation: 1.5s Infinite linear floating-f0fdafdc;animation: 1.5s Infinite linear floating-f0fdafdc;-webkit-animation-delay: 0s;animation-delay: 0s;}\n@-webkit-keyframes wind-f0fdafdc {\n0% {                    transform: rotate( 0deg );\n}\n25% {                    transform: rotate( 1deg );\n}\n75% {                    transform: rotate( -1deg );\n}\n}\n@keyframes wind-f0fdafdc {\n0% {                    transform: rotate( 0deg );\n}\n25% {                    transform: rotate( 1deg );\n}\n75% {                    transform: rotate( -1deg );\n}\n}\n@-webkit-keyframes shake-f0fdafdc {\n10%, 90% {                    transform: translate3d(-1px, 0, 0);\n}\n20%, 80% {                    transform: translate3d(2px, 0, 0);\n}\n30%, 50%, 70% {                    transform: translate3d(-4px, 0, 0);\n}\n40%, 60% {                    transform: translate3d(4px, 0, 0);\n}\n}\n@keyframes shake-f0fdafdc {\n10%, 90% {                    transform: translate3d(-1px, 0, 0);\n}\n20%, 80% {                    transform: translate3d(2px, 0, 0);\n}\n30%, 50%, 70% {                    transform: translate3d(-4px, 0, 0);\n}\n40%, 60% {                    transform: translate3d(4px, 0, 0);\n}\n}\n@-webkit-keyframes floating-f0fdafdc {\n0% {                    opacity: 1;                    transform: translateY(0px);\n}\n50% {                    transform: translateY(-10px);\n}\n100% {                    opacity: 1;                    transform: translateY(0px);\n}\n}\n@keyframes floating-f0fdafdc {\n0% {                    opacity: 1;                    transform: translateY(0px);\n}\n50% {                    transform: translateY(-10px);\n}\n100% {                    opacity: 1;                    transform: translateY(0px);\n}\n}\n.animator-hidden[data-v-f0fdafdc] { display: none;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.bg-teal-600[data-v-f0fdafdc]{\r\n    background-color: #02A594;\n}\nsvg#freepik_stories-forgot-password:not(.animated) .animable[data-v-f0fdafdc] {opacity: 0;}svg#freepik_stories-forgot-password.animated #freepik--Plants--inject-3[data-v-f0fdafdc] {-webkit-animation: 1.5s Infinite linear wind-f0fdafdc;animation: 1.5s Infinite linear wind-f0fdafdc;-webkit-animation-delay: 0s;animation-delay: 0s;}svg#freepik_stories-forgot-password.animated #freepik--question-marks--inject-3[data-v-f0fdafdc] {-webkit-animation: 1.5s Infinite linear shake-f0fdafdc;animation: 1.5s Infinite linear shake-f0fdafdc;-webkit-animation-delay: 0s;animation-delay: 0s;}svg#freepik_stories-forgot-password.animated #freepik--Character--inject-3[data-v-f0fdafdc] {-webkit-animation: 1.5s Infinite linear floating-f0fdafdc;animation: 1.5s Infinite linear floating-f0fdafdc;-webkit-animation-delay: 0s;animation-delay: 0s;}\n@-webkit-keyframes wind-f0fdafdc {\n0% {                    transform: rotate( 0deg );\n}\n25% {                    transform: rotate( 1deg );\n}\n75% {                    transform: rotate( -1deg );\n}\n}\n@keyframes wind-f0fdafdc {\n0% {                    transform: rotate( 0deg );\n}\n25% {                    transform: rotate( 1deg );\n}\n75% {                    transform: rotate( -1deg );\n}\n}\n@-webkit-keyframes shake-f0fdafdc {\n10%, 90% {                    transform: translate3d(-1px, 0, 0);\n}\n20%, 80% {                    transform: translate3d(2px, 0, 0);\n}\n30%, 50%, 70% {                    transform: translate3d(-4px, 0, 0);\n}\n40%, 60% {                    transform: translate3d(4px, 0, 0);\n}\n}\n@keyframes shake-f0fdafdc {\n10%, 90% {                    transform: translate3d(-1px, 0, 0);\n}\n20%, 80% {                    transform: translate3d(2px, 0, 0);\n}\n30%, 50%, 70% {                    transform: translate3d(-4px, 0, 0);\n}\n40%, 60% {                    transform: translate3d(4px, 0, 0);\n}\n}\n@-webkit-keyframes floating-f0fdafdc {\n0% {                    opacity: 1;                    transform: translateY(0px);\n}\n50% {                    transform: translateY(-10px);\n}\n100% {                    opacity: 1;                    transform: translateY(0px);\n}\n}\n@keyframes floating-f0fdafdc {\n0% {                    opacity: 1;                    transform: translateY(0px);\n}\n50% {                    transform: translateY(-10px);\n}\n100% {                    opacity: 1;                    transform: translateY(0px);\n}\n}\n.animator-hidden[data-v-f0fdafdc] { display: none;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28694,7 +28783,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.bg-teal-600[data-v-a267196e]{\n    background-color: #02A594;\n}\nsvg#freepik_stories-login:not(.animated) .animable[data-v-a267196e] {opacity: 0;}svg#freepik_stories-login.animated #freepik--Plants--inject-33[data-v-a267196e] {-webkit-animation: 1.5s Infinite linear wind-a267196e;animation: 1.5s Infinite linear wind-a267196e;-webkit-animation-delay: 0s;animation-delay: 0s;}svg#freepik_stories-login.animated #freepik--Clouds--inject-33[data-v-a267196e] {-webkit-animation: 1.5s Infinite linear wind-a267196e;animation: 1.5s Infinite linear wind-a267196e;-webkit-animation-delay: 0s;animation-delay: 0s;}svg#freepik_stories-login.animated #freepik--Character--inject-33[data-v-a267196e] {-webkit-animation: 1.5s Infinite linear floating-a267196e;animation: 1.5s Infinite linear floating-a267196e;-webkit-animation-delay: 0s;animation-delay: 0s;}\n@-webkit-keyframes wind-a267196e {\n0% {                    transform: rotate( 0deg );\n}\n25% {                    transform: rotate( 1deg );\n}\n75% {                    transform: rotate( -1deg );\n}\n}\n@keyframes wind-a267196e {\n0% {                    transform: rotate( 0deg );\n}\n25% {                    transform: rotate( 1deg );\n}\n75% {                    transform: rotate( -1deg );\n}\n}\n@-webkit-keyframes floating-a267196e {\n0% {                    opacity: 1;                    transform: translateY(0px);\n}\n50% {                    transform: translateY(-10px);\n}\n100% {                    opacity: 1;                    transform: translateY(0px);\n}\n}\n@keyframes floating-a267196e {\n0% {                    opacity: 1;                    transform: translateY(0px);\n}\n50% {                    transform: translateY(-10px);\n}\n100% {                    opacity: 1;                    transform: translateY(0px);\n}\n}\n.animator-hidden[data-v-a267196e] { display: none;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.bg-teal-600[data-v-a267196e]{\r\n    background-color: #02A594;\n}\nsvg#freepik_stories-login:not(.animated) .animable[data-v-a267196e] {opacity: 0;}svg#freepik_stories-login.animated #freepik--Plants--inject-33[data-v-a267196e] {-webkit-animation: 1.5s Infinite linear wind-a267196e;animation: 1.5s Infinite linear wind-a267196e;-webkit-animation-delay: 0s;animation-delay: 0s;}svg#freepik_stories-login.animated #freepik--Clouds--inject-33[data-v-a267196e] {-webkit-animation: 1.5s Infinite linear wind-a267196e;animation: 1.5s Infinite linear wind-a267196e;-webkit-animation-delay: 0s;animation-delay: 0s;}svg#freepik_stories-login.animated #freepik--Character--inject-33[data-v-a267196e] {-webkit-animation: 1.5s Infinite linear floating-a267196e;animation: 1.5s Infinite linear floating-a267196e;-webkit-animation-delay: 0s;animation-delay: 0s;}\n@-webkit-keyframes wind-a267196e {\n0% {                    transform: rotate( 0deg );\n}\n25% {                    transform: rotate( 1deg );\n}\n75% {                    transform: rotate( -1deg );\n}\n}\n@keyframes wind-a267196e {\n0% {                    transform: rotate( 0deg );\n}\n25% {                    transform: rotate( 1deg );\n}\n75% {                    transform: rotate( -1deg );\n}\n}\n@-webkit-keyframes floating-a267196e {\n0% {                    opacity: 1;                    transform: translateY(0px);\n}\n50% {                    transform: translateY(-10px);\n}\n100% {                    opacity: 1;                    transform: translateY(0px);\n}\n}\n@keyframes floating-a267196e {\n0% {                    opacity: 1;                    transform: translateY(0px);\n}\n50% {                    transform: translateY(-10px);\n}\n100% {                    opacity: 1;                    transform: translateY(0px);\n}\n}\n.animator-hidden[data-v-a267196e] { display: none;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28718,7 +28807,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.bg-teal-600[data-v-38c74fee]{\n    background-color: #02A594;\n}\nsvg#freepik_stories-mobile-login:not(.animated) .animable[data-v-38c74fee] {opacity: 0;}svg#freepik_stories-mobile-login.animated #freepik--Plants--inject-16[data-v-38c74fee] {-webkit-animation: 1.5s Infinite linear wind-38c74fee;animation: 1.5s Infinite linear wind-38c74fee;-webkit-animation-delay: 0s;animation-delay: 0s;}svg#freepik_stories-mobile-login.animated #freepik--Gear--inject-16[data-v-38c74fee] {-webkit-animation: 1.5s Infinite linear floating-38c74fee;animation: 1.5s Infinite linear floating-38c74fee;-webkit-animation-delay: 0s;animation-delay: 0s;}svg#freepik_stories-mobile-login.animated #freepik--Character--inject-16[data-v-38c74fee] {-webkit-animation: 1.5s Infinite linear floating-38c74fee;animation: 1.5s Infinite linear floating-38c74fee;-webkit-animation-delay: 0s;animation-delay: 0s;}svg#freepik_stories-mobile-login.animated #freepik--Cloud--inject-16[data-v-38c74fee] {-webkit-animation: 1.5s Infinite linear wind-38c74fee;animation: 1.5s Infinite linear wind-38c74fee;-webkit-animation-delay: 0s;animation-delay: 0s;}\n@-webkit-keyframes wind-38c74fee {\n0% {                    transform: rotate( 0deg );\n}\n25% {                    transform: rotate( 1deg );\n}\n75% {                    transform: rotate( -1deg );\n}\n}\n@keyframes wind-38c74fee {\n0% {                    transform: rotate( 0deg );\n}\n25% {                    transform: rotate( 1deg );\n}\n75% {                    transform: rotate( -1deg );\n}\n}\n@-webkit-keyframes floating-38c74fee {\n0% {                    opacity: 1;                    transform: translateY(0px);\n}\n50% {                    transform: translateY(-10px);\n}\n100% {                    opacity: 1;                    transform: translateY(0px);\n}\n}\n@keyframes floating-38c74fee {\n0% {                    opacity: 1;                    transform: translateY(0px);\n}\n50% {                    transform: translateY(-10px);\n}\n100% {                    opacity: 1;                    transform: translateY(0px);\n}\n}\n.animator-hidden[data-v-38c74fee] { display: none;\n}\n\n\n/*svg#freepik_stories-forgot-password:not(.animated) .animable {opacity: 0;}svg#freepik_stories-forgot-password.animated #freepik--Plants--inject-3 {animation: 1.5s Infinite  linear wind;animation-delay: 0s;}svg#freepik_stories-forgot-password.animated #freepik--question-marks--inject-3 {animation: 1.5s Infinite  linear shake;animation-delay: 0s;}svg#freepik_stories-forgot-password.animated #freepik--Character--inject-3 {animation: 1.5s Infinite  linear floating;animation-delay: 0s;}            @keyframes wind {                0% {                    transform: rotate( 0deg );                }                25% {                    transform: rotate( 1deg );                }                75% {                    transform: rotate( -1deg );                }            }                    @keyframes shake {                10%, 90% {                    transform: translate3d(-1px, 0, 0);                  }                  20%, 80% {                    transform: translate3d(2px, 0, 0);                  }                  30%, 50%, 70% {                    transform: translate3d(-4px, 0, 0);                  }                  40%, 60% {                    transform: translate3d(4px, 0, 0);                  }            }                    @keyframes floating {                0% {                    opacity: 1;                    transform: translateY(0px);                }                50% {                    transform: translateY(-10px);                }                100% {                    opacity: 1;                    transform: translateY(0px);                }            }        .animator-hidden { display: none; }*/\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.bg-teal-600[data-v-38c74fee]{\r\n    background-color: #02A594;\n}\nsvg#freepik_stories-mobile-login:not(.animated) .animable[data-v-38c74fee] {opacity: 0;}svg#freepik_stories-mobile-login.animated #freepik--Plants--inject-16[data-v-38c74fee] {-webkit-animation: 1.5s Infinite linear wind-38c74fee;animation: 1.5s Infinite linear wind-38c74fee;-webkit-animation-delay: 0s;animation-delay: 0s;}svg#freepik_stories-mobile-login.animated #freepik--Gear--inject-16[data-v-38c74fee] {-webkit-animation: 1.5s Infinite linear floating-38c74fee;animation: 1.5s Infinite linear floating-38c74fee;-webkit-animation-delay: 0s;animation-delay: 0s;}svg#freepik_stories-mobile-login.animated #freepik--Character--inject-16[data-v-38c74fee] {-webkit-animation: 1.5s Infinite linear floating-38c74fee;animation: 1.5s Infinite linear floating-38c74fee;-webkit-animation-delay: 0s;animation-delay: 0s;}svg#freepik_stories-mobile-login.animated #freepik--Cloud--inject-16[data-v-38c74fee] {-webkit-animation: 1.5s Infinite linear wind-38c74fee;animation: 1.5s Infinite linear wind-38c74fee;-webkit-animation-delay: 0s;animation-delay: 0s;}\n@-webkit-keyframes wind-38c74fee {\n0% {                    transform: rotate( 0deg );\n}\n25% {                    transform: rotate( 1deg );\n}\n75% {                    transform: rotate( -1deg );\n}\n}\n@keyframes wind-38c74fee {\n0% {                    transform: rotate( 0deg );\n}\n25% {                    transform: rotate( 1deg );\n}\n75% {                    transform: rotate( -1deg );\n}\n}\n@-webkit-keyframes floating-38c74fee {\n0% {                    opacity: 1;                    transform: translateY(0px);\n}\n50% {                    transform: translateY(-10px);\n}\n100% {                    opacity: 1;                    transform: translateY(0px);\n}\n}\n@keyframes floating-38c74fee {\n0% {                    opacity: 1;                    transform: translateY(0px);\n}\n50% {                    transform: translateY(-10px);\n}\n100% {                    opacity: 1;                    transform: translateY(0px);\n}\n}\n.animator-hidden[data-v-38c74fee] { display: none;\n}\r\n\r\n\r\n/*svg#freepik_stories-forgot-password:not(.animated) .animable {opacity: 0;}svg#freepik_stories-forgot-password.animated #freepik--Plants--inject-3 {animation: 1.5s Infinite  linear wind;animation-delay: 0s;}svg#freepik_stories-forgot-password.animated #freepik--question-marks--inject-3 {animation: 1.5s Infinite  linear shake;animation-delay: 0s;}svg#freepik_stories-forgot-password.animated #freepik--Character--inject-3 {animation: 1.5s Infinite  linear floating;animation-delay: 0s;}            @keyframes wind {                0% {                    transform: rotate( 0deg );                }                25% {                    transform: rotate( 1deg );                }                75% {                    transform: rotate( -1deg );                }            }                    @keyframes shake {                10%, 90% {                    transform: translate3d(-1px, 0, 0);                  }                  20%, 80% {                    transform: translate3d(2px, 0, 0);                  }                  30%, 50%, 70% {                    transform: translate3d(-4px, 0, 0);                  }                  40%, 60% {                    transform: translate3d(4px, 0, 0);                  }            }                    @keyframes floating {                0% {                    opacity: 1;                    transform: translateY(0px);                }                50% {                    transform: translateY(-10px);                }                100% {                    opacity: 1;                    transform: translateY(0px);                }            }        .animator-hidden { display: none; }*/\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28790,7 +28879,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.max-w-8xl[data-v-7b4029c0]{\n    max-width: 90rem;\n}\n.h-screen-24[data-v-7b4029c0]{\n    height: calc(100vh - 65px);\n}\n.to-rose-500[data-v-7b4029c0]{\n    --tw-gradient-to: #f43f5e;\n}\n.bg-linear-blue[data-v-7b4029c0]{\n    background: -webkit-gradient(linear,left top,right top,from(#273c92),to(#293e92));\n}\n.text-vs[data-v-7b4029c0]{\n    font-size: 10px;\n}\n.text-xz[data-v-7b4029c0]{\n    font-size: 11px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.max-w-8xl[data-v-7b4029c0]{\r\n    max-width: 90rem;\n}\n.h-screen-24[data-v-7b4029c0]{\r\n    height: calc(100vh - 65px);\n}\n.to-rose-500[data-v-7b4029c0]{\r\n    --tw-gradient-to: #f43f5e;\n}\n.bg-linear-blue[data-v-7b4029c0]{\r\n    background: -webkit-gradient(linear,left top,right top,from(#273c92),to(#293e92));\n}\n.text-vs[data-v-7b4029c0]{\r\n    font-size: 10px;\n}\n.text-xz[data-v-7b4029c0]{\r\n    font-size: 11px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28814,7 +28903,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.bg-linear-blue[data-v-03d0e67f]{\n    background: -webkit-gradient(linear,left top,right top,from(#273c92),to(#293e92));\n}\n.form-control[data-v-03d0e67f] {\n    background-color: rgba(243,243,249,.07);\n    color: #fff;\n    border: none;\n    height: 38px;\n    padding-left: 40px;\n    padding-right: 20px;\n    /*background-color: #f3f3f9;*/\n    box-shadow: none;\n    border-radius: 7px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.bg-linear-blue[data-v-03d0e67f]{\r\n    background: -webkit-gradient(linear,left top,right top,from(#273c92),to(#293e92));\n}\n.form-control[data-v-03d0e67f] {\r\n    background-color: rgba(243,243,249,.07);\r\n    color: #fff;\r\n    border: none;\r\n    height: 38px;\r\n    padding-left: 40px;\r\n    padding-right: 20px;\r\n    /*background-color: #f3f3f9;*/\r\n    box-shadow: none;\r\n    border-radius: 7px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
