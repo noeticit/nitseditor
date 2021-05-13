@@ -23,6 +23,12 @@ class HomeController extends Controller
         return Inertia::render('app-market');
     }
 
+
+
+    public function Sample(){
+        return Inertia::render('sample');
+    }
+
     public function AppMarketDetail(){
         return Inertia::render('nitseditor-app-markets-detail');
     }

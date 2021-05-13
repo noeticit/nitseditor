@@ -37,6 +37,7 @@ Route::get('/nits-admin/app-market/nitseditor-app-markets-detail', [\App\Http\Co
 Route::get('/nits-admin/table-menu', [\App\Http\Controllers\HomeController::class, 'TableMenu']);
 Route::get('/nits-admin/aboutus', [\App\Http\Controllers\HomeController::class, 'AboutUs']);
 Route::get('/nits-admin/app-market/{slug}', [\App\Http\Controllers\PluginController::class,'getPlugin'])->name('plugin.view');
+Route::get('/sample', [\App\Http\Controllers\HomeController::class, 'Sample']);
 
 
 Route::get('/{page}', [\App\Http\Controllers\HomeController::class, 'pageRender']);
