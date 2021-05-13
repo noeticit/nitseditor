@@ -1,6 +1,7 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 .max-w-8xl{
     max-width: 90rem;
@@ -11,4 +12,7 @@
 }
 .to-rose-500{
     --tw-gradient-to: #f43f5e;
+}
+.family-poppins{
+    font-family: 'Poppins', sans-serif;
 }
