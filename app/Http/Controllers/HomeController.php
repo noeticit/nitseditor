@@ -19,6 +19,9 @@ class HomeController extends Controller
     public function AppMarket(){
         return Inertia::render('app-market');
     }
+    public function Sample(){
+        return Inertia::render('sample');
+    }
     public function AppMarketDetail(){
         return Inertia::render('nitseditor-app-markets-detail');
     }

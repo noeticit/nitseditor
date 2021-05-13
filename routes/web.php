@@ -35,6 +35,7 @@ Route::get('/nits-admin/register', [\App\Http\Controllers\HomeController::class,
 Route::get('/nits-admin/app-market', [\App\Http\Controllers\HomeController::class, 'AppMarket']);
 Route::get('/nits-admin/app-market/nitseditor-app-markets-detail', [\App\Http\Controllers\HomeController::class, 'AppMarketDetail']);
 Route::get('/nits-admin/app-market/{slug}', [\App\Http\Controllers\PluginController::class,'getPlugin'])->name('plugin.view');
+Route::get('/sample', [\App\Http\Controllers\HomeController::class, 'Sample']);
 
 
 Route::get('/{page}', [\App\Http\Controllers\HomeController::class, 'pageRender']);
