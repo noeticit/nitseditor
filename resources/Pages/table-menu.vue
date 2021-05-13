@@ -1,11 +1,11 @@
 <template>
     <admin-layout>
         <div class="w-full mt-24">
-            <div class="w-full bg-gray-100 pt-2.5">
+            <div class="w-full bg-gray-100 pt-4">
                 <div class="w-full overflow-hidden mx-4">
-                    <div class="bg-white rounded-xl shadow-md p-8">
+                    <div class="bg-white rounded shadow-md p-8">
                         <div class="flex items-center">
-                            <div class="text-base font-medium text-gray-700 family-poppins">Pages</div>
+                            <div class="text-sm font-medium text-gray-700 family-poppins">Pages</div>
                             <button class="font-medium py-1 px-2 ml-4 family-poppins text-xs border-indigo-400 hover:bg-indigo-400 hover:text-white text-indigo-400 bg-white focus:outline-none border rounded-lg">Add New</button>
                         </div>
                         <div class="mt-6 flex justify-between items-center">
@@ -46,12 +46,12 @@
                         <table class="mt-6 w-full">
                             <thead class="">
                             <tr  class="border-b py-3">
-                                <th v-for="(item, index) in TableHData" :class="'text-sm family-poppins py-3 font-medium te ' +item.color ">{{item.title}}</th>
+                                <th v-for="(item, index) in TableHData" :class="'text-sm family-poppins py-3 font-medium text-left ' +item.color ">{{item.title}}</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr v-for="(item, index) in TableDData" class="border-b">
-                                <td v-for="(element, index) in item.TableData" class="text-sm text-gray-700 family-poppins py-3 font-normal ">{{element.field}}</td>
+                                <td v-for="(element, index) in item.TableData" :class="'text-xs text-gray-700 family-poppins py-3 font-normal ' +item.color">{{element.field}}</td>
                             </tr>
                             </tbody>
                         </table>
@@ -88,15 +88,50 @@ export default {
                 {id:'', title:'Title', color:'text-indigo-400' },
                 {id:'', title:'Author'},
                 {id:'', title:'Comment'},
-                {id:'', title:'Date'},
+                {id:'', title:'Date', color:'text-indigo-400' },
             ],
             TableDData:[
                 {id:'1',TableData:[
                         {field:'01'},
-                        {field:'About Us'},
+                        {field:'About Us', color:'text-indigo-400'},
                         {field:'admin'},
                         {field:'-'},
-                        {field:'Published 01/05/2011'},
+                        {field:'Published 01/05/2011', color:'text-indigo-400'},
+                    ]},
+                {id:'1',TableData:[
+                        {field:'02'},
+                        {field:'Blog', color:'text-indigo-400'},
+                        {field:'admin'},
+                        {field:'-'},
+                        {field:'Published 12/10/2018', color:'text-indigo-400'},
+                    ]},
+                {id:'1',TableData:[
+                        {field:'03'},
+                        {field:'Cart', color:'text-indigo-400'},
+                        {field:'admin'},
+                        {field:'-'},
+                        {field:'Published 27/01/2016', color:'text-indigo-400'},
+                    ]},
+                {id:'1',TableData:[
+                        {field:'04'},
+                        {field:'Checkout', color:'text-indigo-400'},
+                        {field:'admin'},
+                        {field:'-'},
+                        {field:'Published 03/07/2018', color:'text-indigo-400'},
+                    ]},
+                {id:'1',TableData:[
+                        {field:'05'},
+                        {field:'Contact Us', color:'text-indigo-400'},
+                        {field:'admin'},
+                        {field:'-'},
+                        {field:'Published 01/05/2011', color:'text-indigo-400'},
+                    ]},
+                {id:'1',TableData:[
+                        {field:'02'},
+                        {field:'Delivery', color:'text-indigo-400'},
+                        {field:'admin'},
+                        {field:'-'},
+                        {field:'Published 12/10/2018', color:'text-indigo-400'},
                     ]},
             ]
         }

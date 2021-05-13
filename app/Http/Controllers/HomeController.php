@@ -37,4 +37,8 @@ class HomeController extends Controller
     public function TableMenu(){
         return Inertia::render('table-menu');
     }
+
+    public function AboutUs(){
+        return Inertia::render('about-us');
+    }
 }
