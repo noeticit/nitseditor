@@ -22,6 +22,9 @@ class HomeController extends Controller
     public function Sample(){
         return Inertia::render('sample');
     }
+    public function Menus(){
+        return Inertia::render('nav-menus');
+    }
     public function AppMarketDetail(){
         return Inertia::render('nitseditor-app-markets-detail');
     }
