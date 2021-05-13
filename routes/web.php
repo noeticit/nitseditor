@@ -34,6 +34,7 @@ Route::get('/nits-admin/forgot-password', [\App\Http\Controllers\HomeController:
 Route::get('/nits-admin/register', [\App\Http\Controllers\HomeController::class, 'Register']);
 Route::get('/nits-admin/app-market', [\App\Http\Controllers\HomeController::class, 'AppMarket']);
 Route::get('/nits-admin/app-market/nitseditor-app-markets-detail', [\App\Http\Controllers\HomeController::class, 'AppMarketDetail']);
+Route::get('/nits-admin/table-menu', [\App\Http\Controllers\HomeController::class, 'TableMenu']);
 Route::get('/nits-admin/app-market/{slug}', [\App\Http\Controllers\PluginController::class,'getPlugin'])->name('plugin.view');
 
 
