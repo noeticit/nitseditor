@@ -26,7 +26,8 @@ class HomeController extends Controller
     public function pageRender($page)
     {
         return Inertia::render('page-renderer', [
-            'layout' => 1
+            'layout' => 1,
+            'page' => $page
         ]);
     }
 }
