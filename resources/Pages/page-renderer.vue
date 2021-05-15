@@ -26,6 +26,7 @@
 
 export default {
     name: "page-renderer",
+    components: {},
     props: {
         layout: {
             type: String,

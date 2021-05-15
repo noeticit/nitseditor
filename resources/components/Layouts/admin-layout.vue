@@ -9,7 +9,7 @@
                 </div>
             </div>
         </div>
-        <div class="h-16 bg-linear-blue w-full absolute top-0">
+        <div class="h-40 bg-linear-blue w-full absolute top-0">
             <div class="w-full h-full background-pic"></div>
         </div>
     </div>
