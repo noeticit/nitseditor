@@ -1,20 +1,47 @@
 <template>
-<!--    <layout ></layout>-->
-    <home-layout>
+    <div>
+        <app-market-layout></app-market-layout>
+<!--        <component-->
+<!--            is="app-market"-->
+<!--        ></component>-->
+<!--        <layout></layout>-->
+        {{foo}}
+<!--        <Suspense>-->
+<!--            <template #default>-->
+<!--&lt;!&ndash;                <keep-alive>&ndash;&gt;-->
+<!--                    <component-->
+<!--                        is="app-market"-->
+<!--                    ></component>-->
+<!--&lt;!&ndash;                </keep-alive>&ndash;&gt;-->
+<!--            </template>-->
+<!--            <template #fallback>-->
+<!--                <div>Loading...</div>-->
+<!--            </template>-->
+<!--        </Suspense>-->
 
-    </home-layout>
+    </div>
 </template>
 
 <script>
-import HomeLayout from "../components/Layouts/HomeLayout";
+
 export default {
     name: "page-renderer",
-    components: {HomeLayout},
+    components: {},
     props: {
         layout: {
             type: String,
-            default: 'home-layout'
+            default: 'admin-layout'
         },
+    },
+    data(){
+        return{
+
+        }
+    },
+    computed: {
+        foo() {
+            return this.$inertia.page.props.page
+        }
     }
 }
 </script>
