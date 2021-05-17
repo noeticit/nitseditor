@@ -40,6 +40,8 @@ Route::get('/nits-admin/app-market/{slug}', [\App\Http\Controllers\PluginControl
 Route::get('/sample', [\App\Http\Controllers\HomeController::class, 'Sample']);
 Route::get('/nits-admin/nav-menus', [\App\Http\Controllers\HomeController::class, 'Menus']);
 Route::get('/nits-admin/manage-location', [\App\Http\Controllers\HomeController::class, 'ManageLocation']);
+Route::get('/page-builder', [\App\Http\Controllers\HomeController::class, 'Builder']);
+Route::get('/page-builder/add-section', [\App\Http\Controllers\HomeController::class, 'Section']);
 
 
 Route::get('/{page}', [\App\Http\Controllers\HomeController::class, 'pageRender']);
