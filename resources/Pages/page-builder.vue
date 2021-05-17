@@ -1,6 +1,6 @@
 <template>
     <builder-layout>
-        <div class="w-full">
+        <div class="w-full pt-10">
             <div class="max-w-5xl mx-auto bg-white shadow">
                 <div class="border-r-8 border-l-8 border-indigo-600 w-full px-14 py-8">
                     <div class="bg-gray-100 w-full p-6">

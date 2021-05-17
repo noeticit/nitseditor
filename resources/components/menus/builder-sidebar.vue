@@ -2,14 +2,14 @@
     <div class="w-full">
         <div class="w-14 fixed h-screen bg-gray-800 z-30 flex">
             <div class="mx-auto py-10">
-                <div v-for="(item, index) in menus" class="p-2.5 hover:bg-gray-200 cursor-pointer rounded-lg hover:text-indigo-600 text-gray-200 my-1.5">
+                <div v-for="(item, index) in menus" :class="'p-2.5 hover:bg-gray-200 cursor-pointer rounded-lg hover:text-indigo-600 text-gray-200 my-1.5 '+item.styling">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="item.icon" />
                     </svg>
                 </div>
             </div>
         </div>
-        <div class="w-14 fixed right-0 top-20 mt-2 h-screen-33px bg-white flex shadow">
+        <div class="w-14 fixed right-0 top-20 mt-2 h-screen-33px bg-white flex ">
             <div class="mx-auto">
                 <div v-for="(item, index) in SideMenus" class="p-2.5 hover:bg-gray-100 cursor-pointer rounded-lg hover:text-indigo-600 text-gray-800 my-1.5">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -27,7 +27,7 @@ export default {
     data(){
         return{
             menus:[
-                {id:1, path:'', icon:'M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5'},
+                {id:1, path:'', styling:'bg-gray-200 text-indigo-600', icon:'M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5'},
                 {id:2, path:'', icon:'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10'},
                 {id:2, path:'', icon:'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4'},
                 {id:2, path:'', icon:'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01'},
