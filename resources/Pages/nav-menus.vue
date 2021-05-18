@@ -27,17 +27,17 @@
                             </div>
                             <div class="mt-4">
                                 <div v-for="(item, index) in Pages" class="flex py-1.5">
-                                    <input type="checkbox" class="h-4 w-4 rounded mr-2.5 my-auto">
+                                    <input type="checkbox" @click="dataSelection(item,$event)" class="h-4 w-4 rounded mr-2.5 my-auto">
                                     <div class="text-xs font-medium text-gray-700 my-auto">{{item.name}}</div>
                                 </div>
                                 <div class="border-t border-gray-200 my-3"></div>
                                 <div class="flex justify-between">
                                     <div class="flex py-1.5">
-                                        <input type="checkbox" class="h-4 w-4 rounded mr-2.5 my-auto">
+                                        <input v-model="selectAll" type="checkbox" class="h-4 w-4 rounded mr-2.5 my-auto">
                                         <div class="text-xs font-medium text-gray-700 my-auto">Select All</div>
                                     </div>
                                     <div>
-                                        <button class="text-gray-700 border border-gray-300 rounded-md px-2.5 py-1 text-xs font-medium focus:outline-none">Add to menu</button>
+                                        <button @click="submit" class="text-gray-700 border border-gray-300 rounded-md px-2.5 py-1 text-xs font-medium focus:outline-none">Add to menu</button>
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
                                 <input type="search" class="w-full rounded-md px-3 py-2 text-xs text-gray-600 placeholder-gray-800 font-medium border border-gray-200">
                             </div>
                             <div class="mt-1 flex justify-end">
-                                <button class="text-gray-700 border border-gray-300 rounded-md px-2.5 py-1 text-xs font-medium focus:outline-none">Add to menu</button>
+                                <button  class="text-gray-700 border border-gray-300 rounded-md px-2.5 py-1 text-xs font-medium focus:outline-none">Add to menu</button>
                             </div>
                         </div>
                     </div>
@@ -85,15 +85,20 @@
                         <div class="py-2.5 px-3.5">
                             <div class="text-xs font-medium text-gray-800 py-2">Drag the items into the order you prefer. Click the arrow on the right of the item to reveal additional configuration options.</div>
                             <div class="mt-3">
-                                <div v-for="(item, index) in Data" class="bg-gray-100 rounded-md px-4 py-3 w-96 flex justify-between my-1.5">
-                                    <div class="text-xs font-semibold ">{{item.page_name}}</div>
-                                    <div class="flex my-auto">
-                                        <div class="text-xs font-normal text-gray-600 my-auto mr-1">{{item.section}}</div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 my-auto text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </div>
-                                </div>
+                                <draggable v-model="menus" tag="transition-group" item-key="id">
+                                    <template #item="{element}">
+                                        <div> {{element.name}} </div>
+                                    </template>
+                                </draggable>
+<!--                                <div v-for="(item, index) in menus" class="bg-gray-100 rounded-md px-4 py-3 w-96 flex justify-between my-1.5">-->
+<!--                                    <div class="text-xs font-semibold ">{{item.name}}</div>-->
+<!--                                    <div class="flex my-auto">-->
+<!--                                        <div class="text-xs font-normal text-gray-600 my-auto mr-1">{{item.section}}</div>-->
+<!--                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 my-auto text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">-->
+<!--                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />-->
+<!--                                        </svg>-->
+<!--                                    </div>-->
+<!--                                </div>-->
                             </div>
                         </div>
                     </div>
@@ -107,23 +112,24 @@
 import AdminLayout from "../components/Layouts/admin-layout";
 import Button from "../components/Jetstream/Button";
 import Input from "../components/Jetstream/Input";
+import draggable from 'vuedraggable'
 
 export default {
     name: "nav-menus",
-    components: {Input, Button, AdminLayout},
+    components: {Input, Button, AdminLayout, draggable},
     data(){
         return{
             Pages:[
-                {name: 'Disclaimer Policy'},
-                {name: 'Terms and Conditions'},
-                {name: 'Delivery'},
-                {name: 'Refund and cancellation policy'},
-                {name: 'Wishlist page'},
-                {name: 'Sample Page'},
-                {name: 'About us'},
-                {name: 'Contact us'},
-                {name: 'Services'},
-                {name: 'Portfolio'},
+                {id:1, name: 'Disclaimer Policy', section:'page'},
+                {id:2, name: 'Terms and Conditions', section:'page'},
+                {id:3, name: 'Delivery', section:'page'},
+                {id:4, name: 'Refund and cancellation policy', section:'page'},
+                {id:5, name: 'Wishlist page', section:'page'},
+                {id:6, name: 'Sample Page', section:'page'},
+                {id:7, name: 'About us', section:'page'},
+                {id:8, name: 'Contact us', section:'page'},
+                {id:9, name: 'Services', section:'page'},
+                {id:10, name: 'Portfolio', section:'page'},
             ],
             Data:[
                 {page_name:'Terms and Condition', section:'Page'},
@@ -140,7 +146,46 @@ export default {
             ],
             openDropdown:true,
             openDropdown2:true,
+            temp:[],
+            menus:[],
+            selected:[],
         }
+    },
+    methods:{
+        dataSelection(item, event) {
+            if (event.target.checked) {
+                this.temp.push(item);
+                console.log(this.temp)
+            }
+            else{
+                var index = _.findIndex(this.temp, (q) => {
+                    return q === item
+                })
+                this.temp.splice(index,  1);
+                console.log(this.temp)
+            }
+        },
+        submit(){
+            this.menus = this.temp
+        }
+    },
+    computed: {
+        selectAll: {
+            get: function () {
+                return this.Pages ? this.selected.length === this.Pages.length : false;
+            },
+            set: function (value) {
+                var selected = [];
+
+                if (value) {
+                    this.Pages.forEach(function (i) {
+                        selected.push(i);
+                    });
+                }
+                this.selected = selected;
+            }
+        },
+
     }
 }
 </script>

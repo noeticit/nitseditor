@@ -4,6 +4,7 @@ require('./bootstrap');
 import { createApp, h } from 'vue';
 import { App as InertiaApp, plugin as InertiaPlugin } from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
+import AppMarket from './../Pages/app-market';
 
 // require('./../models/_layouts');
 
@@ -19,7 +20,8 @@ const app = createApp({
     .mixin({ methods: { route } })
     .use(InertiaPlugin);
 
-app.component('app-market', () => import('./../layouts/AppMarketLayout'));
+app.component('app-market', AppMarket);
+// app.component('AppMarket', () => import('./../Pages/app-market'));
 
 app.mount(el);
 

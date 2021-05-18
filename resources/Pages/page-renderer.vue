@@ -1,11 +1,11 @@
 <template>
     <div>
-        <app-market-layout></app-market-layout>
-<!--        <component-->
-<!--            is="app-market"-->
-<!--        ></component>-->
+<!--        <app-market></app-market>-->
+        <component
+            is="app-market"
+        ></component>
 <!--        <layout></layout>-->
-        {{foo}}
+<!--        {{foo}}-->
 <!--        <Suspense>-->
 <!--            <template #default>-->
 <!--&lt;!&ndash;                <keep-alive>&ndash;&gt;-->
