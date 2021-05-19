@@ -54,4 +54,10 @@ class HomeController extends Controller
     public function AboutUs(){
         return Inertia::render('about-us');
     }
+    public function Builder(){
+        return Inertia::render('page-builder');
+    }
+    public function Section(){
+        return Inertia::render('added-section');
+    }
 }

@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import AdminLayout from "../components/Layouts/admin-layout";
+import AdminLayout from "../layouts/admin-layout";
 export default {
     name: "about-us",
     components: {AdminLayout}

@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import TopBar from "../menus/top-bar";
-import Sidebar from "../menus/sidebar";
+import TopBar from "./../components/menus/top-bar";
+import Sidebar from "./../components/menus/sidebar";
 export default {
     name: "admin-layout",
     components: {Sidebar, TopBar}

@@ -275,7 +275,7 @@
 <script>
     import AppLayout from '@/Layouts/AppLayout'
     import Welcome from '@/Jetstream/Welcome'
-    import AdminLayout from "../components/Layouts/admin-layout";
+    import AdminLayout from "../layouts/admin-layout";
 
     export default {
         components: {

@@ -8,8 +8,8 @@
 
 <script>
 
-import NitseditorHeader from "../menus/nitseditor-header";
-import NitseditorFooter from "../menus/nitseditor-footer";
+import NitseditorHeader from "./../components/menus/nitseditor-header";
+import NitseditorFooter from "./../components/menus/nitseditor-footer";
 export default {
     name: "HomeLayout",
     components: {NitseditorFooter, NitseditorHeader},

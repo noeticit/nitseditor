@@ -252,7 +252,7 @@
 </template>
 
 <script>
-import AdminLayout from "../components/Layouts/admin-layout";
+import AdminLayout from "../layouts/admin-layout";
 import Button from "../components/Jetstream/Button";
 export default {
     name: "nitseditor-app-markets-detail",

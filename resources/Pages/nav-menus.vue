@@ -85,11 +85,13 @@
                         <div class="py-2.5 px-3.5">
                             <div class="text-xs font-medium text-gray-800 py-2">Drag the items into the order you prefer. Click the arrow on the right of the item to reveal additional configuration options.</div>
                             <div class="mt-3">
-                                <draggable v-model="menus" tag="transition-group" item-key="id">
-                                    <template #item="{element}">
-                                        <div> {{element.name}} </div>
-                                    </template>
-                                </draggable>
+<!--                                <draggable v-model="menus" tag="transition-group" item-key="id">-->
+<!--                                    <template #item="{element}">-->
+<!--                                        <div> {{element.name}} </div>-->
+<!--                                    </template>-->
+<!--                                </draggable>-->
+
+
 <!--                                <div v-for="(item, index) in menus" class="bg-gray-100 rounded-md px-4 py-3 w-96 flex justify-between my-1.5">-->
 <!--                                    <div class="text-xs font-semibold ">{{item.name}}</div>-->
 <!--                                    <div class="flex my-auto">-->
@@ -109,14 +111,14 @@
 </template>
 
 <script>
-import AdminLayout from "../components/Layouts/admin-layout";
+import AdminLayout from "../layouts/admin-layout";
 import Button from "../components/Jetstream/Button";
 import Input from "../components/Jetstream/Input";
 import draggable from 'vuedraggable'
 
 export default {
     name: "nav-menus",
-    components: {Input, Button, AdminLayout, draggable},
+    components: {AdminLayout, Input, Button, draggable},
     data(){
         return{
             Pages:[

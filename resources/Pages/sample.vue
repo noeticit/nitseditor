@@ -5,7 +5,8 @@
 </template>
 
 <script>
-import HomeLayout from "../components/Layouts/HomeLayout";
+import HomeLayout from "../layouts/HomeLayout";
+
 export default {
     name: "sample",
     components: {HomeLayout}
