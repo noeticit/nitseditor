@@ -91,6 +91,19 @@
 <!--                                    </template>-->
 <!--                                </draggable>-->
 
+                                <draggable :list="users">
+                                    <li v-for="user in users"
+                                        :key="user.id" slot="items">
+                                        <p>{{ user.name }}</p>
+                                    </li>
+                                </draggable>
+
+<!--                                <draggable class="dragArea" tag="ul" :list="list" :group="{ name: 'g1' }">-->
+<!--                                    <li v-for="el in list" :key="el.name">-->
+<!--                                        <p>{{ el.name }}</p>-->
+<!--                                        <nested-draggable :tasks="el.tasks" />-->
+<!--                                    </li>-->
+<!--                                </draggable>-->
 
 <!--                                <div v-for="(item, index) in menus" class="bg-gray-100 rounded-md px-4 py-3 w-96 flex justify-between my-1.5">-->
 <!--                                    <div class="text-xs font-semibold ">{{item.name}}</div>-->
@@ -115,12 +128,40 @@ import AdminLayout from "../layouts/admin-layout";
 import Button from "../components/Jetstream/Button";
 import Input from "../components/Jetstream/Input";
 import draggable from 'vuedraggable'
+import TailwindDraggable from "../components/tailwind-draggable";
 
 export default {
     name: "nav-menus",
-    components: {AdminLayout, Input, Button, draggable},
+    components: {TailwindDraggable, AdminLayout, Input, Button, draggable},
     data(){
         return{
+            users: [
+                {
+                    id: 1,
+                    name: "Adrian Schubert",
+                    avatar: "https://pickaface.net/gallery/avatar/unr_sample_161118_2054_ynlrg.png"
+                },
+                {
+                    id: 2,
+                    name: "Violet Gates",
+                    avatar: "https://pickaface.net/gallery/avatar/freud51c8b3f65e7dc.png"
+                },
+                {
+                    id: 3,
+                    name: "Steve Jobs",
+                    avatar: "https://pickaface.net/gallery/avatar/Opi51c74d0125fd4.png"
+                },
+                {
+                    id: 4,
+                    name: "Yassine Smith",
+                    avatar: "https://pickaface.net/gallery/avatar/unr_yassine_191124_2012_3gngr.png"
+                },
+                {
+                    id: 5,
+                    name: "Senior Saez",
+                    avatar: "https://pickaface.net/gallery/avatar/elmedinilla541c03412955c.png"
+                }
+            ],
             Pages:[
                 {id:1, name: 'Disclaimer Policy', section:'page'},
                 {id:2, name: 'Terms and Conditions', section:'page'},

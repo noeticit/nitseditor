@@ -64,13 +64,6 @@ class PluginController extends Controller
 
     }
 
-
-    public function plugins()
-    {
-        return PluginResource::collection(NitsPlugin::get()
-        );
-    }
-
     public function getPlugin($slug)
     {
         $plugin = NitsPlugin::where('plugin_slug', $slug)->first();
