@@ -85,18 +85,18 @@
                         <div class="py-2.5 px-3.5">
                             <div class="text-xs font-medium text-gray-800 py-2">Drag the items into the order you prefer. Click the arrow on the right of the item to reveal additional configuration options.</div>
                             <div class="mt-3">
-<!--                                <draggable v-model="menus" tag="transition-group" item-key="id">-->
-<!--                                    <template #item="{element}">-->
-<!--                                        <div> {{element.name}} </div>-->
-<!--                                    </template>-->
-<!--                                </draggable>-->
-
-                                <draggable :list="users">
-                                    <li v-for="user in users"
-                                        :key="user.id" slot="items">
-                                        <p>{{ user.name }}</p>
-                                    </li>
+                                <draggable v-model="menus" tag="transition-group" item-key="id">
+                                    <template #item="{element}">
+                                        <div> {{element.name}} </div>
+                                    </template>
                                 </draggable>
+
+<!--                                <draggable :list="users">-->
+<!--                                    <li v-for="user in users"-->
+<!--                                        :key="user.id" slot="items">-->
+<!--                                        <p>{{ user.name }}</p>-->
+<!--                                    </li>-->
+<!--                                </draggable>-->
 
 <!--                                <draggable class="dragArea" tag="ul" :list="list" :group="{ name: 'g1' }">-->
 <!--                                    <li v-for="el in list" :key="el.name">-->

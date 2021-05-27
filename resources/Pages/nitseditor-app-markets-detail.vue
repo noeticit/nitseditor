@@ -7,17 +7,17 @@
                         <img class="h-14 w-14 rounded-md mr-7" src="https://static.wixstatic.com/media/18d23d_589925a0d27343a5958cad77ed1669d8~mv2.png/v1/fill/w_68,h_68,al_c,q_85,usm_0.66_1.00_0.01/18d23d_589925a0d27343a5958cad77ed1669d8~mv2.webp">
                         <div>
                             <div class="flex-col">
-                                <div class="text-2xl font-bold family-poppins text-gray-900">{{data.name}}</div>
-                                <div class="text-xs mt-1 font-medium family-poppins text-gray-500">By {{data.author.name}}</div>
+                                <div class="text-2xl font-bold family-poppins text-gray-900">{{tableData.name}}</div>
+                                <div class="text-xs mt-1 font-medium family-poppins text-gray-500">By {{tableData.author_username}}</div>
                             </div>
-                            <div class="text-base font-semibold text-gray-700 mt-6">{{data.brief}}</div>
+                            <div class="text-base font-semibold text-gray-700 mt-6">{{tableData.brief}}</div>
                             <div class="flex py-6 -ml-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 my-auto text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
                                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                 </svg>
                                 <div class="text-sm font-bold my-auto ml-1">4.5<span class="text-gray-600 font-medium">(500)</span></div>
                             </div>
-                            <button @click="downloadPlugin(data)" class="rounded-full px-10 py-2 mt-2 text-sm font-semibold text-white bg-linear-blue focus:outline-none">Add to site</button>
+                            <button @click="downloadPlugin(tableData)" class="rounded-full px-10 py-2 mt-2 text-sm font-semibold text-white bg-linear-blue focus:outline-none">Add to site</button>
                             <div class="text-xs ml-14 my-4 font-medium text-gray-600">Free</div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                             <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" class="my-auto"><path d="M9.75 15.25L7 12.5 6 13.499 9.75 17.25 18 8.999 17 8z"></path></svg>
                             <div class="text-sm text-gray-700 ml-4 my-auto">{{item.name}}</div>
                         </div>
-                        <div class="text-sm text-gray-700 py-5 my-auto">{{data.description}}</div>
+                        <div class="text-sm text-gray-700 py-5 my-auto">{{tableData.description}}</div>
                         <div class="text-sm text-indigo-600 font-semibold mt-4">Read More</div>
                     </div>
                     <div class="col-span-1">
@@ -257,7 +257,7 @@ import Button from "../components/Jetstream/Button";
 export default {
     name: "nitseditor-app-markets-detail",
     components: {Button, AdminLayout},
-    props:['data'],
+    props:['slug'],
     data(){
         return{
             FlexData:[
@@ -280,16 +280,18 @@ export default {
                 {id:1, image:'https://static.wixstatic.com/media/1849bd_e0bcef1e7d7b411581c499d02eca75d6~mv2.jpg/v1/fill/w_68,h_68,al_c,q_80,usm_0.66_1.00_0.01/1849bd_e0bcef1e7d7b411581c499d02eca75d6~mv2.webp', title:'Instagram Pro', subtitle:'By Nitseditor', desc:'Showcase your Instagram feed like a pro', rating:'4.0', total_rating:'(377)', cost:'Free Plan Available'},
                 {id:1, image:'https://static.wixstatic.com/media/454bab_853eea4ca3ae4af4bc5a4cf726260ff5~mv2.jpg/v1/fill/w_68,h_68,al_c,q_80,usm_0.66_1.00_0.01/454bab_853eea4ca3ae4af4bc5a4cf726260ff5~mv2.webp', title:'Nitseditor Blog', subtitle:'By Nitseditor', desc:'Share your expertise and grow your traffic', rating:'2.4', total_rating:'(377)', cost:'Free Plan Available'},
             ],
+            tableData:{},
+            base_url: process.env.MIX_NITSEDITOR_DEVELOPER_URL
         }
     },
     created() {
-        console.log(this.data);
+        this.fetchData();
     },
     methods:{
         downloadPlugin(item){
             axios.post('/api/download-plugin',
                 {
-                    user_name : item.author.name,
+                    user_name : item.author_username,
                     plugin_name : item.name
                 }
             ).then(response => {
@@ -298,7 +300,18 @@ export default {
                 }
             })
         },
-    }
+        fetchData(){
+            axios.post(this.base_url + 'api/plugin-info',
+                {
+                    slug: this.slug
+                }
+            ).then(response => {
+                if (response.status === 200) {
+                    this.tableData = response.data.data
+                }
+            })
+        },
+    },
 }
 </script>
 

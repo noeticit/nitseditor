@@ -66,8 +66,6 @@ class PluginController extends Controller
 
     public function getPlugin($slug)
     {
-        $plugin = NitsPlugin::where('plugin_slug', $slug)->first();
-
-        return Inertia::render('nitseditor-app-markets-detail', ['data' => $plugin->load('author')]);
+        return Inertia::render('nitseditor-app-markets-detail', ['slug' => $slug]);
     }
 }
